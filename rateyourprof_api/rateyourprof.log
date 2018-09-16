@@ -1,0 +1,353 @@
+2018-09-16 11:56:30,425 - app - DEBUG - Start login process
+2018-09-16 11:56:30,427 - app - DEBUG - JSON is not provided
+2018-09-16 11:57:03,460 - app - DEBUG - Start login process
+2018-09-16 11:57:03,461 - app - DEBUG - JSON is not provided
+2018-09-16 11:57:12,035 - app - DEBUG - Start login process
+2018-09-16 11:57:26,102 - app - DEBUG - Start login process
+2018-09-16 11:57:45,190 - app - DEBUG - Start login process
+2018-09-16 11:57:45,191 - app - DEBUG - Token successfully created
+2018-09-16 12:02:35,451 - app - DEBUG - Start login process
+2018-09-16 12:03:33,632 - app - DEBUG - Start login process
+2018-09-16 12:05:43,816 - app - DEBUG - Start login process
+2018-09-16 12:07:01,075 - app - DEBUG - Start registration process
+2018-09-16 12:09:17,912 - app - DEBUG - Start registration process
+2018-09-16 12:11:26,166 - app - DEBUG - Start registration process
+2018-09-16 12:15:41,034 - app - DEBUG - Start registration process
+2018-09-16 12:15:48,776 - app - DEBUG - Start login process
+2018-09-16 12:15:48,848 - app - DEBUG - Token successfully created
+2018-09-16 12:17:05,202 - app - DEBUG - Start registration process
+2018-09-16 12:18:30,217 - app - DEBUG - Start login process
+2018-09-16 12:18:30,270 - app - DEBUG - Token successfully created
+2018-09-16 14:57:01,629 - app - DEBUG - Start registration process
+2018-09-16 15:02:11,145 - app - DEBUG - Start registration process
+2018-09-16 15:02:11,663 - app - DEBUG - Start registration process
+2018-09-16 15:05:16,630 - app - DEBUG - Start registration process
+2018-09-16 15:07:06,617 - app - DEBUG - Start registration process
+2018-09-16 15:46:12,971 - app - DEBUG - Start login process
+2018-09-16 15:46:13,041 - app - DEBUG - Token successfully created
+2018-09-16 16:55:07,468 - app - DEBUG - Start registration process
+2018-09-16 16:56:16,225 - app - DEBUG - Start login process
+2018-09-16 16:56:16,314 - app - DEBUG - Token successfully created
+2018-09-16 16:56:50,434 - app - DEBUG - Start reading database for<class 'app.models.PROFESSOR'>
+2018-09-16 16:56:50,480 - app - DEBUG - Unable to reach database
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/sql/type_api.py", line 471, in _cached_result_processor
+    return dialect._type_memos[self][coltype]
+  File "/usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/weakref.py", line 394, in __getitem__
+    return self.data[ref(key)]
+KeyError: <weakref at 0x10788bbd8; to 'ARRAY' at 0x10721bef0>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/wengkiat/Desktop/AY 18:19 Sem 1/CS3216/assign_3/rateyourprof_api/helpers/output_api.py", line 29, in get_all_results
+    data = database.query.all()
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2737, in all
+    return list(self)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2889, in __iter__
+    return self._execute_and_instances(context)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2912, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1215, in _execute_context
+    result = context.get_result_proxy()
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 480, in get_result_proxy
+    return _result.ResultProxy(self)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/result.py", line 649, in __init__
+    self._init_metadata()
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/result.py", line 678, in _init_metadata
+    self._metadata = ResultMetaData(self, cursor_description)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/result.py", line 215, in __init__
+    num_ctx_cols, cols_are_ordered, textual_ordered)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/result.py", line 379, in _merge_cursor_description
+    in enumerate(result_columns)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/result.py", line 378, in <listcomp>
+    ) for idx, (key, name, obj, type_)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 971, in get_result_processor
+    return type_._cached_result_processor(self.dialect, coltype)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/sql/type_api.py", line 477, in _cached_result_processor
+    d[coltype] = rp = d['impl'].result_processor(dialect, coltype)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/dialects/postgresql/array.py", line 288, in result_processor
+    item_proc = self.item_type.dialect_impl(dialect).\
+AttributeError: 'int' object has no attribute 'dialect_impl'
+2018-09-16 16:57:36,373 - app - DEBUG - Start reading database for<class 'app.models.PROFESSOR'>
+2018-09-16 16:57:36,416 - app - DEBUG - Unable to reach database
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/sql/type_api.py", line 471, in _cached_result_processor
+    return dialect._type_memos[self][coltype]
+  File "/usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/weakref.py", line 394, in __getitem__
+    return self.data[ref(key)]
+KeyError: <weakref at 0x109816c78; to 'ARRAY' at 0x1091a6d68>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/wengkiat/Desktop/AY 18:19 Sem 1/CS3216/assign_3/rateyourprof_api/helpers/output_api.py", line 29, in get_all_results
+    data = database.query.all()
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2737, in all
+    return list(self)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2889, in __iter__
+    return self._execute_and_instances(context)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2912, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1215, in _execute_context
+    result = context.get_result_proxy()
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 480, in get_result_proxy
+    return _result.ResultProxy(self)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/result.py", line 649, in __init__
+    self._init_metadata()
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/result.py", line 678, in _init_metadata
+    self._metadata = ResultMetaData(self, cursor_description)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/result.py", line 215, in __init__
+    num_ctx_cols, cols_are_ordered, textual_ordered)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/result.py", line 379, in _merge_cursor_description
+    in enumerate(result_columns)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/result.py", line 378, in <listcomp>
+    ) for idx, (key, name, obj, type_)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 971, in get_result_processor
+    return type_._cached_result_processor(self.dialect, coltype)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/sql/type_api.py", line 477, in _cached_result_processor
+    d[coltype] = rp = d['impl'].result_processor(dialect, coltype)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/dialects/postgresql/array.py", line 288, in result_processor
+    item_proc = self.item_type.dialect_impl(dialect).\
+AttributeError: 'int' object has no attribute 'dialect_impl'
+2018-09-16 17:04:13,102 - app - DEBUG - Start login process
+2018-09-16 17:04:13,196 - app - DEBUG - Token successfully created
+2018-09-16 17:04:29,771 - app - DEBUG - Start reading database for<class 'app.models.Grades'>
+2018-09-16 17:04:29,774 - app - DEBUG - Finish getting data from<class 'app.models.Grades'>
+2018-09-16 17:05:34,167 - app - DEBUG - Start reading database for<class 'app.models.Grades'>
+2018-09-16 17:05:34,220 - app - DEBUG - Finish getting data from<class 'app.models.Grades'>
+2018-09-16 17:06:33,068 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 17:06:33,075 - app - DEBUG - Unable to reach database
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/sql/type_api.py", line 471, in _cached_result_processor
+    return dialect._type_memos[self][coltype]
+  File "/usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/weakref.py", line 394, in __getitem__
+    return self.data[ref(key)]
+KeyError: <weakref at 0x1078c96d8; to 'ARRAY' at 0x107297f98>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/wengkiat/Desktop/AY 18:19 Sem 1/CS3216/assign_3/rateyourprof_api/helpers/output_api.py", line 29, in get_all_results
+    data = database.query.all()
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2737, in all
+    return list(self)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2889, in __iter__
+    return self._execute_and_instances(context)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2912, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1215, in _execute_context
+    result = context.get_result_proxy()
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 480, in get_result_proxy
+    return _result.ResultProxy(self)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/result.py", line 649, in __init__
+    self._init_metadata()
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/result.py", line 678, in _init_metadata
+    self._metadata = ResultMetaData(self, cursor_description)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/result.py", line 215, in __init__
+    num_ctx_cols, cols_are_ordered, textual_ordered)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/result.py", line 379, in _merge_cursor_description
+    in enumerate(result_columns)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/result.py", line 378, in <listcomp>
+    ) for idx, (key, name, obj, type_)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 971, in get_result_processor
+    return type_._cached_result_processor(self.dialect, coltype)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/sql/type_api.py", line 477, in _cached_result_processor
+    d[coltype] = rp = d['impl'].result_processor(dialect, coltype)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/dialects/postgresql/array.py", line 288, in result_processor
+    item_proc = self.item_type.dialect_impl(dialect).\
+AttributeError: 'int' object has no attribute 'dialect_impl'
+2018-09-16 17:06:40,045 - app - DEBUG - Start reading database for<class 'app.models.Grades'>
+2018-09-16 17:06:40,048 - app - DEBUG - Finish getting data from<class 'app.models.Grades'>
+2018-09-16 17:14:06,241 - app - DEBUG - Start login process
+2018-09-16 17:14:06,356 - app - DEBUG - Token successfully created
+2018-09-16 17:14:12,118 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 17:14:12,125 - app - DEBUG - Finish getting data from<class 'app.models.Professors'>
+2018-09-16 17:15:28,300 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 17:15:28,350 - app - DEBUG - Finish getting data from<class 'app.models.Professors'>
+2018-09-16 17:31:14,178 - app - DEBUG - Start login process
+2018-09-16 17:31:14,269 - app - DEBUG - Token successfully created
+2018-09-16 17:31:26,590 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 17:31:26,599 - app - DEBUG - Finish getting data from<class 'app.models.Professors'>
+2018-09-16 18:00:20,086 - app - DEBUG - Start login process
+2018-09-16 18:00:20,197 - app - DEBUG - Token successfully created
+2018-09-16 18:01:07,931 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 18:01:07,932 - app - DEBUG - Querying by search term
+2018-09-16 18:01:07,988 - app - DEBUG - Data does not exist in database 
+NoneType: None
+2018-09-16 18:01:13,500 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 18:01:13,500 - app - DEBUG - Querying by search term
+2018-09-16 18:01:13,504 - app - DEBUG - Data does not exist in database 
+NoneType: None
+2018-09-16 18:01:33,360 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 18:01:33,360 - app - DEBUG - Querying by search term
+2018-09-16 18:01:33,364 - app - DEBUG - Data does not exist in database 
+NoneType: None
+2018-09-16 18:02:35,308 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 18:02:35,316 - app - DEBUG - Finish getting data from<class 'app.models.Professors'>
+2018-09-16 18:05:45,902 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 18:05:45,904 - app - DEBUG - Querying by search term
+2018-09-16 18:05:45,909 - app - DEBUG - Data does not exist in database 
+NoneType: None
+2018-09-16 18:06:39,015 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 18:06:39,015 - app - DEBUG - Querying by search term
+2018-09-16 18:06:39,019 - app - DEBUG - Data does not exist in database 
+NoneType: None
+2018-09-16 18:06:46,478 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 18:06:46,479 - app - DEBUG - Querying by search term
+2018-09-16 18:06:46,481 - app - DEBUG - Finish getting data from<class 'app.models.Professors'>
+2018-09-16 18:08:37,193 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 18:08:37,194 - app - DEBUG - Querying by search term
+2018-09-16 18:08:37,229 - app - DEBUG - Unable to reach database, database error
+Traceback (most recent call last):
+  File "/Users/wengkiat/Desktop/AY 18:19 Sem 1/CS3216/assign_3/rateyourprof_api/helpers/output_api.py", line 66, in get_search_results
+    data = database.query.filter(database.first_name.contains(search) and database.last_name.contains(search))
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 2975, in __bool__
+    raise TypeError("Boolean value of this clause is not defined")
+TypeError: Boolean value of this clause is not defined
+2018-09-16 18:13:58,801 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 18:13:58,801 - app - DEBUG - Querying by search term
+2018-09-16 18:13:58,834 - app - DEBUG - Unable to reach database, database error
+Traceback (most recent call last):
+  File "/Users/wengkiat/Desktop/AY 18:19 Sem 1/CS3216/assign_3/rateyourprof_api/helpers/output_api.py", line 66, in get_search_results
+    data = database.query.filter(database.first_name.contains(search) or database.last_name.contains(search))
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 2975, in __bool__
+    raise TypeError("Boolean value of this clause is not defined")
+TypeError: Boolean value of this clause is not defined
+2018-09-16 18:14:00,120 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 18:14:00,121 - app - DEBUG - Querying by search term
+2018-09-16 18:14:00,121 - app - DEBUG - Unable to reach database, database error
+Traceback (most recent call last):
+  File "/Users/wengkiat/Desktop/AY 18:19 Sem 1/CS3216/assign_3/rateyourprof_api/helpers/output_api.py", line 66, in get_search_results
+    data = database.query.filter(database.first_name.contains(search) or database.last_name.contains(search))
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 2975, in __bool__
+    raise TypeError("Boolean value of this clause is not defined")
+TypeError: Boolean value of this clause is not defined
+2018-09-16 18:14:00,924 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 18:14:00,925 - app - DEBUG - Querying by search term
+2018-09-16 18:14:00,925 - app - DEBUG - Unable to reach database, database error
+Traceback (most recent call last):
+  File "/Users/wengkiat/Desktop/AY 18:19 Sem 1/CS3216/assign_3/rateyourprof_api/helpers/output_api.py", line 66, in get_search_results
+    data = database.query.filter(database.first_name.contains(search) or database.last_name.contains(search))
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 2975, in __bool__
+    raise TypeError("Boolean value of this clause is not defined")
+TypeError: Boolean value of this clause is not defined
+2018-09-16 18:22:40,316 - app - DEBUG - Start login process
+2018-09-16 18:22:40,415 - app - DEBUG - Token successfully created
+2018-09-16 18:22:46,587 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 18:22:46,587 - app - DEBUG - Querying by search term
+2018-09-16 18:22:46,592 - app - DEBUG - Data does not exist in database 
+NoneType: None
+2018-09-16 18:23:58,149 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 18:23:58,149 - app - DEBUG - Querying by search term
+2018-09-16 18:23:58,204 - app - DEBUG - Finish getting data from<class 'app.models.Professors'>
+2018-09-16 18:24:02,977 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 18:24:02,977 - app - DEBUG - Querying by search term
+2018-09-16 18:24:02,981 - app - DEBUG - Finish getting data from<class 'app.models.Professors'>
+2018-09-16 18:24:06,903 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 18:24:06,903 - app - DEBUG - Querying by search term
+2018-09-16 18:24:06,910 - app - DEBUG - Finish getting data from<class 'app.models.Professors'>
+2018-09-16 18:24:10,075 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 18:24:10,075 - app - DEBUG - Querying by search term
+2018-09-16 18:24:10,078 - app - DEBUG - Finish getting data from<class 'app.models.Professors'>
+2018-09-16 18:24:29,026 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 18:24:29,027 - app - DEBUG - Querying by search term
+2018-09-16 18:24:29,030 - app - DEBUG - Finish getting data from<class 'app.models.Professors'>
+2018-09-16 18:24:37,707 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 18:24:37,707 - app - DEBUG - Querying by search term
+2018-09-16 18:24:37,709 - app - DEBUG - Finish getting data from<class 'app.models.Professors'>
+2018-09-16 18:24:49,794 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 18:24:49,795 - app - DEBUG - Querying by search term
+2018-09-16 18:24:49,799 - app - DEBUG - Finish getting data from<class 'app.models.Professors'>
+2018-09-16 18:26:10,383 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 18:26:10,385 - app - DEBUG - Querying by search term
+2018-09-16 18:26:10,431 - app - DEBUG - Finish getting data from<class 'app.models.Professors'>
+2018-09-16 18:26:23,081 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 18:26:23,083 - app - DEBUG - Querying by search term
+2018-09-16 18:26:23,123 - app - DEBUG - Finish getting data from<class 'app.models.Professors'>
+2018-09-16 18:35:10,472 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 18:35:10,472 - app - DEBUG - Querying by search term
+2018-09-16 18:35:10,529 - app - DEBUG - Finish getting data from<class 'app.models.Professors'>
+2018-09-16 18:35:19,607 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 18:35:19,609 - app - DEBUG - Querying by search term
+2018-09-16 18:35:19,613 - app - DEBUG - Data does not exist in database 
+NoneType: None
+2018-09-16 18:35:22,735 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 18:35:22,736 - app - DEBUG - Querying by search term
+2018-09-16 18:35:22,741 - app - DEBUG - Finish getting data from<class 'app.models.Professors'>
+2018-09-16 18:55:05,216 - app - DEBUG - Start login process
+2018-09-16 18:55:05,353 - app - DEBUG - Token successfully created
+2018-09-16 18:55:21,765 - app - DEBUG - Client did not provide necessary fields
+NoneType: None
+2018-09-16 18:55:38,917 - app - DEBUG - Client did not provide necessary fields
+NoneType: None
+2018-09-16 19:11:06,534 - app - DEBUG - Start login process
+2018-09-16 19:11:06,609 - app - DEBUG - Token successfully created
+2018-09-16 19:11:17,493 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 19:11:17,494 - app - DEBUG - Querying by search term
+2018-09-16 19:11:17,498 - app - DEBUG - Finish getting data from<class 'app.models.Professors'>
+2018-09-16 19:18:37,766 - app - DEBUG - Client did not provide necessary fields
+NoneType: None
+2018-09-16 19:21:51,334 - app - DEBUG - Client did not provide necessary fields
+NoneType: None
+2018-09-16 19:21:56,610 - app - DEBUG - Client did not provide necessary fields
+NoneType: None
+2018-09-16 19:26:34,962 - app - DEBUG - Start login process
+2018-09-16 19:26:35,038 - app - DEBUG - Token successfully created
+2018-09-16 19:26:45,140 - app - DEBUG - Client did not provide necessary fields
+NoneType: None
+2018-09-16 19:27:04,922 - app - DEBUG - Client did not provide necessary fields
+NoneType: None
+2018-09-16 19:32:18,327 - app - DEBUG - Client did not provide necessary fields
+NoneType: None
+2018-09-16 19:34:20,151 - app - DEBUG - Client did not provide necessary fields
+NoneType: None
+2018-09-16 19:36:43,225 - app - INFO - Received 1 new review
+2018-09-16 19:37:03,004 - app - INFO - Received 1 new review
+2018-09-16 19:37:11,822 - app - DEBUG - Start login process
+2018-09-16 19:37:11,885 - app - DEBUG - Token successfully created
+2018-09-16 19:37:23,264 - app - INFO - Received 1 new review
+2018-09-16 19:40:48,813 - app - INFO - Received new review
+2018-09-16 19:44:00,402 - app - INFO - Received new review
+2018-09-16 19:44:37,854 - app - INFO - Received new review
+2018-09-16 19:50:52,402 - app - INFO - Received new review
+2018-09-16 19:51:18,534 - app - INFO - Received new review
+2018-09-16 19:51:42,626 - app - INFO - Received new review
+2018-09-16 19:51:47,033 - app - INFO - Received new review
+2018-09-16 19:52:09,875 - app - INFO - Received new review
+2018-09-16 19:52:20,769 - app - DEBUG - Start login process
+2018-09-16 19:52:20,832 - app - DEBUG - Token successfully created
+2018-09-16 19:52:32,070 - app - INFO - Received new review
+2018-09-16 20:17:14,846 - app - DEBUG - Start login process
+2018-09-16 20:17:14,944 - app - DEBUG - Token successfully created
+2018-09-16 20:17:32,399 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 20:17:32,404 - app - DEBUG - Finish getting data from<class 'app.models.Professors'>
+2018-09-16 20:17:58,061 - app - DEBUG - Start reading database for<class 'app.models.Grades'>
+2018-09-16 20:17:58,104 - app - DEBUG - Finish getting data from<class 'app.models.Grades'>
+2018-09-16 20:35:19,641 - app - DEBUG - Start login process
+2018-09-16 20:35:19,728 - app - DEBUG - Token successfully created
+2018-09-16 20:35:30,336 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 20:35:30,342 - app - DEBUG - Finish getting data from<class 'app.models.Professors'>
+2018-09-16 20:35:37,590 - app - DEBUG - Start reading database for<class 'app.models.Grades'>
+2018-09-16 20:35:37,592 - app - DEBUG - Finish getting data from<class 'app.models.Grades'>
+2018-09-16 20:35:44,696 - app - DEBUG - Start reading database for<class 'app.models.Professors'>
+2018-09-16 20:35:44,696 - app - DEBUG - Querying by search term
+2018-09-16 20:35:44,700 - app - DEBUG - Finish getting data from<class 'app.models.Professors'>
