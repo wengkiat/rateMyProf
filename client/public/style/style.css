@@ -52,7 +52,7 @@ nav {
 
 .index_maincontent {
   /*margin-top: 100px;*/
-  background:url('../img/professor_background.jpg') no-repeat left center fixed;
+  background:url('/img/professor_background.jpg') no-repeat left center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
