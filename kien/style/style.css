@@ -8,10 +8,17 @@ nav {
 
 @media only screen and (min-width: 420px) {
   .forheader {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+}
+
+@media only screen and (min-width: 750px) {
+  .forheader {
     padding-left: 10%;
     padding-right: 10%;
   }
-
 }
 
 .app-icon {
