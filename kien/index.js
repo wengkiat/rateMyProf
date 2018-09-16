@@ -1,13 +1,8 @@
 var express = require('express');
 var app = express();
 
-app.get('/', (req, res) => {
-   res.send("Try localhost:3001/hello");
-});
+var router = require('./router.js');
 
-app.get('/hello', (req, res) => {
-   res.send("Hello World!");
-});
+app.use('/', router);
 
 app.listen(3001);
-
