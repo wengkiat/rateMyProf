@@ -6,6 +6,82 @@ html {
   /*overflow: hidden;*/
 }
 
+.font_large {
+  font-size: 38px;
+}
+
+.font_uppermedium {
+  font-size: 26px;
+}
+
+.font_medium {
+  font-size: 20px;
+}
+
+.font_lowermedium {
+  font-size: 16px;
+}
+
+@media only screen and (min-width: 400px) {
+  .font_large {
+    font-size: 56px;
+  }
+  .font_uppermedium {
+    font-size: 34px;
+  }
+  .font_medium {
+    font-size: 28px;
+  }
+  .font_lowermedium {
+    font-size: 22px;
+  }
+}
+
+@media only screen and (min-width: 575px) {
+  .font_large {
+    font-size: 38px;
+  }
+  .font_uppermedium {
+    font-size: 26px;
+  }
+  .font_medium {
+    font-size: 20px;
+  }
+  .font_lowermedium {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .font_large {
+    font-size: 47px;
+  }
+  .font_uppermedium {
+    font-size: 30px;
+  }
+  .font_medium {
+    font-size: 24px;
+  }
+  .font_lowermedium {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .font-large {
+    font-size: 56px;
+  }
+  .font_uppermedium {
+    font-size: 34px;
+  }
+  .font_medium {
+    font-size: 28px;
+  }
+  .font_lowermedium {
+    font-size: 22px;
+  }
+}
+
 .forheader {
   z-index: 9999;
   /*background-color: #F4F4F4;*/
@@ -137,5 +213,27 @@ nav {
   background-color: #343A40;
   border-color: #343A40;
   color: #FFF;
+  font-weight: bold;
+}
+
+.prof_details_page {
+  margin-top: 30px;
+}
+
+.prof_image {
+  padding-left: 5px;
+  padding-right: 5px;
+  float: left;
+}
+
+.prof_image img{
+  width: 100%;
+}
+
+.prof_details {
+  float: left;
+}
+
+.prof_name {
   font-weight: bold;
 }
