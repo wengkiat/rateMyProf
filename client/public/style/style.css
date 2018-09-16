@@ -11,6 +11,7 @@ html {
   /*background-color: #F4F4F4;*/
 }
 
+
 nav {
   background-color: inherit;
 }
@@ -79,6 +80,10 @@ nav {
   background-color: rgba(255, 255, 255, 0.4);
 }
 
+.padding_1 {
+  padding-left: 3px;
+  padding-right: 3px;
+}
 
 @media only screen and (min-width: 420px) {
   .padding_1 {
@@ -118,4 +123,19 @@ nav {
   text-align: center;
   vertical-align: middle;
   width: 100%;
+}
+
+.index_formtext {
+  font-size: 24px;
+  height: 60px;
+}
+
+.index_formbutton {
+  /*margin: 0 0 0 0;*/
+  font-size: 24px;
+  height: 60px;
+  background-color: #343A40;
+  border-color: #343A40;
+  color: #FFF;
+  font-weight: bold;
 }
