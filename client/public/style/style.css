@@ -1,0 +1,41 @@
+.forheader {
+  /*background-color: #F4F4F4;*/
+}
+
+nav {
+  background-color: inherit;
+}
+
+@media only screen and (min-width: 420px) {
+  .forheader {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+}
+
+@media only screen and (min-width: 750px) {
+  .forheader {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+@media only screen and (min-width: 950px) {
+  .forheader {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+}
+
+.app-icon {
+  width: 40px;
+}
+
+.app-icon img {
+  width: 100%;
+}
+
+.forheader li {
+  margin-left: 20px;
+}
