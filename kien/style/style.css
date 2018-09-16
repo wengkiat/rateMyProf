@@ -21,10 +21,21 @@ nav {
   }
 }
 
+@media only screen and (min-width: 950px) {
+  .forheader {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+}
+
 .app-icon {
-  width: 30px;
+  width: 40px;
 }
 
 .app-icon img {
   width: 100%;
+}
+
+.forheader li {
+  margin-left: 20px;
 }
