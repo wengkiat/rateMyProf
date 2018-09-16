@@ -1,0 +1,1 @@
+CS3216 Assignment 3 (Mobile Cloud Assignment) by Group 7 (Chiang Weng Kiat, Nguyen Tien Trung Kien, Samuel Henry Kurniawan)
