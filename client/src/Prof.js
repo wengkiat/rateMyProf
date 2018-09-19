@@ -45,7 +45,7 @@ class Prof extends Component {
           </div>
 
           <div className="col-6 prof_rate no_padding">
-            <button type="button" class="btn btn-secondary">Rate this Professor!</button>
+            <button type="button" class="btn btn-secondary">Rate This Professor!</button>
           </div>
         </div>
 
