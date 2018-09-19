@@ -6,6 +6,10 @@ html {
   /*overflow: hidden;*/
 }
 
+.grey_background {
+  background-color: #E4E4E4;
+}
+
 .font_large {
   font-size: 38px;
 }
@@ -218,6 +222,7 @@ nav {
 
 .prof_details_page {
   margin-top: 30px;
+  overflow: hidden;
 }
 
 .prof_image {
@@ -237,3 +242,12 @@ nav {
 .prof_name {
   font-weight: bold;
 }
+
+.empty_whitespace {
+  float: left;
+}
+
+.prof_commentbox {
+  float: left;
+}
+

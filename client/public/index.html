@@ -57,19 +57,25 @@
   </body>
   <script>
 
-    $(window).onload = function(){
+    window.onload = function(){
       resizeIndexBackground();
+      resizeProfImage();
       initialize();
     }
 
     $(window).resize(()=>{
       resizeIndexBackground();
+      resizeProfImage();
     });
 
     function resizeIndexBackground(){
       let windowHeight = $(window).height();
       let pageHeight = windowHeight - $(".forheader").height();
       $(".index_maincontent").height(pageHeight < 400 ? 400 : pageHeight);
+    }
+
+    function resizeProfImage() {
+      $(".prof_image img").height($(".prof_details").height());
     }
 
     function initialize() {

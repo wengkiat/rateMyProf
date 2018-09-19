@@ -31,6 +31,19 @@ class Prof extends Component {
             </span>
           </div>
         </div>
+
+        <div className="prof_comment padding_1">
+          <div className="col-0 col-sm-4 empty_whitespace">
+          </div>
+
+          <div className="col-12 col-sm-8 prof_commentbox grey_background">
+            <div className="col-12 prof_commentgeneral">
+            </div>
+            <div className="col-12 prof_commentdetails">
+            </div>
+          </div> 
+        </div>
+        
       </div>
     );
   }
