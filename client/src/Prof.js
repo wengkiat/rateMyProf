@@ -9,7 +9,7 @@ class Prof extends Component {
     return (
       <div>
         <div className="prof_details_page padding_1">
-          <div className="col-12 col-sm-4 col-xl-3 prof_image">
+          <div className="col-12 col-sm-4 col-xl-3 prof_image no_padding">
             <img src="/img/anonymous.jpg"/>
           </div>
 
@@ -29,6 +29,23 @@ class Prof extends Component {
             <span className="prof_tags font_lowermedium">
               Related tags: <span className="prof_taglist"></span>
             </span>
+          </div>
+        </div>
+
+        <div className="prof_buttons padding_1">
+          <div className="col-6 prof_dropdown no_padding">
+            <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Filter
+            </button>
+            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a className="dropdown-item" href="#">CS1010X</a>
+              <a className="dropdown-item" href="#">CS1101S</a>
+              <a className="dropdown-item" href="#">CS3216</a>
+            </div>
+          </div>
+
+          <div className="col-6 prof_rate no_padding">
+            <button type="button" class="btn btn-secondary">Rate this Professor!</button>
           </div>
         </div>
 

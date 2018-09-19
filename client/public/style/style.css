@@ -190,6 +190,8 @@ nav {
   margin-left: 20px;
 }
 
+/*Index page*/
+
 .index_maincontent {
   /*margin-top: 100px;*/
   background:url('/img/professor_background.jpg') no-repeat left center fixed;
@@ -280,6 +282,8 @@ nav {
   font-weight: bold;
 }
 
+
+/*individual prof page*/
 .prof_details_page {
   margin-top: 30px;
   overflow: hidden;
@@ -307,6 +311,22 @@ nav {
   float: left;
 }
 
+.prof_buttons {
+  height: 38px;
+  margin-top: 30px;
+  overflow: visible;
+}
+
+.prof_dropdown {
+  float: left;
+  overflow: visible;
+}
+
+.prof_rate {
+  text-align: right;
+  float: left;
+}
+
 .prof_commentbox {
   float: left;
   border-style: solid;
@@ -315,7 +335,7 @@ nav {
 }
 
 .prof_commentlist {
-  margin-top: 40px;
+  margin-top: 10px;
 }
 
 .prof_comment {
