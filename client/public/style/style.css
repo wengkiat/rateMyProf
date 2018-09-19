@@ -349,6 +349,7 @@ nav {
 
 .prof_commentdetails {
   overflow: hidden;
+  margin-bottom: 10px;
 }
 
 .prof_commenttags {

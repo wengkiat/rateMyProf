@@ -35,13 +35,13 @@ class Prof extends Component {
         <div className="prof_commentlist">
 
           <div className="prof_comment padding_1">
-            <div className="col-12 prof_commentbox grey_background no_padding">
+            <div className="col-12 prof_commentbox lightgrey_background no_padding">
 
-              <div className="col-12 prof_commentmodule font_lowermedium_content">
+              <div className="col-12 prof_commentmodule font_lowermedium_content grey_background">
                   CS3216 (Software Engineering Products for Digital Markets)
               </div>
 
-              <div className="col-12 prof_commenttags font_small_content no_padding">
+              <div className="col-12 prof_commenttags font_small_content no_padding grey_background">
                 <div className="col-3 col-sm-2 prof_tags no_padding">
                   Tags:
                 </div>
@@ -49,7 +49,7 @@ class Prof extends Component {
                 </div>
               </div>
 
-              <div className="col-12 prof_commentdetails no_padding lightgrey_background">
+              <div className="col-12 prof_commentdetails no_padding ">
 
                 <div className="col-4 prof_commentoverview font_lowersmall_content">
                   <div className="prof_commentrating">
@@ -83,11 +83,11 @@ class Prof extends Component {
                 </div>
               </div>
 
-              <div className="col-12 prof_commentsidentity font_lowersmall_content lightgrey_background">
-                <div className="col-8 prof_commentstimestamp grey_font no_padding">
+              <div className="col-12 prof_commentsidentity font_lowersmall_content">
+                <div className="col-7 prof_commentstimestamp grey_font no_padding">
                   Created on 2018-07-20 11:59 PM
                 </div>
-                <div className="col-4 prof_commentsupdownvote">
+                <div className="col-5 prof_commentsupdownvote">
                   <span className="prof_commentsthumbsup">
                     <i class="fas fa-thumbs-up"></i>
                   </span>
@@ -107,13 +107,13 @@ class Prof extends Component {
           </div>
 
           <div className="prof_comment padding_1">
-            <div className="col-12 prof_commentbox grey_background no_padding">
+            <div className="col-12 prof_commentbox lightgrey_background no_padding">
 
-              <div className="col-12 prof_commentmodule font_lowermedium_content">
+              <div className="col-12 prof_commentmodule font_lowermedium_content grey_background">
                   CS3216 (Software Engineering Products for Digital Markets)
               </div>
 
-              <div className="col-12 prof_commenttags font_small_content no_padding">
+              <div className="col-12 prof_commenttags font_small_content no_padding grey_background">
                 <div className="col-3 col-sm-2 prof_tags no_padding">
                   Tags:
                 </div>
@@ -121,7 +121,7 @@ class Prof extends Component {
                 </div>
               </div>
 
-              <div className="col-12 prof_commentdetails no_padding lightgrey_background">
+              <div className="col-12 prof_commentdetails no_padding">
 
                 <div className="col-4 prof_commentoverview font_lowersmall_content">
                   <div className="prof_commentrating">
@@ -155,11 +155,11 @@ class Prof extends Component {
                 </div>
               </div>
 
-              <div className="col-12 prof_commentsidentity font_lowersmall_content lightgrey_background">
-                <div className="col-8 prof_commentstimestamp grey_font no_padding">
+              <div className="col-12 prof_commentsidentity font_lowersmall_content">
+                <div className="col-7 prof_commentstimestamp grey_font no_padding">
                   Created on 2018-09-20 12:40 AM
                 </div>
-                <div className="col-4 prof_commentsupdownvote">
+                <div className="col-5 prof_commentsupdownvote">
                   <span className="prof_commentsthumbsup">
                     <i class="fas fa-thumbs-up"></i>
                   </span>
