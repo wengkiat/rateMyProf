@@ -6,8 +6,20 @@ html {
   /*overflow: hidden;*/
 }
 
+.no_padding {
+  padding: 0 0 0 0 !important;
+}
+
 .grey_background {
-  background-color: #E4E4E4;
+  background-color: #D4D4D5;
+}
+
+.lightgrey_background {
+  background-color: #EDEDED;
+}
+
+.grey_font {
+  color: #B3B3B3;
 }
 
 .font_large {
@@ -26,18 +38,39 @@ html {
   font-size: 16px;
 }
 
+.font_lowermedium_content {
+  font-size: 16px;
+}
+
+.font_small_content {
+  font-size: 12px;
+}
+
+.font_lowersmall_content {
+  font-size: 10px;
+}
+
 @media only screen and (min-width: 400px) {
   .font_large {
-    font-size: 56px;
+    font-size: 48px;
   }
   .font_uppermedium {
-    font-size: 34px;
-  }
-  .font_medium {
     font-size: 28px;
   }
+  .font_medium {
+    font-size: 24px;
+  }
   .font_lowermedium {
-    font-size: 22px;
+    font-size: 18px;
+  }
+  .font_small_content {
+    font-size: 14px;
+  }
+  .font_lowermedium_content {
+    font-size: 18px;
+  }
+  .font_lowersmall_content {
+    font-size: 12px;
   }
 }
 
@@ -54,6 +87,15 @@ html {
   .font_lowermedium {
     font-size: 16px;
   }
+  .font_small_content {
+    font-size: 14px;
+  }
+  .font_lowermedium_content {
+    font-size: 18px;
+  }
+  .font_lowersmall_content {
+    font-size: 12px;
+  }
 }
 
 @media only screen and (min-width: 900px) {
@@ -69,6 +111,15 @@ html {
   .font_lowermedium {
     font-size: 18px;
   }
+  .font_small_content {
+    font-size: 16px;
+  }
+  .font_lowermedium_content {
+    font-size: 20px;
+  }
+  .font_lowersmall_content {
+    font-size: 14px;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -83,6 +134,15 @@ html {
   }
   .font_lowermedium {
     font-size: 22px;
+  }
+  .font_small_content {
+    font-size: 18px;
+  }
+  .font_lowermedium_content {
+    font-size: 22px;
+  }
+  .font_lowersmall_content {
+    font-size: 16px;
   }
 }
 
@@ -249,5 +309,151 @@ nav {
 
 .prof_commentbox {
   float: left;
+  border-style: solid;
+  border-color: #2C2E33;
+  border-width: 3px 3px 3px 3px;
 }
 
+.prof_commentlist {
+  margin-top: 40px;
+}
+
+.prof_comment {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.prof_commentmodule {
+  border-style: solid;
+  border-color: #2C2E33;
+  border-width: 0px 0px 2px 0px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.prof_commenttags {
+  border-style: solid;
+  border-color: #2C2E33;
+  border-width: 0px 0px 2px 0px; 
+}
+
+.prof_module {
+
+  float: left;
+  text-align: center;
+}
+
+.prof_commentmodulename {
+  float: left;
+}
+
+.prof_commentdetails {
+  overflow: hidden;
+}
+
+.prof_commenttags {
+  overflow: hidden;
+}
+
+.prof_tags {
+  float: left;
+  text-align: center;
+}
+
+.prof_commenttaglist {
+  float: left;
+}
+
+.prof_commentoverview div {
+  overflow: hidden;
+}
+
+.prof_commentoverviewtitle {
+  float: left;
+  padding: 0 0 0 2px !important;
+}
+
+.prof_commentoverviewcontent {
+  float: left;
+  padding: 0 0 0 0 !important;
+}
+
+.prof_commentoverview.col-4 {
+  padding: 0 0 0 0;
+  float:left;
+}
+
+@media only screen and (min-width: 550px) {
+  .prof_commentoverview.col-4 {
+    padding-left: 5px;
+  }
+}
+
+@media only screen and (min-width: 650px) {
+  .prof_commentoverview.col-4 {
+    padding-left: 10px;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .prof_commentoverview.col-4 {
+    padding-left: 15px;
+  }
+}
+
+@media only screen and (min-width: 850px) {
+  .prof_commentoverview.col-4 {
+    padding-left: 20px;
+  }
+}
+
+@media only screen and (min-width: 950px) {
+  .prof_commentoverview.col-4 {
+    padding-left: 25px;
+  }
+}
+
+@media only screen and (min-width: 1050px) {
+  .prof_commentoverview.col-4 {
+    padding-left: 35px;
+  }
+}
+
+@media only screen and (min-width: 1150px) {
+  .prof_commentoverview.col-4 {
+    padding-left: 45px;
+  }
+}
+
+.prof_commentessay {
+  float: left;
+}
+
+.prof_commentsidentity {
+  overflow: hidden;
+  padding-left: 2px !important;
+}
+
+.prof_commentstimestamp {
+  float: left;
+}
+
+.prof_commentsupdownvote {
+  float: left;
+  text-align: right;
+}
+.prof_commentsthumbsup {
+  margin-right: 10px;
+}
+
+.prof_commentsupvoted {
+  margin-right: 10px;
+}
+
+.prof_commentsthumbsdown {
+  margin-right: 10px;
+}
+
+.prof_commentsdownvoted {
+  margin-right: 10px;
+}
