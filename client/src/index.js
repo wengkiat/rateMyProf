@@ -5,6 +5,7 @@ import App from './App';
 import Home from './Home';
 import About from './About';
 import Contact from './Contact';
+import Login from './Login';
 import Profs from './Profs';
 import Prof from './Prof';
 import registerServiceWorker from './registerServiceWorker';
@@ -17,6 +18,7 @@ ReactDOM.render(
       <Route path="/app" component={App} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
+      <Route path="/login" component={Login} />
       <Route path="/" component={Home} />
     </Switch>
   </Router>,
