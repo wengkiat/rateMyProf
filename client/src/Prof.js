@@ -23,7 +23,24 @@ class Prof extends Component {
             </span>
             <br/>
             <span className="prof_rating font_medium">
-              Average Rating: <span className="prof_ratingvalue">4.85 / 5.00</span>
+              Average Rating:  
+              <span className="prof_ratingstar">
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <span className="prof_ratingstars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </span>
+              </span> (
+              <span className="prof_ratingvalue">
+                4.50
+              </span>)
             </span>
             <br/>
             <span className="prof_tags font_lowermedium">
@@ -68,13 +85,27 @@ class Prof extends Component {
 
               <div className="col-12 prof_commentdetails no_padding ">
 
-                <div className="col-4 prof_commentoverview font_lowersmall_content">
+                <div className="col-5 col-sm-4 prof_commentoverview font_lowersmall_content">
                   <div className="prof_commentrating">
                     <div className="col-5 col-md-4 prof_commentoverviewtitle">
                       Rating
                     </div>
                     <div className="col-7 col-md-8 prof_commentoverviewcontent">
-                      : 4.5 / 5.0
+                      : 
+                      <span className="prof_comment_ratingstar">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span className="prof_comment_ratingstars" id="prof_comment_ratingstars_1">
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                        </span>
+                      </span>
                     </div>
                   </div>
                   <div className="prof_commentdifficulty">
@@ -82,7 +113,21 @@ class Prof extends Component {
                       Difficulty
                     </div>
                     <div className="col-7 col-md-8 prof_commentoverviewcontent">
-                      : 5.0 / 5.0
+                      : 
+                      <span className="prof_comment_difficultystar">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span className="prof_comment_difficultystars" id="prof_comment_difficultystars_1">
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                        </span>
+                      </span>
                     </div>
                   </div>
                   <div className="prof_commentgrade">
@@ -95,7 +140,7 @@ class Prof extends Component {
                   </div>
                 </div>
 
-                <div className="col-8 prof_commentessay font_lowersmall_content">
+                <div className="col-7 col-sm-8 prof_commentessay font_lowersmall_content">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
                 </div>
               </div>
@@ -140,13 +185,27 @@ class Prof extends Component {
 
               <div className="col-12 prof_commentdetails no_padding">
 
-                <div className="col-4 prof_commentoverview font_lowersmall_content">
+                <div className="col-5 col-sm-4 prof_commentoverview font_lowersmall_content">
                   <div className="prof_commentrating">
                     <div className="col-5 col-md-4 prof_commentoverviewtitle">
                       Rating
                     </div>
                     <div className="col-7 col-md-8 prof_commentoverviewcontent">
-                      : 2.5 / 5.0
+                      : 
+                      <span className="prof_comment_ratingstar">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span className="prof_comment_ratingstars" id="prof_comment_ratingstars_2">
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                        </span>
+                      </span>
                     </div>
                   </div>
                   <div className="prof_commentdifficulty">
@@ -154,7 +213,21 @@ class Prof extends Component {
                       Difficulty
                     </div>
                     <div className="col-7 col-md-8 prof_commentoverviewcontent">
-                      : 3.0 / 5.0
+                      : 
+                      <span className="prof_comment_difficultystar">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span className="prof_comment_difficultystars" id="prof_comment_difficultystars_2">
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                        </span>
+                      </span>
                     </div>
                   </div>
                   <div className="prof_commentgrade">
@@ -167,7 +240,7 @@ class Prof extends Component {
                   </div>
                 </div>
 
-                <div className="col-8 prof_commentessay font_lowersmall_content">
+                <div className="col-7 col-sm-8 prof_commentessay font_lowersmall_content">
                   Amazing prof!
                 </div>
               </div>

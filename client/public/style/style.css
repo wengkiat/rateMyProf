@@ -350,6 +350,26 @@ nav {
   font-weight: bold;
 }
 
+.prof_ratingstar {
+  display: inline-block;
+  position: relative;
+  font-family: FontAwesome;
+}
+ 
+ 
+.prof_ratingstars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 90%;
+}
+ 
+.fas.fa-star {
+  color: #F8CE0B;
+}
+
 .empty_whitespace {
   float: left;
 }
@@ -442,49 +462,100 @@ nav {
   padding: 0 0 0 0 !important;
 }
 
-.prof_commentoverview.col-4 {
+.prof_comment_ratingstar {
+  display: inline-block;
+  position: relative;
+  font-family: FontAwesome;
+}
+ 
+ 
+.prof_comment_ratingstars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  /*width: 90%;*/
+}
+
+.prof_comment_difficultystar {
+  display: inline-block;
+  position: relative;
+  font-family: FontAwesome;
+}
+ 
+ 
+.prof_comment_difficultystars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  /*width: 90%;*/
+}
+
+/*Need to be removed in actual*/
+#prof_comment_ratingstars_1 {
+  width: 100%; 
+}
+
+#prof_comment_difficultystars_1 {
+  width: 80%; 
+}
+
+#prof_comment_ratingstars_2 {
+  width: 60%; 
+}
+
+#prof_comment_difficultystars_2 {
+  width: 40%; 
+}
+
+/*end of need to be removed*/
+
+.prof_commentdetails .prof_commentoverview {
   padding: 0 0 0 0;
   float:left;
 }
 
 @media only screen and (min-width: 550px) {
-  .prof_commentoverview.col-4 {
+  .prof_commentdetails .prof_commentoverview {
     padding-left: 5px;
   }
 }
 
 @media only screen and (min-width: 650px) {
-  .prof_commentoverview.col-4 {
+  .prof_commentdetails .prof_commentoverview {
     padding-left: 10px;
   }
 }
 
 @media only screen and (min-width: 750px) {
-  .prof_commentoverview.col-4 {
+  .prof_commentdetails .prof_commentoverview {
     padding-left: 15px;
   }
 }
 
 @media only screen and (min-width: 850px) {
-  .prof_commentoverview.col-4 {
+  .prof_commentdetails .prof_commentoverview {
     padding-left: 20px;
   }
 }
 
 @media only screen and (min-width: 950px) {
-  .prof_commentoverview.col-4 {
+  .prof_commentdetails .prof_commentoverview {
     padding-left: 25px;
   }
 }
 
 @media only screen and (min-width: 1050px) {
-  .prof_commentoverview.col-4 {
+  .prof_commentdetails .prof_commentoverview {
     padding-left: 35px;
   }
 }
 
 @media only screen and (min-width: 1150px) {
-  .prof_commentoverview.col-4 {
+  .prof_commentdetails .prof_commentoverview {
     padding-left: 45px;
   }
 }
