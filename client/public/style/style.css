@@ -346,7 +346,7 @@ nav {
 }
 
 .prof_image img{
-  width: 100%;
+  /*width: 100%;*/
 }
 
 .prof_details {
@@ -355,6 +355,12 @@ nav {
 
 .prof_name {
   font-weight: bold;
+}
+
+@media only screen and (max-width: 575px) {
+  .prof_name {
+    text-align: center;
+  }
 }
 
 .prof_ratingstar {

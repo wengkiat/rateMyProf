@@ -14,10 +14,9 @@ class Prof extends Component {
           </div>
 
           <div className="col-12 col-sm-8 col-xl-9 prof_details">
-            <span className="prof_name font_large">
-              Foo Bar
-            </span>
-            <br/>
+            <div className="prof_name font_large">
+              Leong Wing Lup, Ben
+            </div>
             <span className="prof_departments font_medium">
               Department of Computer Science
             </span>
@@ -25,17 +24,17 @@ class Prof extends Component {
             <span className="prof_rating font_medium">
               Average Rating:  
               <span className="prof_ratingstar">
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
+                <i className="far fa-star"></i>
+                <i className="far fa-star"></i>
+                <i className="far fa-star"></i>
+                <i className="far fa-star"></i>
+                <i className="far fa-star"></i>
                 <span className="prof_ratingstars">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
                 </span>
               </span> (
               <span className="prof_ratingvalue">
@@ -62,7 +61,7 @@ class Prof extends Component {
           </div>
 
           <div className="col-6 prof_rate no_padding">
-            <button type="button" class="btn btn-secondary">Rate This Professor!</button>
+            <button type="button" className="btn btn-secondary">Rate This Professor!</button>
           </div>
         </div>
 
@@ -93,17 +92,17 @@ class Prof extends Component {
                     <div className="col-7 col-md-8 prof_commentoverviewcontent">
                       : 
                       <span className="prof_comment_ratingstar">
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
                         <span className="prof_comment_ratingstars" id="prof_comment_ratingstars_1">
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
+                          <i className="fas fa-star"></i>
+                          <i className="fas fa-star"></i>
+                          <i className="fas fa-star"></i>
+                          <i className="fas fa-star"></i>
+                          <i className="fas fa-star"></i>
                         </span>
                       </span>
                     </div>
@@ -115,17 +114,17 @@ class Prof extends Component {
                     <div className="col-7 col-md-8 prof_commentoverviewcontent">
                       : 
                       <span className="prof_comment_difficultystar">
-                        <i class="fab fa-hotjar"></i>
-                        <i class="fab fa-hotjar"></i>
-                        <i class="fab fa-hotjar"></i>
-                        <i class="fab fa-hotjar"></i>
-                        <i class="fab fa-hotjar"></i>
+                        <i className="fab fa-hotjar"></i>
+                        <i className="fab fa-hotjar"></i>
+                        <i className="fab fa-hotjar"></i>
+                        <i className="fab fa-hotjar"></i>
+                        <i className="fab fa-hotjar"></i>
                         <span className="prof_comment_difficultystars" id="prof_comment_difficultystars_1">
-                          <i class="fab fa-hotjar"></i>
-                          <i class="fab fa-hotjar"></i>
-                          <i class="fab fa-hotjar"></i>
-                          <i class="fab fa-hotjar"></i>
-                          <i class="fab fa-hotjar"></i>
+                          <i className="fab fa-hotjar"></i>
+                          <i className="fab fa-hotjar"></i>
+                          <i className="fab fa-hotjar"></i>
+                          <i className="fab fa-hotjar"></i>
+                          <i className="fab fa-hotjar"></i>
                         </span>
                       </span>
                     </div>
@@ -151,13 +150,13 @@ class Prof extends Component {
                 </div>
                 <div className="col-5 prof_commentsupdownvote">
                   <span className="prof_commentsthumbsup">
-                    <i class="fas fa-thumbs-up"></i>
+                    <i className="fas fa-thumbs-up"></i>
                   </span>
                   <span className="prof_commentsupvoted">
                     25
                   </span>
                   <span className="prof_commentsthumbsdown">
-                    <i class="fas fa-thumbs-down"></i>
+                    <i className="fas fa-thumbs-down"></i>
                   </span>
                   <span className="prof_commentsdownvoted">
                     7
@@ -193,17 +192,17 @@ class Prof extends Component {
                     <div className="col-7 col-md-8 prof_commentoverviewcontent">
                       : 
                       <span className="prof_comment_ratingstar">
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
+                        <i className="far fa-star"></i>
                         <span className="prof_comment_ratingstars" id="prof_comment_ratingstars_2">
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
+                          <i className="fas fa-star"></i>
+                          <i className="fas fa-star"></i>
+                          <i className="fas fa-star"></i>
+                          <i className="fas fa-star"></i>
+                          <i className="fas fa-star"></i>
                         </span>
                       </span>
                     </div>
@@ -215,17 +214,17 @@ class Prof extends Component {
                     <div className="col-7 col-md-8 prof_commentoverviewcontent">
                       : 
                       <span className="prof_comment_difficultystar">
-                        <i class="fab fa-hotjar"></i>
-                        <i class="fab fa-hotjar"></i>
-                        <i class="fab fa-hotjar"></i>
-                        <i class="fab fa-hotjar"></i>
-                        <i class="fab fa-hotjar"></i>
+                        <i className="fab fa-hotjar"></i>
+                        <i className="fab fa-hotjar"></i>
+                        <i className="fab fa-hotjar"></i>
+                        <i className="fab fa-hotjar"></i>
+                        <i className="fab fa-hotjar"></i>
                         <span className="prof_comment_difficultystars" id="prof_comment_difficultystars_2">
-                          <i class="fab fa-hotjar"></i>
-                          <i class="fab fa-hotjar"></i>
-                          <i class="fab fa-hotjar"></i>
-                          <i class="fab fa-hotjar"></i>
-                          <i class="fab fa-hotjar"></i>
+                          <i className="fab fa-hotjar"></i>
+                          <i className="fab fa-hotjar"></i>
+                          <i className="fab fa-hotjar"></i>
+                          <i className="fab fa-hotjar"></i>
+                          <i className="fab fa-hotjar"></i>
                         </span>
                       </span>
                     </div>
@@ -251,13 +250,13 @@ class Prof extends Component {
                 </div>
                 <div className="col-5 prof_commentsupdownvote">
                   <span className="prof_commentsthumbsup">
-                    <i class="fas fa-thumbs-up"></i>
+                    <i className="fas fa-thumbs-up"></i>
                   </span>
                   <span className="prof_commentsupvoted">
                     13
                   </span>
                   <span className="prof_commentsthumbsdown">
-                    <i class="fas fa-thumbs-down"></i>
+                    <i className="fas fa-thumbs-down"></i>
                   </span>
                   <span className="prof_commentsdownvoted">
                     2
