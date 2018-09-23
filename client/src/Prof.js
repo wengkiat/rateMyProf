@@ -22,7 +22,7 @@ class Prof extends Component {
             </span>
             <br/>
             <span className="prof_rating font_medium">
-              Average Rating:  
+              Average Rating:&nbsp; 
               <span className="prof_ratingstar">
                 <i className="far fa-star"></i>
                 <i className="far fa-star"></i>
