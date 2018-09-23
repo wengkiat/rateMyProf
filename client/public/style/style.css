@@ -621,6 +621,7 @@ nav {
   overflow: hidden;
   margin-bottom: 20px;
   cursor: pointer;
+  border-radius: 50px;
 }
 
 .profs_boxphoto {
