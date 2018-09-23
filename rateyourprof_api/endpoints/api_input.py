@@ -64,3 +64,45 @@ def post_review():
         return jsonify({"msg": "invalid data format"}), http.HTTPStatus.BAD_REQUEST
 
     return jsonify('Upload of review successful'), http.HTTPStatus.CREATED
+
+
+@endpoint_input.route('/V1/review/upvote/<string:post_id>', methods=['POST'])
+@endpoint_input.route('/review/upvote/<string:post_id>', methods=['POST'])
+@jwt_required
+def upvote_review(post_id=None):
+
+    if post_id is None:
+        logger.debug('No string supplied during the call of /review/upvote/post_id endpoint')
+        return jsonify({"msg": "please provide necessary arguments"}), http.HTTPStatus.PRECONDITION_FAILED
+
+    try:
+        post = Posts.query.filter_by(id=post_id).first()
+        post.upvote = post.upvote + 1
+        db.session.commit()
+
+    except:
+        logger.debug('Unable to reach database, database error', exc_info=True)
+        return jsonify({"msg": "unable to reach database"}), http.HTTPStatus.INTERNAL_SERVER_ERROR
+
+    return jsonify('msg: Upvote of review successful', ([post.serialize()])), http.HTTPStatus.OK
+
+
+@endpoint_input.route('/V1/review/downvote/<string:post_id>', methods=['POST'])
+@endpoint_input.route('/review/downvote/<string:post_id>', methods=['POST'])
+@jwt_required
+def downvote_review(post_id=None):
+
+    if post_id is None:
+        logger.debug('No string supplied during the call of /review/downvote/post_id endpoint')
+        return jsonify({"msg": "please provide necessary arguments"}), http.HTTPStatus.PRECONDITION_FAILED
+
+    try:
+        post = Posts.query.filter_by(id=post_id).first()
+        post.downvote = post.downvote + 1
+        db.session.commit()
+
+    except:
+        logger.debug('Unable to reach database, database error', exc_info=True)
+        return jsonify({"msg": "unable to reach database"}), http.HTTPStatus.INTERNAL_SERVER_ERROR
+
+    return jsonify('msg: Downvote of review successful', ([post.serialize()])), http.HTTPStatus.OK
