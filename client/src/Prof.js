@@ -24,11 +24,11 @@ class Prof extends Component {
             <span className="prof_rating font_medium">
               Average Rating:&nbsp; 
               <span className="prof_ratingstar">
-                <i className="far fa-star"></i>
-                <i className="far fa-star"></i>
-                <i className="far fa-star"></i>
-                <i className="far fa-star"></i>
-                <i className="far fa-star"></i>
+                <i className="fas darker-star fa-star"></i>
+                <i className="fas darker-star fa-star"></i>
+                <i className="fas darker-star fa-star"></i>
+                <i className="fas darker-star fa-star"></i>
+                <i className="fas darker-star fa-star"></i>
                 <span className="prof_ratingstars">
                   <i className="fas fa-star"></i>
                   <i className="fas fa-star"></i>
@@ -92,11 +92,11 @@ class Prof extends Component {
                     <div className="col-7 col-md-8 prof_commentoverviewcontent">
                       : 
                       <span className="prof_comment_ratingstar">
-                        <i className="far fa-star"></i>
-                        <i className="far fa-star"></i>
-                        <i className="far fa-star"></i>
-                        <i className="far fa-star"></i>
-                        <i className="far fa-star"></i>
+                        <i className="fas darker-star fa-star"></i>
+                        <i className="fas darker-star fa-star"></i>
+                        <i className="fas darker-star fa-star"></i>
+                        <i className="fas darker-star fa-star"></i>
+                        <i className="fas darker-star fa-star"></i>
                         <span className="prof_comment_ratingstars" id="prof_comment_ratingstars_1">
                           <i className="fas fa-star"></i>
                           <i className="fas fa-star"></i>
@@ -192,11 +192,11 @@ class Prof extends Component {
                     <div className="col-7 col-md-8 prof_commentoverviewcontent">
                       : 
                       <span className="prof_comment_ratingstar">
-                        <i className="far fa-star"></i>
-                        <i className="far fa-star"></i>
-                        <i className="far fa-star"></i>
-                        <i className="far fa-star"></i>
-                        <i className="far fa-star"></i>
+                        <i className="fas darker-star fa-star"></i>
+                        <i className="fas darker-star fa-star"></i>
+                        <i className="fas darker-star fa-star"></i>
+                        <i className="fas darker-star fa-star"></i>
+                        <i className="fas darker-star fa-star"></i>
                         <span className="prof_comment_ratingstars" id="prof_comment_ratingstars_2">
                           <i className="fas fa-star"></i>
                           <i className="fas fa-star"></i>

@@ -11,7 +11,7 @@ class Profs extends Component {
           <img src="/img/anonymous.jpg"/>
         </div>
         <div className="col-8 profs_boxdetails">
-          <div className="profs_boxdetailsname font_uppermedium_content">
+          <div className="profs_boxdetailsname">
             {name}
           </div>
           <div className="profs_boxdetailsdept font_lowermedium_content">
@@ -20,17 +20,17 @@ class Profs extends Component {
           <div className="profs_boxdetailsrating font_lowermedium_content">
             Rating:&nbsp;
             <span className="profs_ratingstar">
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
+              <i className="fas darker-star fa-star"></i>
+              <i className="fas darker-star fa-star"></i>
+              <i className="fas darker-star fa-star"></i>
+              <i className="fas darker-star fa-star"></i>
+              <i className="fas darker-star fa-star"></i>
               <span className="profs_ratingstars" id="profs_ratingstars_1">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
               </span>
             </span>
             <span className="profs_ratingval"> ({rating.toFixed(2)})</span>

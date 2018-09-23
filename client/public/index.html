@@ -100,6 +100,24 @@
         $(".prof_image img").css("margin-top", 0 + ("px"));
       }
 
+      if ($(".profs_boxphoto").width() > 175 ) {
+        $(".profs_box").height($(".profs_boxphoto").width());
+        $(".profs_boxphoto img").height($(".profs_boxphoto").width());
+        $(".profs_boxphoto img").css("margin-top", "0px");
+      } else {
+        $(".profs_box").height(175);
+        $(".profs_boxphoto img").height($(".profs_boxphoto").width());
+        let diff = 175 - $(".profs_boxphoto img").height();
+        $(".profs_boxphoto img").css("margin-top", (diff/2) + "px");
+      }
+
+      let diff = $(".profs_boxphoto").width() - $(".profs_boxphoto img").width();
+      if (diff > 0) {
+        $(".profs_boxdetails").css("margin-left", -diff + "px");
+      } else {
+        $(".profs_boxdetails").css("margin-left", "0px");
+      }
+
     }
 
     function initialize() {
