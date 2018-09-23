@@ -6,6 +6,7 @@ import Home from './Home';
 import About from './About';
 import Contact from './Contact';
 import Login from './Login';
+import SimpleLogin from './SimpleLogin';
 import Profs from './Profs';
 import Prof from './Prof';
 import registerServiceWorker from './registerServiceWorker';
@@ -19,6 +20,7 @@ ReactDOM.render(
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/login" component={Login} />
+      <Route path="/simplelogin" component={SimpleLogin} />
       <Route path="/" component={Home} />
     </Switch>
   </Router>,
