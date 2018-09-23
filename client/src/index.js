@@ -11,21 +11,23 @@ import SimpleLogin from './SimpleLogin';
 import Profs from './Profs';
 import Prof from './Prof';
 import Search from "./Search";
-import registerServiceWorker from './registerServiceWorker';
+import NotFound from "./NotFound";
+import registerServiceWorker from "./registerServiceWorker";
 
 ReactDOM.render(
   <Router>
     <Switch>
-      <Route path="/profs/:profID" component={Prof} />
-      <Route path="/profs" component={Profs} />
+      <Route path="/profs/:profID" component={Prof}/>
+      <Route path="/profs" component={Profs}/>
       <Route path="/rate" component={Rate} />
-      <Route path="/app" component={App} />
-      <Route path="/about" component={About} />
-      <Route path="/contact" component={Contact} />
-      <Route path="/login" component={Login} />
-      <Route path="/simplelogin" component={SimpleLogin} />
-      <Route path="/search" component={Search} />
-      <Route path="/" component={Home} />
+      <Route path="/app" component={App}/>
+      <Route path="/about" component={About}/>
+      <Route path="/contact" component={Contact}/>
+      <Route path="/login" component={Login}/>
+      <Route path="/simplelogin" component={SimpleLogin}/>
+      <Route path="/search" component={Search}/>
+      <Route exact path="/" component={Home}/>
+      <Route component={NotFound}/>
     </Switch>
   </Router>,
   document.getElementById("root")
