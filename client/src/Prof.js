@@ -21,6 +21,25 @@ class Prof extends Component {
       });
   }
 
+  renderStars() {
+    return (
+      <span className="prof_ratingstar">
+        <i className="fas darker-star fa-star"></i>
+        <i className="fas darker-star fa-star"></i>
+        <i className="fas darker-star fa-star"></i>
+        <i className="fas darker-star fa-star"></i>
+        <i className="fas darker-star fa-star"></i>
+        <span className="prof_ratingstars">
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
+        </span>
+      </span>
+    )
+  }
+
   render() {
     const { id, first_name, last_name, department, rating } = this.state.prof;
     return (
@@ -40,20 +59,7 @@ class Prof extends Component {
             <br/>
             <span className="prof_rating font_medium">
               Average Rating:&nbsp;
-              <span className="prof_ratingstar">
-                <i className="fas darker-star fa-star"></i>
-                <i className="fas darker-star fa-star"></i>
-                <i className="fas darker-star fa-star"></i>
-                <i className="fas darker-star fa-star"></i>
-                <i className="fas darker-star fa-star"></i>
-                <span className="prof_ratingstars">
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                </span>
-              </span> (
+              {this.renderStars()} (
               <span className="prof_ratingvalue">
                 {rating}
               </span>)

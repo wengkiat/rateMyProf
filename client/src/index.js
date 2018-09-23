@@ -5,6 +5,7 @@ import App from './App';
 import Home from './Home';
 import About from './About';
 import Contact from './Contact';
+import Rate from './Rate';
 import Login from './Login';
 import SimpleLogin from './SimpleLogin';
 import Profs from './Profs';
@@ -16,6 +17,7 @@ ReactDOM.render(
     <Switch>
       <Route path="/profs/:profID" component={Prof} />
       <Route path="/profs" component={Profs} />
+      <Route path="/rate" component={Rate} />
       <Route path="/app" component={App} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />

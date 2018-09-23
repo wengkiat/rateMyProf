@@ -870,3 +870,101 @@ nav {
 .fa-facebook-square, .fa-google-plus-square {
   width: 100%;
 }
+
+/*for submit form*/
+.rate {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+#rateProfModule {
+  cursor: pointer;
+}
+
+#ratewProfGrade {
+  cursor: pointer;
+}
+
+#rateProfRating {
+  display: none;
+}
+
+#rateProfDifficulty {
+  display: none;
+}
+
+.rate_stars {
+  display: inline-block;
+  position: relative;
+  font-family: FontAwesome;
+}
+ 
+ 
+.rate_stars_2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0%;
+  /*width: 90%;*/
+}
+
+.rate_star {
+  cursor: pointer;
+}
+
+.rate_fires {
+  display: inline-block;
+  position: relative;
+  font-family: FontAwesome;
+}
+ 
+ 
+.rate_fires_2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0%;
+  /*width: 90%;*/
+}
+
+.rate_fires .fa-hotjar {
+  color: #CCCCCC;
+  /*color: #FBCE0B;*/
+}
+
+.rate_fires_2 .fa-hotjar {
+  color: red;
+  width: 0%;
+}
+
+.rate_fire {
+  cursor: pointer;
+}
+
+.rate_tagscheckbox {
+  display: none !important;
+}
+
+.rate_tag {
+  cursor: pointer;
+  display: inline-block;
+  color: #666666;
+  font-weight: bold;
+  /*background-color: #a7ecf6;*/
+  background-color: #EDEDED;
+  height: 100%;
+  line-height: 100%;
+  margin: 3px 3px 3px 3px;
+  padding : 3px 5px 3px 5px;
+}
+
+.rate_submit.btn {
+  width: 100px;
+  height: 50px;
+  font-size: 20px;
+  margin-bottom: 30px
+}
