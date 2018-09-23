@@ -377,6 +377,14 @@ nav {
   color: #F8CE0B;
 }
 
+.prof_comment_difficultystar .fa-hotjar {
+  /*color: #FBCE0B;*/
+}
+
+.prof_comment_difficultystars .fa-hotjar {
+  color: red;
+}
+
 .empty_whitespace {
   float: left;
 }

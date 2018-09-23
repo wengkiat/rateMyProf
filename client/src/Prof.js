@@ -115,17 +115,17 @@ class Prof extends Component {
                     <div className="col-7 col-md-8 prof_commentoverviewcontent">
                       : 
                       <span className="prof_comment_difficultystar">
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
+                        <i class="fab fa-hotjar"></i>
+                        <i class="fab fa-hotjar"></i>
+                        <i class="fab fa-hotjar"></i>
+                        <i class="fab fa-hotjar"></i>
+                        <i class="fab fa-hotjar"></i>
                         <span className="prof_comment_difficultystars" id="prof_comment_difficultystars_1">
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
+                          <i class="fab fa-hotjar"></i>
+                          <i class="fab fa-hotjar"></i>
+                          <i class="fab fa-hotjar"></i>
+                          <i class="fab fa-hotjar"></i>
+                          <i class="fab fa-hotjar"></i>
                         </span>
                       </span>
                     </div>
@@ -215,17 +215,17 @@ class Prof extends Component {
                     <div className="col-7 col-md-8 prof_commentoverviewcontent">
                       : 
                       <span className="prof_comment_difficultystar">
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
+                        <i class="fab fa-hotjar"></i>
+                        <i class="fab fa-hotjar"></i>
+                        <i class="fab fa-hotjar"></i>
+                        <i class="fab fa-hotjar"></i>
+                        <i class="fab fa-hotjar"></i>
                         <span className="prof_comment_difficultystars" id="prof_comment_difficultystars_2">
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
+                          <i class="fab fa-hotjar"></i>
+                          <i class="fab fa-hotjar"></i>
+                          <i class="fab fa-hotjar"></i>
+                          <i class="fab fa-hotjar"></i>
+                          <i class="fab fa-hotjar"></i>
                         </span>
                       </span>
                     </div>
