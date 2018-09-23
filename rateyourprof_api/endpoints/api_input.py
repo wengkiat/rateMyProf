@@ -53,7 +53,7 @@ def post_review():
         db.session.add(new_review)
     except:
         logger.debug('Unable to reach database, database error', exc_info=True)
-        return jsonify({"msg": "unable to reach database"}), http.HTTPStatus.BAD_REQUEST
+        return jsonify({"msg": "unable to reach database"}), http.HTTPStatus.INTERNAL_SERVER_ERROR
 
     logger.info('Received new review')
 
@@ -63,4 +63,4 @@ def post_review():
     except exc.SQLAlchemyError:
         return jsonify({"msg": "invalid data format"}), http.HTTPStatus.BAD_REQUEST
 
-    return jsonify('Upload of review successful'), http.HTTPStatus.OK
+    return jsonify('Upload of review successful'), http.HTTPStatus.CREATED

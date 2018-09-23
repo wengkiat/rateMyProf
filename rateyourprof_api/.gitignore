@@ -29,6 +29,5 @@ nosetests.xml
 
 venv
 app.db
-nike.log*
+rateyourprof.log*
 .idea*
-.env
