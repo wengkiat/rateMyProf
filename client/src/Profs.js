@@ -1,12 +1,20 @@
 import React, { Component } from "react";
 import Prof from "./Prof.js";
+import { fetchAllProfs } from "./api.js";
 
 class Profs extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      profs: []
+    };
+  }
+
   renderProf(props) {
-    const { name, faculty, rating } = props;
+    const { name, faculty, rating, key } = props;
     return (
-      <div className="profs_box lightgrey_background">
+      <div className="profs_box lightgrey_background" key={key}>
         <div className="col-4 profs_boxphoto no_padding">
           <img src="/img/anonymous.jpg"/>
         </div>
@@ -40,6 +48,13 @@ class Profs extends Component {
     );
   }
 
+  componentDidMount() {
+    fetchAllProfs()
+      .then(res => {
+        this.setState({profs: res});
+      });
+  }
+
   render() {
     const {
       match
@@ -52,18 +67,15 @@ class Profs extends Component {
         </div>
 
         <div className="profs_boxlist">
-          {this.renderProf({
-            name: "Steven Halim",
-            faculty: "Department of Computer Science",
-            rating: 4.5
-          })}
-          {this.renderProf({
-            name: "Colin Tan",
-            faculty: "Department of Computer Science",
-            rating: 3.5
+          {this.state.profs.map(prof => {
+            return this.renderProf({
+              key: prof.id,
+              name: prof.first_name + prof.last_name,
+              faculty: prof.department,
+              rating: prof.rating
+            });
           })}
         </div>
-
       </div>
     );
   }

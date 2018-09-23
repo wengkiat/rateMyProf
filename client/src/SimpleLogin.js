@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
-import { Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
-import './SimpleLogin.css';
+import React, { Component } from "react";
+import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import "./SimpleLogin.css";
+import { getLoginToken } from "./api.js";
+
 export default class Login extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      username: '',
-      password: ''
+      username: "",
+      password: ""
     };
   }
 
@@ -23,26 +25,7 @@ export default class Login extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    fetch('http://18.222.251.155:3000/login', {
-      method: 'POST',
-      body: JSON.stringify({
-        'username': this.state.username,
-        'password': this.state.password
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(res => {
-      return res.json()
-    })
-    .then(response => {
-      localStorage.setItem('access_token', response.access_token)
-      alert(JSON.stringify(response))
-    })
-    .catch(error => {
-      alert(JSON.stringify(error))
-    });
+    getLoginToken(this.state.username, this.state.password)
   }
 
   render() {
