@@ -10,7 +10,7 @@ class Profs extends Component {
     return (
       <div className="padding_1">
         <div className="profs_searchresult font_uppermedium">
-          Search Result for "Foo Bar"
+          Search Result for <br className="mobile_only"/>"Foo Bar"
         </div>
 
         <div className="profs_boxlist">
@@ -26,7 +26,22 @@ class Profs extends Component {
                 Department of Computer Science
               </div>
               <div className="profs_boxdetailsrating font_lowermedium_content">
-                Average rating: 4.85 / 5.00
+                Rating:&nbsp;
+                <span className="profs_ratingstar">
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <span className="profs_ratingstars" id="profs_ratingstars_1">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </span> 
+                </span>
+                <span className="profs_ratingval"> (4.5)</span>
               </div>
             </div>
           </div>
