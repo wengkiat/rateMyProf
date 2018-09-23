@@ -3,12 +3,11 @@ Definition of output-side APIs. These allow clients to retrieve the data from th
 """
 
 import http
-
 from flask_jwt_extended import jwt_required
 from flask import Blueprint
 from app import logger
 from flask import jsonify, request
-from app.models import Professors, Grades
+from app.models import Professors, Modules, Grades, Departments
 from helpers.output_api import get_args, get_results, get_single_result, get_all_results, get_search_results
 
 

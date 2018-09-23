@@ -1,4 +1,4 @@
-from sqlalchemy import text
+from sqlalchemy import text, ForeignKey
 from app import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from sqlalchemy.dialects.postgresql import UUID, ARRAY, INTEGER
@@ -28,13 +28,15 @@ class User(db.Model):
 
 class Professors(db.Model):
     __tablename__ = 'professors'
-    id = db.Column(UUID(as_uuid=True), primary_key=True, server_default=text("uuid_generate_v4()"))
+    #id = db.Column(UUID(as_uuid=True), primary_key=True, server_default=text("uuid_generate_v4()"))
+    id = db.Column(db.String, primary_key=True)
     first_name = db.Column(db.VARCHAR)
     last_name = db.Column(db.VARCHAR)
-    department = db.Column(db.Integer)
+    department = db.Column(ForeignKey('Departments.id'))
     rating = db.Column(db.Float)
     posts = db.Column(db.Integer)
     tags = db.Column(ARRAY(INTEGER))
+    modules = db.Column(ARRAY(INTEGER))
 
     def serialize(self):
         """Return object data in easily serializeable format"""
@@ -45,16 +47,34 @@ class Professors(db.Model):
             'department': self.department,
             'rating': self.rating,
             'posts': self.posts,
-            'tags': self.tags
+            'tags': self.tags,
+            'modules': self.modules
         }
 
-    def search_serialize(self):
+    def search_serialize(i):
         """Return object data in easily serializeable format"""
         return {
-            'id': self.id,
-            'first_name': self.first_name,
-            'last_name': self.last_name,
-            'department': self.department,
+            'id': i[0].id,
+            'first_name': i[0].first_name,
+            'last_name': i[0].last_name,
+            'department': i[1],
+        }
+
+    def serialize_full(data, data2):
+        """Return object data in easily serializeable format"""
+
+        mod = []
+        for i in data2:
+            mod.append([i.code, i.name])
+        return {
+            'id': data[0][0].id,
+            'first_name': data[0][0].first_name,
+            'last_name': data[0][0].last_name,
+            'department': data[0][1],
+            'rating': data[0][0].rating,
+            'posts': data[0][0].posts,
+            'tags': data[0][0].tags,
+            'modules': mod
         }
 
 
@@ -88,6 +108,7 @@ class Modules(db.Model):
     __tablename__ = 'modules'
     id = db.Column(db.Integer, primary_key=True, autoincrement='auto')
     code = db.Column(db.VARCHAR)
+    name = db.Column(db.String)
 
     def serialize(self):
         """Return object data in easily serializeable format"""
