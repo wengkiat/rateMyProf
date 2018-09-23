@@ -3,12 +3,11 @@ Definition of output-side APIs. These allow clients to retrieve the data from th
 """
 
 import http
-
 from flask_jwt_extended import jwt_required
 from flask import Blueprint
 from app import logger
 from flask import jsonify, request
-from app.models import Professors, Grades
+from app.models import Professors, Modules, Grades, Departments
 from helpers.output_api import get_args, get_results, get_single_result, get_all_results, get_search_results
 
 
@@ -25,18 +24,33 @@ def get_professors():
     return get_all_results(Professors)
 
 
-@endpoint_output.route('/V1/professors/search/<string:search>', methods=['GET'])
-@endpoint_output.route('/professors/search/<string:search>', methods=['GET'])
+@endpoint_output.route('/V1/professors/<string:search>', methods=['GET'])
+@endpoint_output.route('/professors/<string:search>', methods=['GET'])
 @jwt_required
-def search_professor(search=None):
-    """GET /professors
-    (retrieve some professors)"""
+def get_professor(search=None):
+    """GET /professors/<string:search>
+    (retrieve a specific professor)"""
+
     if search is None:
         logger.debug('No string supplied during the call of /professors/search endpoint')
         return jsonify({"msg": "please provide necessary arguments"}), http.HTTPStatus.PRECONDITION_FAILED
 
     search = search.upper()
-    return get_search_results(Professors, search)
+    return get_single_result(Professors, Departments, Modules, search)
+
+
+@endpoint_output.route('/V1/professors/search/<string:search>', methods=['GET'])
+@endpoint_output.route('/professors/search/<string:search>', methods=['GET'])
+@jwt_required
+def search_professor(search=None):
+    """GET /professors/<string:search>
+    (search for a professor)"""
+    if search is None:
+        logger.debug('No string supplied during the call of /professors/search endpoint')
+        return jsonify({"msg": "please provide necessary arguments"}), http.HTTPStatus.PRECONDITION_FAILED
+
+    search = search.upper()
+    return get_search_results(Professors, Departments, search)
 
 
 @endpoint_output.route('/V1/grades', methods=['GET'])
