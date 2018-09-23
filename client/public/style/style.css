@@ -6,6 +6,13 @@ html {
   /*overflow: hidden;*/
 }
 
+@media only screen and (min-width: 575px) {
+  .mobile_only {
+    display: none;
+  }
+}
+
+
 .no_padding {
   padding: 0 0 0 0 !important;
 }
@@ -58,6 +65,10 @@ html {
   font-size: 10px;
 }
 
+.font_mini_content {
+  font-size: 8px;
+}
+
 @media only screen and (min-width: 400px) {
   .font_large {
     font-size: 48px;
@@ -86,9 +97,10 @@ html {
   .font_lowersmall_content {
     font-size: 12px;
   }
-}.font_uppermedium_content {
-    font-size: 28px;
+  .font_mini_content {
+    font-size: 10px;
   }
+}
 
 @media only screen and (min-width: 575px) {
   .font_large {
@@ -117,6 +129,9 @@ html {
   }
   .font_lowersmall_content {
     font-size: 12px;
+  }
+  .font_mini_content {
+    font-size: 10px;
   }
 }
 
@@ -148,6 +163,9 @@ html {
   .font_lowersmall_content {
     font-size: 14px;
   }
+  .font_mini_content {
+    font-size: 12px;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -177,6 +195,9 @@ html {
   }
   .font_lowersmall_content {
     font-size: 16px;
+  }
+  .font_mini_content {
+    font-size: 14px;
   }
 }
 
@@ -339,7 +360,7 @@ nav {
 }
 
 .prof_image img{
-  width: 100%;
+  /*width: 100%;*/
 }
 
 .prof_details {
@@ -348,6 +369,12 @@ nav {
 
 .prof_name {
   font-weight: bold;
+}
+
+@media only screen and (max-width: 575px) {
+  .prof_name {
+    text-align: center;
+  }
 }
 
 .prof_ratingstar {
@@ -366,8 +393,21 @@ nav {
   width: 90%;
 }
  
+.fas.darker-star.fa-star {
+  color: #CCCCCC;
+}
+
 .fas.fa-star {
   color: #F8CE0B;
+}
+
+.prof_comment_difficultystar .fa-hotjar {
+  color: #CCCCCC;
+  /*color: #FBCE0B;*/
+}
+
+.prof_comment_difficultystars .fa-hotjar {
+  color: red;
 }
 
 .empty_whitespace {
@@ -392,9 +432,9 @@ nav {
 
 .prof_commentbox {
   float: left;
-  border-style: solid;
+/*  border-style: solid;
   border-color: #2C2E33;
-  border-width: 3px 3px 3px 3px;
+  border-width: 3px 3px 3px 3px;*/
 }
 
 .prof_commentlist {
@@ -407,17 +447,18 @@ nav {
 }
 
 .prof_commentmodule {
-  border-style: solid;
+/*  border-style: solid;
   border-color: #2C2E33;
-  border-width: 0px 0px 2px 0px;
+  border-width: 0px 0px 2px 0px;*/
   overflow: hidden;
   text-align: center;
 }
 
 .prof_commenttags {
-  border-style: solid;
+/*  border-style: solid;
   border-color: #2C2E33;
-  border-width: 0px 0px 2px 0px; 
+  border-width: 0px 0px 2px 0px; */
+  margin-bottom: 5px;
 }
 
 .prof_module {
@@ -442,6 +483,30 @@ nav {
 .prof_tags {
   float: left;
   text-align: center;
+}
+
+.prof_tag {
+  display: inline-block;
+  color: #666666;
+  font-weight: bold;
+  background-color: #eaeeb0;
+  height: 100%;
+  line-height: 100%;
+  margin: 3px 3px 3px 3px;
+  padding : 3px 5px 3px 5px;
+}
+
+.prof_main_tag {
+  display: inline-block;
+  color: #666666;
+  /*color: #888888;*/
+  font-weight: bold;
+  background-color: #eaeeb0;
+  /*background-color: #F0F0F0;*/
+  height: 100%;
+  line-height: 100%;
+  margin: 3px 3px 3px 3px;
+  padding : 5px 8px 5px 8px;
 }
 
 .prof_commenttaglist {
@@ -579,6 +644,7 @@ nav {
 }
 .prof_commentsthumbsup {
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .prof_commentsupvoted {
@@ -587,6 +653,7 @@ nav {
 
 .prof_commentsthumbsdown {
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .prof_commentsdownvoted {
@@ -594,8 +661,17 @@ nav {
 }
 
 /*for search prof page*/
+
+.
+
 .profs_searchresult {
   margin-top: 30px;
+}
+
+@media only screen and (max-width: 575px) {
+  .profs_searchresult {
+    text-align: center;
+  }
 }
 
 .profs_boxlist {
@@ -605,6 +681,9 @@ nav {
 .profs_box {
   overflow: hidden;
   margin-bottom: 20px;
+  cursor: pointer;
+  border-radius: 50px;
+  max-height: 250px;
 }
 
 .profs_boxphoto {
@@ -614,7 +693,8 @@ nav {
 
 .profs_boxphoto img {
   width: 100%;
-  height: 250px;
+  max-height: 250px;
+  max-width: 250px;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -647,6 +727,54 @@ nav {
 .profs_boxdetails {
   float: left;
   padding-top: 20px;
+}
+
+.profs_boxdetailsname {
+  font-size: 20px;
+}
+
+@media only screen and (min-width: 400px) {
+  .profs_boxdetailsname {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (min-width: 575px) {
+  .profs_boxdetailsname {
+    font-size: 26px;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .profs_boxdetailsname {
+    font-size: 28px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .profs_boxdetailsname {
+    font-size: 32px;
+  }
+}
+
+.profs_ratingstar {
+  display: inline-block;
+  position: relative;
+  font-family: FontAwesome;
+}
+ 
+ 
+.profs_ratingstars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  /*width: 90%;*/
+}
+
+#profs_ratingstars_1 {
+  width: 90%;
 }
 
 /*for about page*/
