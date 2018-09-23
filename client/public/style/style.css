@@ -498,9 +498,11 @@ nav {
 
 .prof_main_tag {
   display: inline-block;
-  color: #888888;
+  color: #666666;
+  /*color: #888888;*/
   font-weight: bold;
-  background-color: #D9D9D9;
+  background-color: #eaeeb0;
+  /*background-color: #F0F0F0;*/
   height: 100%;
   line-height: 100%;
   margin: 3px 3px 3px 3px;
