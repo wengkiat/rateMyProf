@@ -1,11 +1,28 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { getProf } from "./api.js";
 
 class Prof extends Component {
-  render() {
-    const {
-      match
-    } = this.props;
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      prof: {}
+    };
+  }
+
+  componentDidMount() {
+    const { match } = this.props;
+    console.log(match.params.profID);
+    getProf(match.params.profID)
+      .then(res => {
+        console.log(38495734);
+        console.log(res);
+        this.setState({prof: res});
+      });
+  }
+
+  render() {
+    const { id, first_name, last_name, department, rating } = this.state.prof;
     return (
       <div>
         <div className="prof_details_page padding_1">
@@ -15,14 +32,14 @@ class Prof extends Component {
 
           <div className="col-12 col-sm-8 col-xl-9 prof_details">
             <div className="prof_name font_large">
-              Leong Wing Lup, Ben
+              {first_name + " " + last_name}
             </div>
             <span className="prof_departments font_medium">
-              Department of Computer Science
+              {department}
             </span>
             <br/>
             <span className="prof_rating font_medium">
-              Average Rating:&nbsp; 
+              Average Rating:&nbsp;
               <span className="prof_ratingstar">
                 <i className="fas darker-star fa-star"></i>
                 <i className="fas darker-star fa-star"></i>
@@ -38,20 +55,20 @@ class Prof extends Component {
                 </span>
               </span> (
               <span className="prof_ratingvalue">
-                4.50
+                {rating}
               </span>)
             </span>
             <br/>
             <span className="prof_main_tags font_lowermedium">
-              Related tags: 
+              Related tags:
               <div className="prof_taglist font_lowersmall_content">
-                <span className="prof_main_tag">HIGH WORKLOAD(1)</span> &nbsp; 
-                <span className="prof_main_tag">LIKE TO TORTURE(1)</span> &nbsp; 
-                <span className="prof_main_tag">YOU DIE? HE HAPPY(1)</span> &nbsp; 
-                <span className="prof_main_tag">BARELY BREATHING(1)</span> &nbsp; 
-                <span className="prof_main_tag">WANT TO S/U(1)</span> &nbsp; 
-                <span className="prof_main_tag">NICE PROF(1)</span> &nbsp; 
-                <span className="prof_main_tag">VERY FLEXIBLE(1)</span> &nbsp; 
+                <span className="prof_main_tag">HIGH WORKLOAD(1)</span> &nbsp;
+                <span className="prof_main_tag">LIKE TO TORTURE(1)</span> &nbsp;
+                <span className="prof_main_tag">YOU DIE? HE HAPPY(1)</span> &nbsp;
+                <span className="prof_main_tag">BARELY BREATHING(1)</span> &nbsp;
+                <span className="prof_main_tag">WANT TO S/U(1)</span> &nbsp;
+                <span className="prof_main_tag">NICE PROF(1)</span> &nbsp;
+                <span className="prof_main_tag">VERY FLEXIBLE(1)</span> &nbsp;
               </div>
             </span>
           </div>
@@ -88,11 +105,11 @@ class Prof extends Component {
                   Tags:
                 </div>
                 <div className="col-9 col-sm-10 prof_commenttaglist font_mini_content">
-                  <span className="prof_tag">HIGH WORKLOAD</span> &nbsp; 
-                  <span className="prof_tag">LIKE TO TORTURE</span> &nbsp; 
-                  <span className="prof_tag">YOU DIE? HE HAPPY</span> &nbsp; 
-                  <span className="prof_tag">BARELY BREATHING</span> &nbsp; 
-                  <span className="prof_tag">WANT TO S/U</span> &nbsp; 
+                  <span className="prof_tag">HIGH WORKLOAD</span> &nbsp;
+                  <span className="prof_tag">LIKE TO TORTURE</span> &nbsp;
+                  <span className="prof_tag">YOU DIE? HE HAPPY</span> &nbsp;
+                  <span className="prof_tag">BARELY BREATHING</span> &nbsp;
+                  <span className="prof_tag">WANT TO S/U</span> &nbsp;
                 </div>
               </div>
 
@@ -104,7 +121,7 @@ class Prof extends Component {
                       Rating
                     </div>
                     <div className="col-7 col-md-8 prof_commentoverviewcontent">
-                      : 
+                      :
                       <span className="prof_comment_ratingstar">
                         <i className="fas darker-star fa-star"></i>
                         <i className="fas darker-star fa-star"></i>
@@ -126,7 +143,7 @@ class Prof extends Component {
                       Difficulty
                     </div>
                     <div className="col-7 col-md-8 prof_commentoverviewcontent">
-                      : 
+                      :
                       <span className="prof_comment_difficultystar">
                         <i className="fab fa-hotjar"></i>
                         <i className="fab fa-hotjar"></i>
@@ -175,7 +192,7 @@ class Prof extends Component {
                   <span className="prof_commentsdownvoted">
                     7
                   </span>
-                </div>                
+                </div>
               </div>
 
             </div>
@@ -193,8 +210,8 @@ class Prof extends Component {
                   Tags:
                 </div>
                 <div className="col-9 col-sm-10 prof_commenttaglist font_mini_content">
-                  <span className="prof_tag">NICE PROF</span> &nbsp; 
-                  <span className="prof_tag">VERY FLEXIBLE</span> &nbsp; 
+                  <span className="prof_tag">NICE PROF</span> &nbsp;
+                  <span className="prof_tag">VERY FLEXIBLE</span> &nbsp;
                 </div>
               </div>
 
@@ -206,7 +223,7 @@ class Prof extends Component {
                       Rating
                     </div>
                     <div className="col-7 col-md-8 prof_commentoverviewcontent">
-                      : 
+                      :
                       <span className="prof_comment_ratingstar">
                         <i className="fas darker-star fa-star"></i>
                         <i className="fas darker-star fa-star"></i>
@@ -228,7 +245,7 @@ class Prof extends Component {
                       Difficulty
                     </div>
                     <div className="col-7 col-md-8 prof_commentoverviewcontent">
-                      : 
+                      :
                       <span className="prof_comment_difficultystar">
                         <i className="fab fa-hotjar"></i>
                         <i className="fab fa-hotjar"></i>
@@ -277,14 +294,14 @@ class Prof extends Component {
                   <span className="prof_commentsdownvoted">
                     2
                   </span>
-                </div>                
+                </div>
               </div>
 
             </div>
           </div>
 
         </div>
-        
+
       </div>
     );
   }

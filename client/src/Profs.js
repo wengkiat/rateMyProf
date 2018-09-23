@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Prof from "./Prof.js";
-import { fetchAllProfs } from "./api.js";
+import { Link } from "react-router-dom";
+import { getAllProfs } from "./api.js";
 
 class Profs extends Component {
 
@@ -12,9 +13,10 @@ class Profs extends Component {
   }
 
   renderProf(props) {
-    const { name, faculty, rating, key } = props;
+    const { name, faculty, rating, id } = props;
     return (
-      <div className="profs_box lightgrey_background" key={key}>
+      <Link to={`/profs/${id}`}>
+      <div className="profs_box lightgrey_background" key={id}>
         <div className="col-4 profs_boxphoto no_padding">
           <img src="/img/anonymous.jpg"/>
         </div>
@@ -45,11 +47,12 @@ class Profs extends Component {
           </div>
         </div>
       </div>
+      </Link>
     );
   }
 
   componentDidMount() {
-    fetchAllProfs()
+    getAllProfs()
       .then(res => {
         this.setState({profs: res});
       });
@@ -69,7 +72,7 @@ class Profs extends Component {
         <div className="profs_boxlist">
           {this.state.profs.map(prof => {
             return this.renderProf({
-              key: prof.id,
+              id: prof.id,
               name: prof.first_name + prof.last_name,
               faculty: prof.department,
               rating: prof.rating

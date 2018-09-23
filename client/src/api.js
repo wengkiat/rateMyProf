@@ -6,8 +6,6 @@ function requestOnce(method, input, init = {}) {
     "Authorization": "Bearer " + (localStorage.getItem("access_token") || "")
   };
 
-  console.log("39857434");
-  console.log({...init, headers: newHeader});
   return fetch(input, {...init, headers: newHeader})
     .catch(err => {
       console.error(err);
@@ -57,6 +55,10 @@ function requestJSON(method, input, init = {}) {
     });
 }
 
-export function fetchAllProfs() {
+export function getAllProfs() {
   return requestJSON("GET", "http://18.222.251.155:3000/professors");
+}
+
+export function getProf(profID) {
+  return requestJSON("GET", `http://18.222.251.155:3000/professors/${profID}`);
 }
