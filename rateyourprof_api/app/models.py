@@ -149,12 +149,12 @@ class Posts(db.Model):
         """Return object data in easily serializeable format"""
         return {
             'id': self.id,
-            'prof_id': self.first_name,
-            'content': self.last_name,
-            'rating': self.department,
-            'difficulty': self.rating,
-            'tags': self.posts,
-            'module': self.tags,
+            'prof_id': self.prof_id,
+            'content': self.content,
+            'rating': self.rating,
+            'difficulty': self.difficulty,
+            'tags': self.tags,
+            'module': self.module,
             'grade': self.grade,
             'upvote': self.upvote,
             'downvote': self.downvote,
