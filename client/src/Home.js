@@ -1,17 +1,24 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 function Form(props) {
   const {
     caption,
     placeholder
-  } = props
+  } = props;
 
   return (
-    <form action="" className="index_form">
-      <input type="text" placeholder={placeholder} className="index_formtext col-10"/>
-      <button type="submit" className="index_formbutton col-2">{caption}</button>
+    <form action="/search" className="index_form">
+      <input
+        type="text"
+        name="q"
+        placeholder={placeholder}
+        className="index_formtext col-10"
+      />
+      <button type="submit" className="index_formbutton col-2">
+        {caption}
+      </button>
     </form>
-  )
+  );
 }
 
 class Home extends Component {
@@ -22,7 +29,10 @@ class Home extends Component {
           <div className="index_transparentbox">
             <div className="index_searchcontainer padding_1">
               <div className="index_tablecontainer">
-                <Form placeholder="Find a Professor by Name" caption="GO"/>
+                <Form
+                  placeholder="Find a Professor by Name"
+                  caption="GO"
+                />
               </div>
             </div>
           </div>

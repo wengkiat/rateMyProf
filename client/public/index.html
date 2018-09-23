@@ -24,23 +24,23 @@
     </noscript>
     <div class="forheader bg-dark">
         <nav id="main_navbar" class="navbar navbar-expand-sm navbar-dark ">
-          <a class="navbar-brand app-icon" href="#"><img src="/img/temporary_image.png"/></a>
+          <a class="navbar-brand app-icon" href="/"><img src="/img/temporary_image.png"/></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="/about">About</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="#">Contact Us</a>
+                <a class="nav-link" href="/contact">Contact Us</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="#">Login</a>
+                <a class="nav-link" href="/login">Login</a>
               </li>
             </ul>
           </div>
@@ -98,8 +98,10 @@
         $(".prof_image").css("text-align", "center");
         $(".prof_image").height($(".prof_image img").height());
         $(".prof_image img").css("margin-top", 0 + ("px"));
-      }
+      }      
+    }
 
+    function resizeProfsImage() {
       if ($(".profs_boxphoto").width() > 175 ) {
         $(".profs_box").height($(".profs_boxphoto").width());
         $(".profs_boxphoto img").height($(".profs_boxphoto").width());
@@ -117,15 +119,40 @@
       } else {
         $(".profs_boxdetails").css("margin-left", "0px");
       }
-
     }
 
     function initialize() {
+      // this one work in prof.js
       $("#dropdownMenuButton").trigger("click");
+      // this one work in rate.js
+      $(".rate_star").on("click", function() {
+        let thisVal = $(this).attr("value");
+        $("#rateProfRating").attr("value", thisVal);
+        thisVal *= 100;
+        thisVal /= 5;
+        $(".rate_stars_2").css("width", thisVal + "%");
+      });
+      $(".rate_fire").on("click", function() {
+        let thisVal = $(this).attr("value");
+        $("#rateProfDifficulty").attr("value", thisVal);
+        thisVal *= 100;
+        thisVal /= 5;
+        $(".rate_fires_2").css("width", thisVal + "%");
+      });
+      $(".rate_tag").on("click", function(){
+        let thisID = $(this).attr("id").split("_")[1];
+        $("#rateTags_" + thisID).trigger("click");
+        if ($("#rateTags_" + thisID).is(":checked")) {
+          $(this).css("background-color", "#A7ECF6");
+        } else {
+          $(this).css("background-color", "#EDEDED");
+        }
+      });
     }
 
     function resizeFire() {
       $(".fa-hotjar").width($(".prof_comment_ratingstar .fa-star").width());
+      $(".fa-hotjar.rate_fire").width($(".fa-star.rate_star").width());
     }
 
   </script>
