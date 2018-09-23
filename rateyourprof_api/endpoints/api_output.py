@@ -33,7 +33,7 @@ def search_professor(search=None):
     (retrieve some professors)"""
     if search is None:
         logger.debug('No string supplied during the call of /professors/search endpoint')
-        return jsonify({"msg": "please provide necessary arguments"}), http.HTTPStatus.BAD_REQUEST
+        return jsonify({"msg": "please provide necessary arguments"}), http.HTTPStatus.PRECONDITION_FAILED
 
     search = search.upper()
     return get_search_results(Professors, search)

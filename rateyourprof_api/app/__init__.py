@@ -10,7 +10,7 @@ from helpers.logging import create_log_file
 
 app = Flask(__name__)
 app.config.from_object(Config)
-db: SQLAlchemy = SQLAlchemy(app)
+db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 app.config['JSON_SORT_KEYS'] = False  # prevent sorting of keys
 

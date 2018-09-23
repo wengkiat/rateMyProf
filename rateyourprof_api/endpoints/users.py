@@ -27,10 +27,10 @@ def login():
     password = request.json.get('password', None)
     if not username:
         logger.debug('Username is not provided')
-        return jsonify({"msg": "Missing username parameter"}), http.HTTPStatus.BAD_REQUEST
+        return jsonify({"msg": "Missing username parameter"}), http.HTTPStatus.PRECONDITION_FAILED
     if not password:
         logger.debug('Password is not provided')
-        return jsonify({"msg": "Missing password parameter"}), http.HTTPStatus.BAD_REQUEST
+        return jsonify({"msg": "Missing password parameter"}), http.HTTPStatus.PRECONDITION_FAILED
 
     user = User.query.filter_by(username=username).first()
     if user is None or not user.check_password(password):
@@ -40,7 +40,7 @@ def login():
     # Identity can be any data that is json serializable
     access_token = create_access_token(identity=username)
     logger.debug('Token successfully created')
-    return jsonify(access_token=access_token), http.HTTPStatus.OK
+    return jsonify(access_token=access_token), http.HTTPStatus.ACCEPTED
 
 
 @users.route('/register', methods=['POST'])
@@ -58,10 +58,10 @@ def register():
 
     if not username:
         logger.debug('Username is not provided')
-        return jsonify({"msg": "Missing username parameter"}), http.HTTPStatus.BAD_REQUEST
+        return jsonify({"msg": "Missing username parameter"}), http.HTTPStatus.PRECONDITION_FAILED
     if not password:
         logger.debug('Password is not provided')
-        return jsonify({"msg": "Missing password parameter"}), http.HTTPStatus.BAD_REQUEST
+        return jsonify({"msg": "Missing password parameter"}), http.HTTPStatus.PRECONDITION_FAILED
 
     user = User(username=username)
     user.set_password(password)

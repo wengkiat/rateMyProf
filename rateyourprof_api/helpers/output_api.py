@@ -31,7 +31,7 @@ def get_all_results(database):
 
     except:
         logger.debug('Unable to reach database', exc_info=True)
-        return jsonify({"msg": "unable to reach database"}), http.HTTPStatus.BAD_REQUEST
+        return jsonify({"msg": "unable to reach database"}), http.HTTPStatus.INTERNAL_SERVER_ERROR
 
     logger.debug('Finish getting data from' + str(database))
     return jsonify([i.serialize() for i in data])
@@ -45,7 +45,7 @@ def get_single_result(database, dispute):
         data = database.query.filter_by(dispute_id=dispute)
     except:
         logger.debug('Unable to reach database', exc_info=True)
-        return jsonify({"msg": "unable to reach database"}), http.HTTPStatus.BAD_REQUEST
+        return jsonify({"msg": "unable to reach database"}), http.HTTPStatus.INTERNAL_SERVER_ERROR
 
     if data.first() is None:
         logger.debug('Data does not exist in database ', exc_info=True)
@@ -67,7 +67,7 @@ def get_search_results(database, search):
 
     except:
         logger.debug('Unable to reach database, database error', exc_info=True)
-        return jsonify({"msg": "unable to reach database"}), http.HTTPStatus.BAD_REQUEST
+        return jsonify({"msg": "unable to reach database"}), http.HTTPStatus.INTERNAL_SERVER_ERROR
 
     if data.first() is None:
         logger.debug('Data does not exist in database ', exc_info=True)
@@ -103,7 +103,7 @@ def get_results(database, args, time_field):
 
     except:
         logger.debug('Unable to reach database, database error', exc_info=True)
-        return jsonify({"msg": "unable to reach database"}), http.HTTPStatus.BAD_REQUEST
+        return jsonify({"msg": "unable to reach database"}), http.HTTPStatus.INTERNAL_SERVER_ERROR
 
     if data.first() is None:
         logger.debug('Data does not exist in database ', exc_info=True)
