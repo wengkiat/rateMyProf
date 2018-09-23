@@ -4,4 +4,4 @@
 #and requirements installed with
 # pip install -r requirements.txt
 source ./venv/bin/activate
-python api.py >> ./server.log 2>&1 &
+python3 api.py >> ./server.log 2>&1 &
