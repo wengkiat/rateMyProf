@@ -53,6 +53,16 @@ def get_grades():
     return get_all_results(Grades)
 
 
+@endpoint_output.route('/V1/tags', methods=['GET'])
+@endpoint_output.route('/tags', methods=['GET'])
+@jwt_required
+def get_tags():
+    """GET /tags
+    (retrieve all tags)"""
+
+    return get_all_results(Tags)
+
+
 # @endpoint_output.route('/V1/predictions', methods=['GET'])
 # @endpoint_output.route('/predictions', methods=['GET'])
 # @jwt_required
