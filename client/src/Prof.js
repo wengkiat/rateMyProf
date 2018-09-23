@@ -42,8 +42,17 @@ class Prof extends Component {
               </span>)
             </span>
             <br/>
-            <span className="prof_tags font_lowermedium">
-              Related tags: <span className="prof_taglist"></span>
+            <span className="prof_main_tags font_lowermedium">
+              Related tags: 
+              <div className="prof_taglist font_lowersmall_content">
+                <span className="prof_main_tag">HIGH WORKLOAD(1)</span> &nbsp; 
+                <span className="prof_main_tag">LIKE TO TORTURE(1)</span> &nbsp; 
+                <span className="prof_main_tag">YOU DIE? HE HAPPY(1)</span> &nbsp; 
+                <span className="prof_main_tag">BARELY BREATHING(1)</span> &nbsp; 
+                <span className="prof_main_tag">WANT TO S/U(1)</span> &nbsp; 
+                <span className="prof_main_tag">NICE PROF(1)</span> &nbsp; 
+                <span className="prof_main_tag">VERY FLEXIBLE(1)</span> &nbsp; 
+              </div>
             </span>
           </div>
         </div>
@@ -78,7 +87,12 @@ class Prof extends Component {
                 <div className="col-3 col-sm-2 prof_tags no_padding">
                   Tags:
                 </div>
-                <div className="col-9 col-sm-10 prof_commenttaglist">
+                <div className="col-9 col-sm-10 prof_commenttaglist font_mini_content">
+                  <span className="prof_tag">HIGH WORKLOAD</span> &nbsp; 
+                  <span className="prof_tag">LIKE TO TORTURE</span> &nbsp; 
+                  <span className="prof_tag">YOU DIE? HE HAPPY</span> &nbsp; 
+                  <span className="prof_tag">BARELY BREATHING</span> &nbsp; 
+                  <span className="prof_tag">WANT TO S/U</span> &nbsp; 
                 </div>
               </div>
 
@@ -178,7 +192,9 @@ class Prof extends Component {
                 <div className="col-3 col-sm-2 prof_tags no_padding">
                   Tags:
                 </div>
-                <div className="col-9 col-sm-10 prof_commenttaglist">
+                <div className="col-9 col-sm-10 prof_commenttaglist font_mini_content">
+                  <span className="prof_tag">NICE PROF</span> &nbsp; 
+                  <span className="prof_tag">VERY FLEXIBLE</span> &nbsp; 
                 </div>
               </div>
 
