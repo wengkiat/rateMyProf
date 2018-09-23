@@ -1,15 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import App from './App';
-import Home from './Home';
-import About from './About';
-import Contact from './Contact';
-import Login from './Login';
-import SimpleLogin from './SimpleLogin';
-import Profs from './Profs';
-import Prof from './Prof';
-import registerServiceWorker from './registerServiceWorker';
+import App from "./App";
+import Home from "./Home";
+import About from "./About";
+import Contact from "./Contact";
+import Login from "./Login";
+import SimpleLogin from "./SimpleLogin";
+import Profs from "./Profs";
+import Prof from "./Prof";
+import Search from "./Search";
+import registerServiceWorker from "./registerServiceWorker";
 
 ReactDOM.render(
   <Router>
@@ -21,9 +22,10 @@ ReactDOM.render(
       <Route path="/contact" component={Contact} />
       <Route path="/login" component={Login} />
       <Route path="/simplelogin" component={SimpleLogin} />
+      <Route path="/search" component={Search} />
       <Route path="/" component={Home} />
     </Switch>
   </Router>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 registerServiceWorker();
