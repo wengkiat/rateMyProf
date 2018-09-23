@@ -27,14 +27,13 @@ def get_all_results(database):
 
     try:
         data = database.query.all()
-        print(data)
 
     except:
         logger.debug('Unable to reach database', exc_info=True)
         return jsonify({"msg": "unable to reach database"}), http.HTTPStatus.INTERNAL_SERVER_ERROR
 
     logger.debug('Finish getting data from' + str(database))
-    return jsonify([i.serialize() for i in data])
+    return jsonify([i.serialize() for i in data]), http.HTTPStatus.OK
 
 
 def get_single_result(database, department, modules, prof_id):
@@ -61,11 +60,8 @@ def get_single_result(database, department, modules, prof_id):
         logger.debug('Unable to reach database', exc_info=True)
         return jsonify({"msg": "unable to reach database"}), http.HTTPStatus.INTERNAL_SERVER_ERROR
 
-    for i in data2:
-        print(i)
-
     logger.debug('Finish getting data from' + str(database))
-    return jsonify(database.serialize_full(data, data2))
+    return jsonify(database.serialize_full(data, data2)), http.HTTPStatus.OK
 
 
 def get_search_results(database, database2, search):
@@ -88,7 +84,7 @@ def get_search_results(database, database2, search):
         return jsonify({"msg": "no such professor in database"}), http.HTTPStatus.NOT_FOUND
 
     logger.debug('Finish getting data from' + str(database))
-    return jsonify([database.search_serialize(i) for i in data])
+    return jsonify([database.search_serialize(i) for i in data]), http.HTTPStatus.OK
 
 
 def get_results(database, args, time_field):
