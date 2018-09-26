@@ -120,6 +120,29 @@ def get_all_results_with_joins(database, database2, database3, database4, prof_i
     return jsonify([database.join_serialize(i) for i in result]), http.HTTPStatus.OK
 
 
+def get_single_result_name(database, department, name):
+
+    logger.debug('Start reading database for' + str(database))
+
+    try:
+        data = db.session.query(database, department.name).join(department, database.department == department.id).\
+            filter(database.full_name.contains(name))
+
+    except:
+        logger.debug('Unable to reach database, database error', exc_info=True)
+
+        return jsonify({"msg": "unable to reach database"}), http.HTTPStatus.INTERNAL_SERVER_ERROR
+
+    if data.first() is None:
+        logger.debug('Data does not exist in database ', exc_info=True)
+
+        return jsonify({"msg": "no such professor in database"}), http.HTTPStatus.NO_CONTENT
+
+    logger.debug('Finish getting data from' + str(database))
+
+    return jsonify([database.search_serialize(i) for i in data]), http.HTTPStatus.OK
+
+
 def get_results(database, args, time_field):
 
     logger.debug('Start reading database for' + str(database))
