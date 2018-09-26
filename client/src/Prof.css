@@ -116,7 +116,6 @@
   font-family: FontAwesome;
 }
  
- 
 .prof-rating__stars--coloured {
   position: absolute;
   top: 0;
@@ -159,7 +158,6 @@
   float: left;
   padding: 0 0 0 0;
 }
-
 
 .prof-commentlist {
   margin-top: 15px;
@@ -284,7 +282,6 @@
   position: relative;
   font-family: FontAwesome;
 }
- 
  
 .prof-comment__difficulty-fire--coloured {
   position: absolute;

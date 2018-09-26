@@ -172,15 +172,6 @@ html {
   margin-left: 20px;
 }
 
-.margin_1 {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-
-.padding_2 {
-  padding: 15px 15px 15px 15px;
-}
-
 .page {
   padding-left: 3px;
   padding-right: 3px;
@@ -278,15 +269,6 @@ html {
   }
 }
 
-/*@media only screen and (max-width: 420px) {
-  .profs_boxphoto {
-    height: 100px;
-  }
-  .profs_boxphoto img {
-    height: 100px;
-  }
-}*/
-
 .profs_boxdetails {
   float: left;
   padding-top: 20px;
@@ -334,104 +316,6 @@ html {
   white-space: nowrap;
   overflow: hidden;
   /*width: 90%;*/
-}
-
-#profs_ratingstars_1 {
-  width: 90%;
-}
-
-/*for about page*/
-.about {
-  margin-top: 50px;
-}
-.about_text {
-  margin-top: 30px;
-}
-
-/*for contact page*/
-.contact {
-  margin-top: 50px;
-}
-.contact_text {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-.form-group label {
-  font-weight: bold;
-}
-
-/*for login page*/
-.login {
-  margin-top: 50px;
-  margin-bottom: 30px;
-}
-
-.login_methods {
-  overflow: hidden;
-}
-
-.login_methods button {
-  float: left;
-  overflow: hidden;
-  margin: 10px 10px 10px 10px;
-  height: 80px;
-}
-
-.btn-primary.col-12.col-sm-5 {
-  background-color: #3B5998;
-  border-color: #3B5998;
-}
-
-.btn-danger.col-12.col-sm-5 {
-  background-color: #DD4B39;
-  border-color: #DD4B39;
-}
-
-.login_fbimage {
-  padding-top: 15px;
-  float: left;
-}
-
-.login_fbtext {
-  float: left;
-  height: 100%;
-  /*padding-top: 30px;*/
-}
-
-.login_googleimage {
-  padding-top: 15px;
-  float: left;
-}
-
-.login_googletext {
-  float: left;
-  height: 100%;
-  /*padding-top: 30px;*/
-}
-
-.login_fbtext table, .login_googletext table {
-  height: 100%;
-}
-
-.login_fbtext table td, .login_googletext table td {
-  vertical-align: middle;
-}
-
-@media only screen and (min-width: 576px) and (max-width: 635px) {
-  .login_fbtext, .login_googletext {
-    font-size: 14px !important;
-  }
-}
-
-@media only screen and (min-width: 636px) and (max-width: 699px) {
-  .login_fbtext, .login_googletext {
-    font-size: 16px !important;
-  }
-}
-
-.fa-facebook-square, .fa-google-plus-square {
-  width: 100%;
 }
 
 /*for submit form*/
