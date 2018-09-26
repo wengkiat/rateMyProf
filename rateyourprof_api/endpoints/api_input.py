@@ -71,6 +71,30 @@ def post_review():
     except exc.SQLAlchemyError:
         return jsonify({"msg": "invalid data format"}), http.HTTPStatus.BAD_REQUEST
 
+
+    db.session.flush() # to get post id of the post that was just posted
+    print(new_review.id)
+    # update tags
+    # SHOULD BE CONVERTED TO A DB TRIGGER
+    relation = {}
+    for x in review_json['tags']:
+
+        relation['post_id'] = new_review.id
+        relation['tag_id'] = x
+        new_relation = PostTags(**relation)
+        db.session.add(new_relation)
+
+    # update ratings and post counts
+    # SHOULD BE CONVERTED TO A DB TRIGGER
+    if prof.rating == 0:
+        prof.rating = review_json['rating']
+
+    else:
+        prof.rating = ((prof.rating * prof.posts) + review_json['rating']) / (prof.posts + 1)
+
+    prof.posts = prof.posts + 1
+    db.session.commit()
+
     return jsonify('Upload of review successful'), http.HTTPStatus.CREATED
 
 
