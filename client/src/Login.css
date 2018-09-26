@@ -1,0 +1,62 @@
+.login__title {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.login__options {
+  overflow: hidden;
+}
+
+.login__button {
+  float: left;
+  overflow: hidden;
+  margin: 10px 10px 10px 10px;
+  height: 80px;
+  padding: 0 0 0 0;
+}
+
+.login-fb {
+  background-color: #3B5998;
+  border-color: #3B5998;
+}
+
+.login-google {
+  background-color: #DD4B39;
+  border-color: #DD4B39;
+}
+
+.login-fb__image, .login-google__image {
+  padding-top: 15px;
+  float: left;
+}
+
+.login-fb__icon .login-google__icon {
+  width: 100%;
+}
+
+.login-fb__text, .login-google__text {
+  float: left;
+  height: 100%;
+  font-size: 18px;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 635px) {
+  .login-fb__text, .login-google__text {
+    font-size: 14px !important;
+  }
+}
+
+@media only screen and (min-width: 636px) and (max-width: 699px) {
+  .login-fb__text, .login-google__text {
+    font-size: 16px !important;
+  }
+}
+
+.login-fb__table, .login-google__table {
+  height: 100%;
+}
+
+.login-fb__cell, .login-google__cell {
+  vertical-align: middle;
+}
+
