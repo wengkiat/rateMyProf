@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./Home.css";
 
 function Form(props) {
   const {
@@ -7,14 +8,14 @@ function Form(props) {
   } = props;
 
   return (
-    <form action="/search" className="index_form">
+    <form action="/search" className="search__form">
       <input
         type="text"
         name="q"
         placeholder={placeholder}
-        className="index_formtext col-10"
+        className="search__text col-10"
       />
-      <button type="submit" className="index_formbutton col-2">
+      <button type="submit" className="search__button col-2">
         {caption}
       </button>
     </form>
@@ -25,12 +26,12 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <div className="index_maincontent">
-          <div className="index_transparentbox">
-            <div className="index_searchcontainer padding_1">
-              <div className="index_tablecontainer">
+        <div className="index">
+          <div className="index__background--transparent">
+            <div className="index__search-container page">
+              <div className="index__search search">
                 <Form
-                  placeholder="Find a Professor by Name"
+                  placeholder="Search Prof's Name"
                   caption="GO"
                 />
               </div>

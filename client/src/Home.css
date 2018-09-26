@@ -1,0 +1,47 @@
+.index {
+  background:url('/img/professor_background.jpg') no-repeat left center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  height: 800px;
+}
+
+.index__background--transparent {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.index__search-container {
+  width: 100%;
+  height: 100%;
+}
+
+.index__search {
+  height: 100%;
+  width: 100%;
+  display: table;
+}
+
+.search__form {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.search__text {
+  font-size: 24px;
+  height: 60px;
+}
+
+.search__button {
+  font-size: 24px;
+  height: 60px;
+  background-color: #343A40;
+  border-color: #343A40;
+  color: #FFF;
+  font-weight: bold;
+}
