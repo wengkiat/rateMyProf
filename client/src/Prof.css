@@ -110,20 +110,7 @@
   }
 }
 
-.prof-rating__stars {
-  display: inline-block;
-  position: relative;
-  font-family: FontAwesome;
-}
- 
-.prof-rating__stars--coloured {
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0%;
-}
+
 
 .prof-data__tag {
   display: inline-block;
@@ -277,26 +264,11 @@
   padding: 0 0 0 0 !important;
 }
 
-.prof-comment__difficulty-fire {
-  display: inline-block;
-  position: relative;
-  font-family: FontAwesome;
-}
- 
-.prof-comment__difficulty-fire--coloured {
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0%;
-}
-
 .prof-comment__essay {
   float: left;
 }
 
-.prof-commnent__data {
+.prof-comment__data {
   overflow: hidden;
   width: 100%;
   padding-left: 2px !important;

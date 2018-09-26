@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { searchProfs } from "./api.js";
+import "./Search.css";
 
 const queryString = require("query-string");
 
@@ -30,34 +31,34 @@ class Search extends Component {
     const { name, faculty, rating, id } = props;
     return (
       <Link to={`/profs/${id}`}>
-        <div className="profs_box lightgrey_background" key={id}>
-          <div className="col-4 profs_boxphoto no_padding">
-            <img src="/img/anonymous.jpg"/>
+        <div className="search-result__prof prof background--lightgrey" key={id}>
+          <div className="col-4 prof__photobox">
+            <img src="/img/anonymous.jpg" className=".prof__photo"/>
           </div>
-          <div className="col-8 profs_boxdetails">
-            <div className="profs_boxdetailsname">
+          <div className="col-8 prof__overview">
+            <div className="prof__name">
               {name}
             </div>
-            <div className="profs_boxdetailsdept font_lowermedium_content">
+            <div className="prof__department font-size--m">
               {faculty}
             </div>
-            <div className="profs_boxdetailsrating font_lowermedium_content">
+            <div className="prof-overview-rating font-size--m">
             Rating:&nbsp;
-              <span className="profs_ratingstar">
-                <i className="fas darker-star fa-star"></i>
-                <i className="fas darker-star fa-star"></i>
-                <i className="fas darker-star fa-star"></i>
-                <i className="fas darker-star fa-star"></i>
-                <i className="fas darker-star fa-star"></i>
-                <span className="profs_ratingstars" id="profs_ratingstars_1">
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
+              <span className="rate-value">
+                <i className="fas fa-star star--dark"></i>
+                <i className="fas fa-star star--dark"></i>
+                <i className="fas fa-star star--dark"></i>
+                <i className="fas fa-star star--dark"></i>
+                <i className="fas fa-star star--dark"></i>
+                <span className="rate-value--coloured" id="profs_ratingstars_1">
+                  <i className="fas fa-star star--bright"></i>
+                  <i className="fas fa-star star--bright"></i>
+                  <i className="fas fa-star star--bright"></i>
+                  <i className="fas fa-star star--bright"></i>
+                  <i className="fas fa-star star--bright"></i>
                 </span>
               </span>
-              <span className="profs_ratingval"> ({rating.toFixed(2)})</span>
+              <span className="prof-overview-rating__value"> ({rating.toFixed(2)})</span>
             </div>
           </div>
         </div>
@@ -67,12 +68,12 @@ class Search extends Component {
 
   render() {
     return (
-      <div className="padding_1">
-        <div className="profs_searchresult font_uppermedium">
-        Search Result for <br className="mobile_only"/>{this.state.query}
+      <div className="page search">
+        <div className="search__title font-size--xl">
+        Search Result for <br className="mobile_only"/>"{this.state.query}"
         </div>
 
-        <div className="profs_boxlist">
+        <div className="search__result search-result">
           {this.state.profs.map(prof => {
             return this.renderProf({
               id: prof.id,
