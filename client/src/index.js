@@ -17,10 +17,10 @@ import registerServiceWorker from "./registerServiceWorker";
 ReactDOM.render(
   <Router>
     <Switch>
-      <Route path="/profs/:profID" component={Prof}/>
-      <Route path="/profs" component={Profs}/>
-      <Route path="/rate" component={Rate} />
-      <Route path="/app" component={App}/>
+      <Route exact path="/profs/:profID/rate" component={Rate} />
+      <Route exact path="/profs/:profID" component={Prof}/>
+      <Route exact path="/profs" component={Profs}/>
+      <Route exact path="/app" component={App}/>
       <Route path="/about" component={About}/>
       <Route path="/contact" component={Contact}/>
       <Route path="/login" component={Login}/>
