@@ -24,13 +24,13 @@ class Prof extends Component {
 
   renderStars() {
     return (
-      <span className="prof-rating__stars">
+      <span className="rate-value">
         <i className="fas fa-star star--dark"></i>
         <i className="fas fa-star star--dark"></i>
         <i className="fas fa-star star--dark"></i>
         <i className="fas fa-star star--dark"></i>
         <i className="fas fa-star star--dark"></i>
-        <span className="prof-rating__stars--coloured">
+        <span className="rate-value--coloured">
           <i className="fas fa-star star--bright"></i>
           <i className="fas fa-star star--bright"></i>
           <i className="fas fa-star star--bright"></i>
@@ -136,18 +136,18 @@ class Prof extends Component {
                   </div>
                   <div className="col-7 col-md-8 prof-comment__overview-content">
                     :
-                    <span className="prof-comment__difficulty-fire">
-                      <i className="fab fa-hotjar"></i>
-                      <i className="fab fa-hotjar"></i>
-                      <i className="fab fa-hotjar"></i>
-                      <i className="fab fa-hotjar"></i>
-                      <i className="fab fa-hotjar"></i>
-                      <span className="prof-comment__difficulty-fire--coloured" id="prof_comment_difficultystars_1">
-                        <i className="fab fa-hotjar"></i>
-                        <i className="fab fa-hotjar"></i>
-                        <i className="fab fa-hotjar"></i>
-                        <i className="fab fa-hotjar"></i>
-                        <i className="fab fa-hotjar"></i>
+                    <span className="rate-value">
+                      <i className="fab fa-hotjar fire--dark"></i>
+                      <i className="fab fa-hotjar fire--dark"></i>
+                      <i className="fab fa-hotjar fire--dark"></i>
+                      <i className="fab fa-hotjar fire--dark"></i>
+                      <i className="fab fa-hotjar fire--dark"></i>
+                      <span className="rate-value--coloured fire--dark" id="prof_comment_difficultystars_1">
+                        <i className="fab fa-hotjar fire--bright"></i>
+                        <i className="fab fa-hotjar fire--bright"></i>
+                        <i className="fab fa-hotjar fire--bright"></i>
+                        <i className="fab fa-hotjar fire--bright"></i>
+                        <i className="fab fa-hotjar fire--bright"></i>
                       </span>
                     </span>
                   </div>
@@ -168,7 +168,7 @@ class Prof extends Component {
               </div>
             </div>
 
-            <div className=".prof-comment__data font-size--xs">
+            <div className="prof-comment__data font-size--xs">
               <div className="col-7 prof-comment__timestamp font--grey">
                 Created on 2018-07-20 11:59 PM
               </div>
