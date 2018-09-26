@@ -91,7 +91,7 @@ def post_review():
         prof.rating = review_json['rating']
 
     else:
-        prof.rating = ((prof.rating * prof.posts) + review_json['rating']) / (prof.posts + 1)
+        prof.rating = ((prof.rating * prof.posts) + int(review_json['rating'])) / (prof.posts + 1)
 
     prof.posts = prof.posts + 1
     db.session.commit()
