@@ -60,19 +60,20 @@
   </body>
   <script>
 
-    window.onload = function(){
-      resizeIndexBackground();
-      resizeProfImage();
-      initialize();
-      resizeFire();
-    }
+    // window.onload = function(){
+    //   resizeIndexBackground();
+    //   resizeProfImage();
+    //   initialize();
+    //   resizeFire();
+    // }
 
-    $(document).ready(()=> {
-    });
+    // $(document).ready(()=> {
+    // });
 
     $(window).resize(()=>{
       resizeIndexBackground();
       resizeProfImage();
+      resizeProfsImage();
       resizeFire();
     });
 
@@ -105,22 +106,22 @@
     }
 
     function resizeProfsImage() {
-      if ($(".profs_boxphoto").width() > 175 ) {
-        $(".profs_box").height($(".profs_boxphoto").width());
-        $(".profs_boxphoto img").height($(".profs_boxphoto").width());
-        $(".profs_boxphoto img").css("margin-top", "0px");
+      if ($(".prof__photobox").width() > 175 ) {
+        $(".search-result__prof").height($(".prof__photobox").width());
+        $(".prof__photo").height($(".prof__photobox").width());
+        $(".prof__photo").css("margin-top", "0px");
       } else {
-        $(".profs_box").height(175);
-        $(".profs_boxphoto img").height($(".profs_boxphoto").width());
-        let diff = 175 - $(".profs_boxphoto img").height();
-        $(".profs_boxphoto img").css("margin-top", (diff/2) + "px");
+        $(".search-result__prof").height(175);
+        $(".prof__photo").height($(".prof__photobox").width());
+        // let diff = 175 - $(".prof__photo").height();
+        // $(".prof__photo").css("margin-top", (diff/2) + "px");
       }
 
-      let diff = $(".profs_boxphoto").width() - $(".profs_boxphoto img").width();
+      let diff = $(".prof__photobox").width() - $(".prof__photo").width();
       if (diff > 0) {
-        $(".profs_boxdetails").css("margin-left", -diff + "px");
+        $(".prof__overview").css("margin-left", -diff + "px");
       } else {
-        $(".profs_boxdetails").css("margin-left", "0px");
+        $(".prof__overview").css("margin-left", "0px");
       }
     }
 
@@ -129,29 +130,29 @@
       $("#dropdownMenuButton").trigger("click");
 
       // this one work in rate.js
-      /*$(".rate_star").on("click", function() {
-        let thisVal = $(this).attr("value");
-        $("#rateProfRating").attr("value", thisVal);
-        thisVal *= 100;
-        thisVal /= 5;
-        $(".rate_stars_2").css("width", thisVal + "%");
-      });
-      $(".rate_fire").on("click", function() {
-        let thisVal = $(this).attr("value");
-        $("#rateProfDifficulty").attr("value", thisVal);
-        thisVal *= 100;
-        thisVal /= 5;
-        $(".rate_fires_2").css("width", thisVal + "%");
-      });
-      $(".rate_tag").on("click", function(){
-        let thisID = $(this).attr("id").split("_")[1];
-        $("#rateTags_" + thisID).trigger("click");
-        if ($("#rateTags_" + thisID).is(":checked")) {
-          $(this).css("background-color", "#A7ECF6");
-        } else {
-          $(this).css("background-color", "#EDEDED");
-        }
-      });*/
+      // $(".rate_star").on("click", function() {
+      //   let thisVal = $(this).attr("value");
+      //   $("#rateProfRating").attr("value", thisVal);
+      //   thisVal *= 100;
+      //   thisVal /= 5;
+      //   $(".rate_stars_2").css("width", thisVal + "%");
+      // });
+      // $(".rate_fire").on("click", function() {
+      //   let thisVal = $(this).attr("value");
+      //   $("#rateProfDifficulty").attr("value", thisVal);
+      //   thisVal *= 100;
+      //   thisVal /= 5;
+      //   $(".rate_fires_2").css("width", thisVal + "%");
+      // });
+      // $(".rate_tag").on("click", function(){
+      //   let thisID = $(this).attr("id").split("_")[1];
+      //   $("#rateTags_" + thisID).trigger("click");
+      //   if ($("#rateTags_" + thisID).is(":checked")) {
+      //     $(this).css("background-color", "#A7ECF6");
+      //   } else {
+      //     $(this).css("background-color", "#EDEDED");
+      //   }
+      // });
     }
 
     function resizeFire() {

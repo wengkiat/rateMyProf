@@ -65,6 +65,7 @@ export function getProf(profID) {
 
 export function searchProfs(query) {
   query = query.replace(/[^a-zA-Z\d:]/g, " ");
+  console.log(query);
   const url = `http://18.222.251.155:3000/professors/search/${query}`;
   return requestJSON("GET", url);
 }
