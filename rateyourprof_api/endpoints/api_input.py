@@ -8,7 +8,7 @@ import http
 from flask_jwt_extended import jwt_required
 from flask import Blueprint, jsonify, request
 from app import db, logger
-from app.models import Posts
+from app.models import Posts, Professors, PostTags
 from sqlalchemy import exc
 
 
@@ -35,12 +35,20 @@ def post_review():
         logger.debug('Client did not provide necessary fields', exc_info=True)
         return jsonify({"msg": "prof_id cannot be None"}), http.HTTPStatus.BAD_REQUEST
 
+    # check if prof id is valid
+    prof = Professors.query.filter(Professors.id == review_json['prof_id']).first()
+
+    if prof is None:
+        logger.debug('Professor id does not exist in database ', exc_info=True)
+        return jsonify({"msg": "no such professor in database"}), http.HTTPStatus.BAD_REQUEST
+
     review_data = {}
     for attr in members:
         if attr == 'id' or attr == 'time_posted':
             # ensure id is assigned by DB, given value is ignored
             # always override predictor time with default (db-local now())
             review_data[attr] = None
+
         else:
             if attr not in review_json:
                 review_data[attr] = None
