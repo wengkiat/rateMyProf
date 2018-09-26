@@ -49,6 +49,9 @@ def post_review():
             # always override predictor time with default (db-local now())
             review_data[attr] = None
 
+        elif attr == 'upvote' or attr == 'downvote':
+            review_data[attr] = 0
+
         else:
             if attr not in review_json:
                 review_data[attr] = None
