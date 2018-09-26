@@ -85,9 +85,9 @@
         $(".prof-photo").height($(".prof-photo").width());
         $(".prof-photo").css("margin-top", 0 + ("px"));
 
-        if ($(".prof-details__image").width() < $(".prof_details").height()) {
-          let diff = $(".prof_details").height() - $(".prof-details__image").width();
-          $(".prof-details__image").height($(".prof_details").height());
+        if ($(".prof-details__image").width() < $(".prof-details__text").height()) {
+          let diff = $(".prof-details__text").height() - $(".prof-details__image").width();
+          $(".prof-details__image").height($(".prof-details__text").height());
           $(".prof-photo").css("margin-top", (diff/2) + ("px"));
         } else {
           $(".prof-details__image").height($(".prof-details__image").width());
@@ -124,6 +124,7 @@
     function initialize() {
       // this one work in prof.js
       $("#dropdownMenuButton").trigger("click");
+
       // this one work in rate.js
       $(".rate_star").on("click", function() {
         let thisVal = $(this).attr("value");

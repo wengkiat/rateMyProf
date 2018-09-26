@@ -2,137 +2,128 @@ html {
   overflow-x: hidden;
 }
 
-.index_body {
-  /*overflow: hidden;*/
-}
-
 @media only screen and (min-width: 575px) {
   .mobile_only {
     display: none;
   }
 }
 
-
-.no_padding {
-  padding: 0 0 0 0 !important;
-}
-
-.grey_background {
+.background--grey {
   background-color: #D4D4D5;
 }
 
-.lightgrey_background {
+.background--lightgrey {
   background-color: #EDEDED;
 }
 
-.grey_font {
+.font--grey {
   color: #B3B3B3;
 }
 
-.font_uppermedium_content {
+.font-size--xl {
   font-size: 26px;
 }
 
-.font_medium_content {
+.font-size--l {
   font-size: 20px;
 }
 
-.font_lowermedium_content {
+.font-size--m {
   font-size: 16px;
 }
 
-.font_small_content {
+.font-size--s {
   font-size: 12px;
 }
 
-.font_lowersmall_content {
+.font-size--xs {
   font-size: 10px;
 }
 
-.font_mini_content {
+.font-size--xxs {
   font-size: 8px;
 }
 
 @media only screen and (min-width: 400px) {
-  .font_small_content {
-    font-size: 14px;
-  }
-  .font_uppermedium_content {
+  .font-size--xl {
     font-size: 26px;
   }
-  .font_medium_content {
+  .font-size--l {
     font-size: 22px;
   }
-  .font_lowermedium_content {
+  .font-size--m {
     font-size: 18px;
   }
-  .font_lowersmall_content {
+  .font-size--s {
+    font-size: 14px;
+  }
+  .font-size--xs {
     font-size: 12px;
   }
-  .font_mini_content {
+  .font-size--xxs {
     font-size: 10px;
   }
 }
 
 @media only screen and (min-width: 575px) {
-  .font_small_content {
-    font-size: 14px;
-  }
-  .font_uppermedium_content {
+  .font-size--xl {
     font-size: 28px;
   }
-  .font_medium_content {
+  .font-size--l {
     font-size: 22px;
   }
-  .font_lowermedium_content {
+  .font-size--m {
     font-size: 18px;
   }
-  .font_lowersmall_content {
+  .font-size--s {
+    font-size: 14px;
+  }
+  .font-size--xs {
     font-size: 12px;
   }
-  .font_mini_content {
+  .font-size--xxs {
     font-size: 10px;
   }
 }
 
 @media only screen and (min-width: 900px) {
-  .font_small_content {
-    font-size: 16px;
-  }
-  .font_uppermedium_content {
+  .font-size--xl {
     font-size: 30px;
   }
-  .font_medium_content {
+  .font-size--l {
     font-size: 24px;
   }
-  .font_lowermedium_content {
+  .font-size--m {
     font-size: 20px;
   }
-  .font_lowersmall_content {
+  .font-size--s {
+    font-size: 16px;
+  }
+  .font-size--xs {
     font-size: 14px;
   }
-  .font_mini_content {
+  .font-size--xxs {
     font-size: 12px;
   }
 }
 
 @media only screen and (min-width: 1200px) {
-  .font_small_content {
-    font-size: 18px;
-  }
-  .font_uppermedium_content {
+  .font-size--xl {
     font-size: 32px;
   }
-  .font_medium_content {
+  .font-size--l {
     font-size: 26px;
   }
-  .font_lowermedium_content {
+  .font-size--m {
     font-size: 22px;
   }
-  .font_lowersmall_content {
+  .font-size--s {
+    font-size: 18px;
+  }
+  .font-size--xs {
     font-size: 16px;
   }
-  .font_mini_content {
+  .font-size--xxs {
     font-size: 14px;
   }
 }
@@ -217,7 +208,21 @@ html {
   }
 }
 
+.star--dark {
+  color: #CCCCCC;
+}
 
+.star--bright {
+  color: #F8CE0B;
+}
+
+.fire--dark {
+  color: #CCCCCC;
+}
+
+.fire--bright {
+  color: red;
+}
 
 /*for search prof page*/
 

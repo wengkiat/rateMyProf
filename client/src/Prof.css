@@ -110,115 +110,99 @@
   }
 }
 
-.prof-rating__star {
+.prof-rating__stars {
   display: inline-block;
   position: relative;
   font-family: FontAwesome;
 }
  
  
-.prof-rating__star-coloured {
+.prof-rating__stars--coloured {
   position: absolute;
   top: 0;
   left: 0;
   white-space: nowrap;
   overflow: hidden;
-  width: 90%;
-}
- 
-.fas.darker-star.fa-star {
-  color: #CCCCCC;
+  width: 0%;
 }
 
-.fas.fa-star {
-  color: #F8CE0B;
+.prof-data__tag {
+  display: inline-block;
+  color: #666666;
+  font-weight: bold;
+  background-color: #a7ecf6;
+  height: 100%;
+  line-height: 100%;
+  margin: 3px 3px 3px 3px;
+  padding : 5px 8px 5px 8px;
 }
 
-.prof_comment_difficultystar .fa-hotjar {
-  color: #CCCCCC;
-  /*color: #FBCE0B;*/
-}
-
-.prof_comment_difficultystars .fa-hotjar {
-  color: red;
-}
-
-.empty_whitespace {
-  float: left;
-}
-
-.prof_buttons {
+.prof-page__buttons {
   height: 38px;
   margin-top: 30px;
   overflow: visible;
 }
 
-.prof_dropdown {
+.prof-buttons {
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+.prof-buttons__dropdown {
   float: left;
   overflow: visible;
+  padding: 0 0 0 0;
 }
 
-.prof_rate {
+.prof-buttons__rate {
   text-align: right;
   float: left;
+  padding: 0 0 0 0;
 }
 
-.prof_commentbox {
-  float: left;
-/*  border-style: solid;
-  border-color: #2C2E33;
-  border-width: 3px 3px 3px 3px;*/
+
+.prof-commentlist {
+  margin-top: 15px;
 }
 
-.prof_commentlist {
-  margin-top: 10px;
-}
-
-.prof_comment {
-  overflow: hidden;
+.prof-comment {
+  width: 100%;
   margin-bottom: 20px;
+  padding: 0 0 0 0;
 }
 
-.prof_commentmodule {
-/*  border-style: solid;
-  border-color: #2C2E33;
-  border-width: 0px 0px 2px 0px;*/
+.prof-comment__module {
   overflow: hidden;
   text-align: center;
+  width: 100%;
 }
 
-.prof_commenttags {
-/*  border-style: solid;
-  border-color: #2C2E33;
-  border-width: 0px 0px 2px 0px; */
+.prof-comment__tags {
   margin-bottom: 5px;
+  width: 100%;
+  padding: 0 0 0 0;
 }
 
-.prof_module {
-
-  float: left;
-  text-align: center;
-}
-
-.prof_commentmodulename {
-  float: left;
-}
-
-.prof_commentdetails {
+.prof-comment__details {
   overflow: hidden;
   margin-bottom: 10px;
 }
 
-.prof_commenttags {
+.prof-comment__tags {
   overflow: hidden;
 }
 
-.prof_tags {
+.prof-comment__tags-title {
   float: left;
   text-align: center;
+  padding: 0 0 0 0;
 }
 
-.prof_tag {
+.prof-comment__taglist {
+  float: left;
+}
+
+.prof-comment__tag {
   display: inline-block;
   color: #666666;
   font-weight: bold;
@@ -229,166 +213,122 @@
   padding : 3px 5px 3px 5px;
 }
 
-.prof_main_tag {
-  display: inline-block;
-  color: #666666;
-  /*color: #888888;*/
-  font-weight: bold;
-  background-color: #a7ecf6;
-  /*background-color: #F0F0F0;*/
-  height: 100%;
-  line-height: 100%;
-  margin: 3px 3px 3px 3px;
-  padding : 5px 8px 5px 8px;
+.prof-comment__details {
+  width: 100%;
+  padding: 0 0 0 0;
 }
 
-.prof_commenttaglist {
-  float: left;
-}
-
-.prof_commentoverview div {
-  overflow: hidden;
-}
-
-.prof_commentoverviewtitle {
-  float: left;
-  padding: 0 0 0 2px !important;
-}
-
-.prof_commentoverviewcontent {
-  float: left;
-  padding: 0 0 0 0 !important;
-}
-
-.prof_comment_ratingstar {
-  display: inline-block;
-  position: relative;
-  font-family: FontAwesome;
-}
- 
- 
-.prof_comment_ratingstars {
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  /*width: 90%;*/
-}
-
-.prof_comment_difficultystar {
-  display: inline-block;
-  position: relative;
-  font-family: FontAwesome;
-}
- 
- 
-.prof_comment_difficultystars {
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  /*width: 90%;*/
-}
-
-/*Need to be removed in actual*/
-#prof_comment_ratingstars_1 {
-  width: 100%; 
-}
-
-#prof_comment_difficultystars_1 {
-  width: 80%; 
-}
-
-#prof_comment_ratingstars_2 {
-  width: 60%; 
-}
-
-#prof_comment_difficultystars_2 {
-  width: 40%; 
-}
-
-/*end of need to be removed*/
-
-.prof_commentdetails .prof_commentoverview {
+.prof-comment__overview {
   padding: 0 0 0 0;
   float:left;
 }
 
 @media only screen and (min-width: 550px) {
-  .prof_commentdetails .prof_commentoverview {
+  .prof-comment__overview {
     padding-left: 5px;
   }
 }
 
 @media only screen and (min-width: 650px) {
-  .prof_commentdetails .prof_commentoverview {
+  .prof-comment__overview {
     padding-left: 10px;
   }
 }
 
 @media only screen and (min-width: 750px) {
-  .prof_commentdetails .prof_commentoverview {
+  .prof-comment__overview {
     padding-left: 15px;
   }
 }
 
 @media only screen and (min-width: 850px) {
-  .prof_commentdetails .prof_commentoverview {
+  .prof-comment__overview {
     padding-left: 20px;
   }
 }
 
 @media only screen and (min-width: 950px) {
-  .prof_commentdetails .prof_commentoverview {
+  .prof-comment__overview {
     padding-left: 25px;
   }
 }
 
 @media only screen and (min-width: 1050px) {
-  .prof_commentdetails .prof_commentoverview {
+  .prof-comment__overview {
     padding-left: 35px;
   }
 }
 
 @media only screen and (min-width: 1150px) {
-  .prof_commentdetails .prof_commentoverview {
+  .prof-comment__overview {
     padding-left: 45px;
   }
 }
 
-.prof_commentessay {
+.prof-comment__rating {
+  overflow: hidden;
+}
+
+.prof-comment__overview-title {
+  float: left;
+  padding: 0 0 0 2px !important;
+}
+
+.prof-comment__overview-content {
+  float: left;
+  padding: 0 0 0 0 !important;
+}
+
+.prof-comment__difficulty-fire {
+  display: inline-block;
+  position: relative;
+  font-family: FontAwesome;
+}
+ 
+ 
+.prof-comment__difficulty-fire--coloured {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0%;
+}
+
+.prof-comment__essay {
   float: left;
 }
 
-.prof_commentsidentity {
+.prof-commnent__data {
   overflow: hidden;
+  width: 100%;
   padding-left: 2px !important;
 }
 
-.prof_commentstimestamp {
+.prof-comment__timestamp {
   float: left;
+  padding: 0 0 0 0;
 }
 
-.prof_commentsupdownvote {
+.prof-comment__vote {
   float: left;
   text-align: right;
 }
-.prof_commentsthumbsup {
+
+.prof-comment__thumbs-up {
   margin-right: 10px;
   cursor: pointer;
 }
 
-.prof_commentsupvoted {
+.prof-comment__upvoted {
   margin-right: 10px;
 }
 
-.prof_commentsthumbsdown {
+.prof-comment__thumbs-down {
   margin-right: 10px;
   cursor: pointer;
 }
 
-.prof_commentsdownvoted {
+.prof-comment__downvoted {
   margin-right: 10px;
 }
