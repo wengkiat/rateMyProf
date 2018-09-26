@@ -37,7 +37,13 @@
 .login-fb__text, .login-google__text {
   float: left;
   height: 100%;
-  font-size: 18px;
+  font-size: 22px;
+}
+
+@media only screen and (max-width: 400px) {
+  .login-fb__text, .login-google__text {
+    font-size: 18px !important;
+  }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 635px) {
@@ -49,6 +55,18 @@
 @media only screen and (min-width: 636px) and (max-width: 699px) {
   .login-fb__text, .login-google__text {
     font-size: 16px !important;
+  }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 999px) {
+  .login-fb__text, .login-google__text {
+    font-size: 18px !important;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1199px) {
+  .login-fb__text, .login-google__text {
+    font-size: 20px !important;
   }
 }
 
