@@ -172,15 +172,6 @@ html {
   margin-left: 20px;
 }
 
-.margin_1 {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-
-.padding_2 {
-  padding: 15px 15px 15px 15px;
-}
-
 .page {
   padding-left: 3px;
   padding-right: 3px;
@@ -278,15 +269,6 @@ html {
   }
 }
 
-/*@media only screen and (max-width: 420px) {
-  .profs_boxphoto {
-    height: 100px;
-  }
-  .profs_boxphoto img {
-    height: 100px;
-  }
-}*/
-
 .profs_boxdetails {
   float: left;
   padding-top: 20px;
@@ -334,31 +316,6 @@ html {
   white-space: nowrap;
   overflow: hidden;
   /*width: 90%;*/
-}
-
-#profs_ratingstars_1 {
-  width: 90%;
-}
-
-/*for about page*/
-.about {
-  margin-top: 50px;
-}
-.about_text {
-  margin-top: 30px;
-}
-
-/*for contact page*/
-.contact {
-  margin-top: 50px;
-}
-.contact_text {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-.form-group label {
-  font-weight: bold;
 }
 
 /*for login page*/
