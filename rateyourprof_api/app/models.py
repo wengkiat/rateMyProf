@@ -32,10 +32,9 @@ class Professors(db.Model):
     id = db.Column(db.String, primary_key=True)
     first_name = db.Column(db.VARCHAR)
     last_name = db.Column(db.VARCHAR)
-    department = db.Column(ForeignKey('Departments.id'))
+    department = db.Column(db.Integer)
     rating = db.Column(db.Float)
     posts = db.Column(db.Integer)
-    tags = db.Column(ARRAY(INTEGER))
     modules = db.Column(ARRAY(INTEGER))
 
     def serialize(self):
@@ -47,7 +46,6 @@ class Professors(db.Model):
             'department': self.department,
             'rating': self.rating,
             'posts': self.posts,
-            'tags': self.tags,
             'modules': self.modules
         }
 
@@ -58,6 +56,16 @@ class Professors(db.Model):
             'first_name': i[0].first_name,
             'last_name': i[0].last_name,
             'department': i[1],
+        }
+
+    def serialize_review(self):
+        """Return object data in easily serializeable format"""
+        return {
+            'id': self.id,
+            'first_name': self.first_name,
+            'last_name': self.last_name,
+            'rating': self.rating,
+            'posts': self.posts,
         }
 
     def serialize_full(data, data2):
@@ -73,7 +81,6 @@ class Professors(db.Model):
             'department': data[0][1],
             'rating': data[0][0].rating,
             'posts': data[0][0].posts,
-            'tags': data[0][0].tags,
             'modules': mod
         }
 
@@ -138,22 +145,38 @@ class Posts(db.Model):
     content = db.Column(db.VARCHAR)
     rating = db.Column(db.VARCHAR)
     difficulty = db.Column(db.Integer)
-    tags = db.Column(ARRAY(INTEGER))
     module = db.Column(db.Integer)
     grade = db.Column(db.Integer)
     upvote = db.Column(db.Integer)
     downvote = db.Column(db.Integer)
     time_posted = db.Column(db.TIMESTAMP(timezone=True), nullable=False, server_default=text('now()'))
 
+    def join_serialize(i):
+        """Return object data in easily serializeable format"""
+
+        return {
+            'id': i[0].id,
+            'prof_id': i[0].prof_id,
+            'content': i[0].content,
+            'rating': i[0].rating,
+            'difficulty': i[0].difficulty,
+            'module': i[1][1],
+            'grade': i[0].grade,
+            'upvote': i[0].upvote,
+            'downvote': i[0].downvote,
+            'time_posted': i[0].time_posted.isoformat() if i[0].time_posted is not None else None,
+            'tags': i[1][0]
+        }
+
+
     def serialize(self):
         """Return object data in easily serializeable format"""
         return {
             'id': self.id,
-            'prof_id': self.prof_id,
             'content': self.content,
-            'rating': self.rating,
+            'prof_id' : self.prof_id,
+            'rating' : self.rating,
             'difficulty': self.difficulty,
-            'tags': self.tags,
             'module': self.module,
             'grade': self.grade,
             'upvote': self.upvote,
@@ -161,6 +184,11 @@ class Posts(db.Model):
             'time_posted': self.time_posted.isoformat() if self.time_posted is not None else None
         }
 
+class PostTags(db.Model):
+    __tablename__ = 'post_tags'
+    id = db.Column(db.Integer, primary_key=True, autoincrement='auto')
+    post_id = db.Column(db.Integer)
+    tag_id = db.Column(db.Integer)
 
 # class Prediction(db.Model):
 #     __tablename__ = 'predictions'

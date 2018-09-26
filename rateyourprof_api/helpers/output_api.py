@@ -50,7 +50,7 @@ def get_single_result(database, department, modules, prof_id):
 
     if data.first() is None:
         logger.debug('Data does not exist in database ', exc_info=True)
-        return jsonify({"msg": "no such professor in database"}), http.HTTPStatus.NOT_FOUND
+        return jsonify({"msg": "no such professor in database"}), http.HTTPStatus.OK
 
     # get modules
     try:
@@ -68,8 +68,6 @@ def get_search_results(database, database2, search):
 
     logger.debug('Start reading database for' + str(database))
 
-    print(search)
-
     try:
         logger.debug('Querying by search term')
         data = db.session.query(database, database2.name).join(database2, database.department == database2.id).filter(or_(database.first_name.contains(search), database.last_name.contains(search)))
@@ -81,10 +79,45 @@ def get_search_results(database, database2, search):
 
     if data.first() is None:
         logger.debug('Data does not exist in database ', exc_info=True)
-        return jsonify({"msg": "no such professor in database"}), http.HTTPStatus.NOT_FOUND
+        return jsonify({"msg": "no such professor in database"}), http.HTTPStatus.OK
 
     logger.debug('Finish getting data from' + str(database))
     return jsonify([database.search_serialize(i) for i in data]), http.HTTPStatus.OK
+
+
+def get_all_results_with_joins(database, database2, database3, database4, prof_id):
+    logger.debug('Start reading database for' + str(database))
+
+    try:
+        logger.debug('Querying posts by prof')
+        #data = database.query.filter(database.prof_id == prof_id)
+        data = db.session.query(database, database2.definition, database4.code).join(database3, database.id == database3.post_id). \
+            join(database2, database3.tag_id == database2.id). \
+            join(database4, database.module == database4.id). \
+            filter(database.prof_id == prof_id)
+
+
+    except:
+        logger.debug('Unable to reach database, database error', exc_info=True)
+        return jsonify({"msg": "unable to reach database"}), http.HTTPStatus.INTERNAL_SERVER_ERROR
+
+    if data.first() is None:
+        logger.debug('Data does not exist in database ', exc_info=True)
+        return jsonify({"msg": "no reviews for this prof in database"}), http.HTTPStatus.OK
+
+    # clean data
+    x = {}
+    for key, value, code in data:
+        if key in x:
+            x[key][0].extend([value])
+
+        else:
+            x[key] = [[value], code]
+
+    result = list(x.items())
+
+    logger.debug('Finish getting data from' + str(database))
+    return jsonify([database.join_serialize(i) for i in result]), http.HTTPStatus.OK
 
 
 def get_results(database, args, time_field):
@@ -117,7 +150,7 @@ def get_results(database, args, time_field):
 
     if data.first() is None:
         logger.debug('Data does not exist in database ', exc_info=True)
-        return jsonify({"msg": "no such data in database"}), http.HTTPStatus.NOT_FOUND
+        return jsonify({"msg": "no such data in database"}), http.HTTPStatus.OK
 
     logger.debug('Finish getting data from' + str(database))
-    return jsonify([i.serialize() for i in data])
+    return jsonify([i.serialize() for i in data]), http.HTTPStatus.OK

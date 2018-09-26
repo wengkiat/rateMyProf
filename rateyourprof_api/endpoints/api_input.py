@@ -8,7 +8,7 @@ import http
 from flask_jwt_extended import jwt_required
 from flask import Blueprint, jsonify, request
 from app import db, logger
-from app.models import Posts
+from app.models import Posts, Professors, PostTags
 from sqlalchemy import exc
 
 
@@ -35,12 +35,23 @@ def post_review():
         logger.debug('Client did not provide necessary fields', exc_info=True)
         return jsonify({"msg": "prof_id cannot be None"}), http.HTTPStatus.BAD_REQUEST
 
+    # check if prof id is valid
+    prof = Professors.query.filter(Professors.id == review_json['prof_id']).first()
+
+    if prof is None:
+        logger.debug('Professor id does not exist in database ', exc_info=True)
+        return jsonify({"msg": "no such professor in database"}), http.HTTPStatus.BAD_REQUEST
+
     review_data = {}
     for attr in members:
         if attr == 'id' or attr == 'time_posted':
             # ensure id is assigned by DB, given value is ignored
             # always override predictor time with default (db-local now())
             review_data[attr] = None
+
+        elif attr == 'upvote' or attr == 'downvote':
+            review_data[attr] = 0
+
         else:
             if attr not in review_json:
                 review_data[attr] = None
@@ -63,7 +74,29 @@ def post_review():
     except exc.SQLAlchemyError:
         return jsonify({"msg": "invalid data format"}), http.HTTPStatus.BAD_REQUEST
 
-    return jsonify('Upload of review successful'), http.HTTPStatus.CREATED
+    db.session.flush() # to get post id of the post that was just posted
+    # update tags
+    # SHOULD BE CONVERTED TO A DB TRIGGER
+    relation = {}
+    for x in review_json['tags']:
+
+        relation['post_id'] = new_review.id
+        relation['tag_id'] = x
+        new_relation = PostTags(**relation)
+        db.session.add(new_relation)
+
+    # update ratings and post counts
+    # SHOULD BE CONVERTED TO A DB TRIGGER
+    if prof.rating == 0:
+        prof.rating = review_json['rating']
+
+    else:
+        prof.rating = ((prof.rating * prof.posts) + review_json['rating']) / (prof.posts + 1)
+
+    prof.posts = prof.posts + 1
+    db.session.commit()
+
+    return jsonify('Upload of review successful', ([prof.serialize_review()])), http.HTTPStatus.CREATED
 
 
 @endpoint_input.route('/V1/review/upvote/<string:post_id>', methods=['POST'])
