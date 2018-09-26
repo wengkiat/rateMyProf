@@ -71,9 +71,7 @@ def post_review():
     except exc.SQLAlchemyError:
         return jsonify({"msg": "invalid data format"}), http.HTTPStatus.BAD_REQUEST
 
-
     db.session.flush() # to get post id of the post that was just posted
-    print(new_review.id)
     # update tags
     # SHOULD BE CONVERTED TO A DB TRIGGER
     relation = {}
@@ -95,7 +93,7 @@ def post_review():
     prof.posts = prof.posts + 1
     db.session.commit()
 
-    return jsonify('Upload of review successful'), http.HTTPStatus.CREATED
+    return jsonify('Upload of review successful', ([prof.serialize_review()])), http.HTTPStatus.CREATED
 
 
 @endpoint_input.route('/V1/review/upvote/<string:post_id>', methods=['POST'])
