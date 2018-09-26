@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getProf } from "./api.js";
+import { getProf, getAllTags } from "./api.js";
 
 class Rate extends Component {
 
@@ -8,19 +8,19 @@ class Rate extends Component {
     this.state = {
       prof: {
         modules: []
-      }
+      },
+      tags: []
     };
+
+    this.onSubmit = this.onSubmit.bind(this)
   }
 
   componentDidMount() {
     const { match } = this.props;
     console.log(match);
     const profID = match.params.profID;
-    getProf(profID)
-      .then(res => {
-        console.log(res);
-        this.setState({ prof: res });
-      });
+    getProf(profID).then(res => this.setState({ prof: res }));
+    getAllTags().then(res => this.setState({ tags: res }));
   }
 
   renderProfName() {
@@ -151,11 +151,11 @@ class Rate extends Component {
           <input className="form-check-input" type="checkbox" value="" id="rateTags_5"/>
         </div>
         <div className="rate_taglist">
-          <span className="rate_tag" id="rateTagDisplay_1">HORRIBLE PROF</span>
-          <span className="rate_tag" id="rateTagDisplay_2">NICE PROF</span>
-          <span className="rate_tag" id="rateTagDisplay_3">LIKE TO TORTURE</span>
-          <span className="rate_tag" id="rateTagDisplay_4">HIGH WORKLOAD</span>
-          <span className="rate_tag" id="rateTagDisplay_5">WANT TO S/U</span>
+          {
+            this.state.tags.map(tag =>
+              <span className="rate_tag">{tag.definition}</span>
+            )
+          }
         </div>
       </div>
     );
@@ -167,6 +167,18 @@ class Rate extends Component {
         <label htmlFor="rateProfComment" className="font_lowermedium_content">Further Comments</label>
         <textarea type="textarea" rows={6} id="rateProfComment" className="form-control" placeholder="Write down all your comments..." />
       </div>
+    );
+  }
+
+  onSubmit(event) {
+
+  }
+
+  renderSubmitButton() {
+    return (
+      <button type="submit" class="btn rate_submit">
+        Submit
+      </button>
     );
   }
 
@@ -185,7 +197,7 @@ class Rate extends Component {
           {this.renderDifficultyInput()}
           {this.renderTagInput()}
           {this.renderCommentInput()}
-          <button type="submit" class="btn rate_submit">Submit</button>
+          {this.renderSubmitButton()}
         </form>
       </div>
     );
