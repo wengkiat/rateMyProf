@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { searchProfs } from "./api.js";
 import "./Home.css";
 
@@ -36,24 +37,20 @@ class Home extends Component {
           value={this.state.query}
           onChange={this.onQueryChange}
           placeholder="Search Prof's Name"
-          list="profs"
+          autocomplete="off"
         />
-        <datalist id="profs">
-          {this.state.profs.map(prof =>
-            <option value={prof.first_name + " " + prof.last_name}/>
-          )}
-        </datalist>
         <button type="submit" className="search__button col-2">
           GO
         </button>
         <div className="preliminary-search-result">
           <div className="preliminary-search-result__box font-size--m col-10">
-            <div className="preliminary-search-result__prof">
-              Ben Leong
-            </div>
-            <div className="preliminary-search-result__prof">
-              Steven Halim
-            </div>
+            {this.state.profs.slice(0, 5).map(prof =>
+              <Link to={`/profs/${prof.id}`}>
+                <div className="preliminary-search-result__prof">
+                  {prof.first_name + " " + prof.last_name}
+                </div>
+              </Link>
+            )}
           </div>
           <div className="preliminary-search-result__emptyspace col-2">
           </div>

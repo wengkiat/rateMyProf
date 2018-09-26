@@ -1,12 +1,12 @@
 
 function requestOnce(method, input, init = {}) {
+  console.log(`requestOnce ${method}, ${input}, ${JSON.stringify(init)}`);
   const newHeader = {
     ...init.headers,
-    "method": method,
     "Authorization": "Bearer " + (localStorage.getItem("access_token") || "")
   };
 
-  return fetch(input, {...init, headers: newHeader})
+  return fetch(input, {...init, method: method, headers: newHeader})
     .catch(err => {
       console.error(err);
       throw err;
@@ -74,6 +74,25 @@ export function getAllTags() {
   return requestJSON("GET", "http://18.222.251.155:3000/tags");
 }
 
-/*export function createReview() {
-  return requestJSON("POST", `http://18.222.251.155:3000/review`)
-}*/
+export function postReview(profID) {
+  const body = {
+    "content": "test",
+    "rating": "3",
+    "difficulty": "3",
+    "module": "79",
+    "grade": "1",
+    "prof_id": profID,
+    "tags": [
+      1,
+      2,
+      3,
+      4
+    ]
+  };
+  return requestJSON("POST", "http://18.222.251.155:3000/review",
+    {
+      body: JSON.stringify(body),
+      headers: {"Content-Type": "application/json"}
+    }
+  );
+}
