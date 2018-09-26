@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { getProf } from "./api.js";
+import "./Prof.css";
 
 class Prof extends Component {
 
@@ -23,13 +24,13 @@ class Prof extends Component {
 
   renderStars() {
     return (
-      <span className="prof_ratingstar">
+      <span className="prof-rating__star">
         <i className="fas darker-star fa-star"></i>
         <i className="fas darker-star fa-star"></i>
         <i className="fas darker-star fa-star"></i>
         <i className="fas darker-star fa-star"></i>
         <i className="fas darker-star fa-star"></i>
-        <span className="prof_ratingstars">
+        <span className="prof-rating__star-coloured">
           <i className="fas fa-star"></i>
           <i className="fas fa-star"></i>
           <i className="fas fa-star"></i>
@@ -43,29 +44,29 @@ class Prof extends Component {
   render() {
     const { id, first_name, last_name, department, rating } = this.state.prof;
     return (
-      <div>
-        <div className="prof_details_page padding_1">
-          <div className="col-12 col-sm-4 col-xl-3 prof_image no_padding">
-            <img src="/img/anonymous.jpg"/>
+      <div className="page">
+        <div className="prof-details">
+          <div className="col-12 col-sm-4 col-xl-3 prof-details__image">
+            <img className="prof-photo" src="/img/anonymous.jpg"/>
           </div>
 
-          <div className="col-12 col-sm-8 col-xl-9 prof_details">
-            <div className="prof_name font_large">
+          <div className="col-12 col-sm-8 col-xl-9 prof-details__text prof-data">
+            <div className="prof-data__name prof-page__font--tier-1">
               {first_name + " " + last_name}
             </div>
-            <span className="prof_departments font_medium">
+            <span className="prof-data__department prof-page__font--tier-3">
               {department}
             </span>
             <br/>
-            <span className="prof_rating font_medium">
+            <span className="prof-data__rating prof-rating  prof-page__font--tier-3">
               Average Rating:&nbsp;
               {this.renderStars()} (
-              <span className="prof_ratingvalue">
+              <span className="prof-data__rating-value">
                 {rating}
               </span>)
             </span>
             <br/>
-            <span className="prof_main_tags font_lowermedium">
+            <span className="prof_main_tags prof-page__font--tier-4">
               Related tags:
               <div className="prof_taglist font_lowersmall_content">
                 <span className="prof_main_tag">HIGH WORKLOAD(1)</span> &nbsp;

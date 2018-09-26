@@ -29,22 +29,6 @@ html {
   color: #B3B3B3;
 }
 
-.font_large {
-  font-size: 38px;
-}
-
-.font_uppermedium {
-  font-size: 26px;
-}
-
-.font_medium {
-  font-size: 20px;
-}
-
-.font_lowermedium {
-  font-size: 16px;
-}
-
 .font_uppermedium_content {
   font-size: 26px;
 }
@@ -70,18 +54,6 @@ html {
 }
 
 @media only screen and (min-width: 400px) {
-  .font_large {
-    font-size: 48px;
-  }
-  .font_uppermedium {
-    font-size: 28px;
-  }
-  .font_medium {
-    font-size: 24px;
-  }
-  .font_lowermedium {
-    font-size: 18px;
-  }
   .font_small_content {
     font-size: 14px;
   }
@@ -103,18 +75,6 @@ html {
 }
 
 @media only screen and (min-width: 575px) {
-  .font_large {
-    font-size: 38px;
-  }
-  .font_uppermedium {
-    font-size: 26px;
-  }
-  .font_medium {
-    font-size: 20px;
-  }
-  .font_lowermedium {
-    font-size: 16px;
-  }
   .font_small_content {
     font-size: 14px;
   }
@@ -136,18 +96,6 @@ html {
 }
 
 @media only screen and (min-width: 900px) {
-  .font_large {
-    font-size: 47px;
-  }
-  .font_uppermedium {
-    font-size: 30px;
-  }
-  .font_medium {
-    font-size: 24px;
-  }
-  .font_lowermedium {
-    font-size: 18px;
-  }
   .font_small_content {
     font-size: 16px;
   }
@@ -169,18 +117,6 @@ html {
 }
 
 @media only screen and (min-width: 1200px) {
-  .font-large {
-    font-size: 56px;
-  }
-  .font_uppermedium {
-    font-size: 34px;
-  }
-  .font_medium {
-    font-size: 28px;
-  }
-  .font_lowermedium {
-    font-size: 22px;
-  }
   .font_small_content {
     font-size: 18px;
   }
@@ -281,322 +217,10 @@ html {
   }
 }
 
-/*individual prof page*/
-.prof_details_page {
-  margin-top: 30px;
-  overflow: hidden;
-}
 
-.prof_image {
-  padding-left: 5px;
-  padding-right: 5px;
-  float: left;
-}
-
-.prof_image img{
-  /*width: 100%;*/
-}
-
-.prof_details {
-  float: left;
-}
-
-.prof_name {
-  font-weight: bold;
-}
-
-@media only screen and (max-width: 575px) {
-  .prof_name {
-    text-align: center;
-  }
-}
-
-.prof_ratingstar {
-  display: inline-block;
-  position: relative;
-  font-family: FontAwesome;
-}
- 
- 
-.prof_ratingstars {
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 90%;
-}
- 
-.fas.darker-star.fa-star {
-  color: #CCCCCC;
-}
-
-.fas.fa-star {
-  color: #F8CE0B;
-}
-
-.prof_comment_difficultystar .fa-hotjar {
-  color: #CCCCCC;
-  /*color: #FBCE0B;*/
-}
-
-.prof_comment_difficultystars .fa-hotjar {
-  color: red;
-}
-
-.empty_whitespace {
-  float: left;
-}
-
-.prof_buttons {
-  height: 38px;
-  margin-top: 30px;
-  overflow: visible;
-}
-
-.prof_dropdown {
-  float: left;
-  overflow: visible;
-}
-
-.prof_rate {
-  text-align: right;
-  float: left;
-}
-
-.prof_commentbox {
-  float: left;
-/*  border-style: solid;
-  border-color: #2C2E33;
-  border-width: 3px 3px 3px 3px;*/
-}
-
-.prof_commentlist {
-  margin-top: 10px;
-}
-
-.prof_comment {
-  overflow: hidden;
-  margin-bottom: 20px;
-}
-
-.prof_commentmodule {
-/*  border-style: solid;
-  border-color: #2C2E33;
-  border-width: 0px 0px 2px 0px;*/
-  overflow: hidden;
-  text-align: center;
-}
-
-.prof_commenttags {
-/*  border-style: solid;
-  border-color: #2C2E33;
-  border-width: 0px 0px 2px 0px; */
-  margin-bottom: 5px;
-}
-
-.prof_module {
-
-  float: left;
-  text-align: center;
-}
-
-.prof_commentmodulename {
-  float: left;
-}
-
-.prof_commentdetails {
-  overflow: hidden;
-  margin-bottom: 10px;
-}
-
-.prof_commenttags {
-  overflow: hidden;
-}
-
-.prof_tags {
-  float: left;
-  text-align: center;
-}
-
-.prof_tag {
-  display: inline-block;
-  color: #666666;
-  font-weight: bold;
-  background-color: #a7ecf6;
-  height: 100%;
-  line-height: 100%;
-  margin: 3px 3px 3px 3px;
-  padding : 3px 5px 3px 5px;
-}
-
-.prof_main_tag {
-  display: inline-block;
-  color: #666666;
-  /*color: #888888;*/
-  font-weight: bold;
-  background-color: #a7ecf6;
-  /*background-color: #F0F0F0;*/
-  height: 100%;
-  line-height: 100%;
-  margin: 3px 3px 3px 3px;
-  padding : 5px 8px 5px 8px;
-}
-
-.prof_commenttaglist {
-  float: left;
-}
-
-.prof_commentoverview div {
-  overflow: hidden;
-}
-
-.prof_commentoverviewtitle {
-  float: left;
-  padding: 0 0 0 2px !important;
-}
-
-.prof_commentoverviewcontent {
-  float: left;
-  padding: 0 0 0 0 !important;
-}
-
-.prof_comment_ratingstar {
-  display: inline-block;
-  position: relative;
-  font-family: FontAwesome;
-}
- 
- 
-.prof_comment_ratingstars {
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  /*width: 90%;*/
-}
-
-.prof_comment_difficultystar {
-  display: inline-block;
-  position: relative;
-  font-family: FontAwesome;
-}
- 
- 
-.prof_comment_difficultystars {
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  /*width: 90%;*/
-}
-
-/*Need to be removed in actual*/
-#prof_comment_ratingstars_1 {
-  width: 100%; 
-}
-
-#prof_comment_difficultystars_1 {
-  width: 80%; 
-}
-
-#prof_comment_ratingstars_2 {
-  width: 60%; 
-}
-
-#prof_comment_difficultystars_2 {
-  width: 40%; 
-}
-
-/*end of need to be removed*/
-
-.prof_commentdetails .prof_commentoverview {
-  padding: 0 0 0 0;
-  float:left;
-}
-
-@media only screen and (min-width: 550px) {
-  .prof_commentdetails .prof_commentoverview {
-    padding-left: 5px;
-  }
-}
-
-@media only screen and (min-width: 650px) {
-  .prof_commentdetails .prof_commentoverview {
-    padding-left: 10px;
-  }
-}
-
-@media only screen and (min-width: 750px) {
-  .prof_commentdetails .prof_commentoverview {
-    padding-left: 15px;
-  }
-}
-
-@media only screen and (min-width: 850px) {
-  .prof_commentdetails .prof_commentoverview {
-    padding-left: 20px;
-  }
-}
-
-@media only screen and (min-width: 950px) {
-  .prof_commentdetails .prof_commentoverview {
-    padding-left: 25px;
-  }
-}
-
-@media only screen and (min-width: 1050px) {
-  .prof_commentdetails .prof_commentoverview {
-    padding-left: 35px;
-  }
-}
-
-@media only screen and (min-width: 1150px) {
-  .prof_commentdetails .prof_commentoverview {
-    padding-left: 45px;
-  }
-}
-
-.prof_commentessay {
-  float: left;
-}
-
-.prof_commentsidentity {
-  overflow: hidden;
-  padding-left: 2px !important;
-}
-
-.prof_commentstimestamp {
-  float: left;
-}
-
-.prof_commentsupdownvote {
-  float: left;
-  text-align: right;
-}
-.prof_commentsthumbsup {
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-.prof_commentsupvoted {
-  margin-right: 10px;
-}
-
-.prof_commentsthumbsdown {
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-.prof_commentsdownvoted {
-  margin-right: 10px;
-}
 
 /*for search prof page*/
 
-.
 
 .profs_searchresult {
   margin-top: 30px;
