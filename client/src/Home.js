@@ -46,6 +46,19 @@ class Home extends Component {
         <button type="submit" className="search__button col-2">
           GO
         </button>
+        <div className="preliminary-search-result">
+          <div className="preliminary-search-result__box font-size--m col-10">
+            <div className="preliminary-search-result__prof">
+              Ben Leong
+            </div>
+            <div className="preliminary-search-result__prof">
+              Steven Halim
+            </div>
+          </div>
+          <div className="preliminary-search-result__emptyspace col-2">
+          </div>
+        </div>
+
       </form>
     );
   }
