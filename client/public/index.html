@@ -81,23 +81,23 @@
 
     function resizeProfImage() {
       if ($(window).outerWidth() > 575) {
-        $(".prof_image img").width($(".prof_image").width());
-        $(".prof_image img").height($(".prof_image img").width());
-        $(".prof_image img").css("margin-top", 0 + ("px"));
+        $(".prof-photo").width($(".prof-details__image").width());
+        $(".prof-photo").height($(".prof-photo").width());
+        $(".prof-photo").css("margin-top", 0 + ("px"));
 
-        if ($(".prof_image").width() < $(".prof_details").height()) {
-          let diff = $(".prof_details").height() - $(".prof_image").width();
-          $(".prof_image").height($(".prof_details").height());
-          $(".prof_image img").css("margin-top", (diff/2) + ("px"));
+        if ($(".prof-details__image").width() < $(".prof-details__text").height()) {
+          let diff = $(".prof-details__text").height() - $(".prof-details__image").width();
+          $(".prof-details__image").height($(".prof-details__text").height());
+          $(".prof-photo").css("margin-top", (diff/2) + ("px"));
         } else {
-          $(".prof_image").height($(".prof_image").width());
+          $(".prof-details__image").height($(".prof-details__image").width());
         }
       } else {
-        $(".prof_image img").width(Math.min(300, $(window).width()));
-        $(".prof_image img").height($(".prof_image img").width());
-        $(".prof_image").css("text-align", "center");
-        $(".prof_image").height($(".prof_image img").height());
-        $(".prof_image img").css("margin-top", 0 + ("px"));
+        $(".prof-photo").width(Math.min(300, $(window).width()));
+        $(".prof-photo").height($(".prof-photo").width());
+        $(".prof-details__image").css("text-align", "center");
+        $(".prof-details__image").height($(".prof-photo").height());
+        $(".prof-photo").css("margin-top", 0 + ("px"));
       }      
     }
 
@@ -124,6 +124,7 @@
     function initialize() {
       // this one work in prof.js
       $("#dropdownMenuButton").trigger("click");
+
       // this one work in rate.js
       $(".rate_star").on("click", function() {
         let thisVal = $(this).attr("value");
