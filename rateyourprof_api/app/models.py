@@ -32,6 +32,7 @@ class Professors(db.Model):
     id = db.Column(db.String, primary_key=True)
     first_name = db.Column(db.VARCHAR)
     last_name = db.Column(db.VARCHAR)
+    full_name = db.Column(db.VARCHAR)
     department = db.Column(db.Integer)
     rating = db.Column(db.Float)
     posts = db.Column(db.Integer)
@@ -55,6 +56,7 @@ class Professors(db.Model):
             'id': i[0].id,
             'first_name': i[0].first_name,
             'last_name': i[0].last_name,
+            'rating': i[0].rating,
             'department': i[1],
         }
 
