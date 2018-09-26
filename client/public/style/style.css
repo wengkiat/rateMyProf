@@ -286,13 +286,13 @@ nav {
   padding: 15px 15px 15px 15px;
 }
 
-.padding_1 {
+.#root {
   padding-left: 3px;
   padding-right: 3px;
 }
 
 @media only screen and (min-width: 420px) {
-  .padding_1 {
+  .#root {
     padding-left: 5%;
     padding-right: 5%;
   }
@@ -300,14 +300,14 @@ nav {
 }
 
 @media only screen and (min-width: 750px) {
-  .padding_1 {
+  .#root {
     padding-left: 10%;
     padding-right: 10%;
   }
 }
 
 @media only screen and (min-width: 950px) {
-  .padding_1 {
+  .#root {
     padding-left: 15%;
     padding-right: 15%;
   }
