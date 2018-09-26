@@ -50,7 +50,7 @@ def get_single_result(database, department, modules, prof_id):
 
     if data.first() is None:
         logger.debug('Data does not exist in database ', exc_info=True)
-        return jsonify({"msg": "no such professor in database"}), http.HTTPStatus.OK
+        return jsonify({"msg": "no such professor in database"}), http.HTTPStatus.NO_CONTENT
 
     # get modules
     try:
@@ -70,7 +70,8 @@ def get_search_results(database, database2, search):
 
     try:
         logger.debug('Querying by search term')
-        data = db.session.query(database, database2.name).join(database2, database.department == database2.id).filter(or_(database.first_name.contains(search), database.last_name.contains(search)))
+        data = db.session.query(database, database2.name).join(database2, database.department == database2.id). \
+            filter(or_(database.first_name.contains(search), database.last_name.contains(search)))
 
 
     except:
@@ -79,7 +80,7 @@ def get_search_results(database, database2, search):
 
     if data.first() is None:
         logger.debug('Data does not exist in database ', exc_info=True)
-        return jsonify({"msg": "no such professor in database"}), http.HTTPStatus.OK
+        return jsonify({"msg": "no such professor in database"}), http.HTTPStatus.NO_CONTENT
 
     logger.debug('Finish getting data from' + str(database))
     return jsonify([database.search_serialize(i) for i in data]), http.HTTPStatus.OK
@@ -90,7 +91,6 @@ def get_all_results_with_joins(database, database2, database3, database4, prof_i
 
     try:
         logger.debug('Querying posts by prof')
-        #data = database.query.filter(database.prof_id == prof_id)
         data = db.session.query(database, database2.definition, database4.code).join(database3, database.id == database3.post_id). \
             join(database2, database3.tag_id == database2.id). \
             join(database4, database.module == database4.id). \
@@ -103,7 +103,7 @@ def get_all_results_with_joins(database, database2, database3, database4, prof_i
 
     if data.first() is None:
         logger.debug('Data does not exist in database ', exc_info=True)
-        return jsonify({"msg": "no reviews for this prof in database"}), http.HTTPStatus.OK
+        return jsonify({"msg": "no reviews for this prof in database"}), http.HTTPStatus.NO_CONTENT
 
     # clean data
     x = {}
