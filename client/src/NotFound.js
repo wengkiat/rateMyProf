@@ -1,10 +1,13 @@
 import React, { Component } from "react";
+import "./NotFound.css";
 
 class NotFound extends Component {
 
   render() {
     return (
-      <p>404 Not Found</p>
+      <div className="page">
+        <p className="not-found font-size--xl">404 Not Found</p>
+      </div>
     );
   }
 }
