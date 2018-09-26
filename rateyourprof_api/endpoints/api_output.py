@@ -8,7 +8,7 @@ from flask import Blueprint
 from app import logger
 from flask import jsonify, request
 from app.models import Professors, Modules, Grades, Departments, Tags, Posts, PostTags
-from helpers.output_api import get_args, get_results, get_single_result, get_all_results, get_search_results, get_all_results_with_joins
+from helpers.output_api import get_args, get_results, get_single_result, get_all_results, get_search_results, get_all_results_with_joins, get_single_result_name
 
 
 endpoint_output = Blueprint('endpoint_output', __name__)
@@ -19,7 +19,7 @@ endpoint_output = Blueprint('endpoint_output', __name__)
 @jwt_required
 def get_professor(search=None):
     """GET /professors/<string:search>
-    (retrieve a specific professor)"""
+    (retrieve a specific professor with prof_id in the search term)"""
 
     if search is None:
         logger.debug('No string supplied during the call of /professors/search_term endpoint')
@@ -27,6 +27,21 @@ def get_professor(search=None):
 
     search = search.upper()
     return get_single_result(Professors, Departments, Modules, search)
+
+
+@endpoint_output.route('/V1/professors/name/<string:name>', methods=['GET'])
+@endpoint_output.route('/professors/name/<string:name>', methods=['GET'])
+@jwt_required
+def get_professor_by_name(name=None):
+    """GET /professors/<string:search>
+    (retrieve a specific professor with name in the search term)"""
+
+    if name is None:
+        logger.debug('No string supplied during the call of /professors/name/search_term endpoint')
+        return jsonify({"msg": "please provide necessary arguments"}), http.HTTPStatus.PRECONDITION_FAILED
+
+    name = name.upper()
+    return get_single_result_name(Professors, Departments, name)
 
 
 @endpoint_output.route('/V1/professors/search/<string:search>', methods=['GET'])
