@@ -64,6 +64,16 @@ export function getProf(profID) {
 }
 
 export function searchProfs(query) {
-  query = query.replace(/[^a-zA-Z\d:]/g, ' ');
-  return requestJSON("GET", `http://18.222.251.155:3000/professors/search/${query}`);
+  query = query.replace(/[^a-zA-Z\d:]/g, " ");
+  console.log(query);
+  const url = `http://18.222.251.155:3000/professors/search/${query}`;
+  return requestJSON("GET", url);
 }
+
+export function getAllTags() {
+  return requestJSON("GET", "http://18.222.251.155:3000/tags");
+}
+
+/*export function createReview() {
+  return requestJSON("POST", `http://18.222.251.155:3000/review`)
+}*/
