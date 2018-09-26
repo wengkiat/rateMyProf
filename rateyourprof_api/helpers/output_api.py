@@ -50,7 +50,7 @@ def get_single_result(database, department, modules, prof_id):
 
     if data.first() is None:
         logger.debug('Data does not exist in database ', exc_info=True)
-        return jsonify({"msg": "no such professor in database"}), http.HTTPStatus.NOT_FOUND
+        return jsonify({"msg": "no such professor in database"}), http.HTTPStatus.OK
 
     # get modules
     try:
@@ -67,8 +67,6 @@ def get_single_result(database, department, modules, prof_id):
 def get_search_results(database, database2, search):
 
     logger.debug('Start reading database for' + str(database))
-
-    print(search)
 
     try:
         logger.debug('Querying by search term')
@@ -117,7 +115,7 @@ def get_results(database, args, time_field):
 
     if data.first() is None:
         logger.debug('Data does not exist in database ', exc_info=True)
-        return jsonify({"msg": "no such data in database"}), http.HTTPStatus.NOT_FOUND
+        return jsonify({"msg": "no such data in database"}), http.HTTPStatus.OK
 
     logger.debug('Finish getting data from' + str(database))
-    return jsonify([i.serialize() for i in data])
+    return jsonify([i.serialize() for i in data]), http.HTTPStatus.OK
