@@ -67,6 +67,9 @@
       resizeFire();
     }
 
+    $(document).ready(()=> {
+    });
+
     $(window).resize(()=>{
       resizeIndexBackground();
       resizeProfImage();
@@ -93,21 +96,12 @@
           $(".prof-details__image").height($(".prof-details__image").width());
         }
       } else {
-<<<<<<< 6fee7f4ef44de74708bf763964e6edcd3396bcf4
         $(".prof-photo").width(Math.min(300, $(window).width()));
         $(".prof-photo").height($(".prof-photo").width());
         $(".prof-details__image").css("text-align", "center");
         $(".prof-details__image").height($(".prof-photo").height());
         $(".prof-photo").css("margin-top", 0 + ("px"));
       }      
-=======
-        $(".prof_image img").width(Math.min(300, $(window).width()));
-        $(".prof_image img").height($(".prof_image img").width());
-        $(".prof_image").css("text-align", "center");
-        $(".prof_image").height($(".prof_image img").height());
-        $(".prof_image img").css("margin-top", 0 + ("px"));
-      }
->>>>>>> Implement auto-suggest feature
     }
 
     function resizeProfsImage() {

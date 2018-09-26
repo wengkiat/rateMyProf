@@ -1,0 +1,48 @@
+.rate-form {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+#rate--form__module {
+  cursor: pointer;
+}
+
+#rate--form__grade {
+  cursor: pointer;
+}
+
+#rate--form__rating {
+  display: none;
+}
+
+#rate--form__difficulty {
+  display: none;
+}
+
+.rate-form__star, .rate-form__star--coloured, .rate-form__fire, .rate-form__fire--coloured {
+  cursor: pointer;
+}
+
+.rate-form__checkbox {
+  display: none !important;
+}
+
+.rate-form__tag {
+  cursor: pointer;
+  display: inline-block;
+  color: #666666;
+  font-weight: bold;
+  /*background-color: #a7ecf6;*/
+  background-color: #EDEDED;
+  height: 100%;
+  line-height: 100%;
+  margin: 3px 3px 3px 3px;
+  padding : 3px 5px 3px 5px;
+}
+
+.rate-form__submit {
+  width: 100px;
+  height: 50px;
+  font-size: 20px;
+  margin-bottom: 30px
+}
