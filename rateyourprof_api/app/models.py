@@ -174,6 +174,11 @@ class Posts(db.Model):
             'time_posted': self.time_posted.isoformat() if self.time_posted is not None else None
         }
 
+class PostTags(db.Model):
+    __tablename__ = 'post_tags'
+    id = db.Column(db.Integer, primary_key=True, autoincrement='auto')
+    post_id = db.Column(db.Integer)
+    tag_id = db.Column(db.Integer)
 
 # class Prediction(db.Model):
 #     __tablename__ = 'predictions'
