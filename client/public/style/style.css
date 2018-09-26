@@ -229,10 +229,11 @@ html {
 }
 
 .icon {
-  width: 40px;
+  width: 60px;
+  overflow: hidden;
 }
 
-.icon__image {
+.icon__logo {
   width: 100%;
 }
 
