@@ -47,3 +47,36 @@
   padding-left: 0px;
   padding-right: 0px;
 }
+
+.preliminary-search-result {
+  overflow: hidden;
+  margin-top: -1px;
+}
+
+.preliminary-search-result__box {
+  float: left;
+  background-color: white;
+  text-align: left;
+  border-style: solid;
+  border-color: #D3D3D3;
+  border-width: 0px 1px 1px 1px;
+  font-weight: bold;
+  padding: 0 0 0 0;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+.preliminary-search-result__emptyspace {
+  float: left;
+}
+
+.preliminary-search-result__prof {
+  padding-left: 10px;
+  padding-bottom: 3px;
+  padding-top: 3px;
+}
+
+.preliminary-search-result__prof:hover {
+  cursor: pointer;
+  background-color: #F6F6F6;
+}
