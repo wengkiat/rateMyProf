@@ -7,8 +7,8 @@ from flask_jwt_extended import jwt_required
 from flask import Blueprint
 from app import logger
 from flask import jsonify, request
-from app.models import Professors, Modules, Grades, Departments, Tags
-from helpers.output_api import get_args, get_results, get_single_result, get_all_results, get_search_results
+from app.models import Professors, Modules, Grades, Departments, Tags, Posts, PostTags
+from helpers.output_api import get_args, get_results, get_single_result, get_all_results, get_search_results, get_all_results_with_joins
 
 
 endpoint_output = Blueprint('endpoint_output', __name__)
@@ -61,6 +61,21 @@ def get_tags():
     (retrieve all tags)"""
 
     return get_all_results(Tags)
+
+
+@endpoint_output.route('/V1/reviews/<string:prof_id>', methods=['GET'])
+@endpoint_output.route('/reviews/<string:prof_id>', methods=['GET'])
+@jwt_required
+def get_reviews(prof_id):
+    """GET /reviews/<string:prof_id>
+    (retrieve all reviews for a professor)"""
+
+    if prof_id is None:
+        logger.debug('No string supplied during the call of reviews/prof_id endpoint')
+        return jsonify({"msg": "please provide necessary arguments"}), http.HTTPStatus.PRECONDITION_FAILED
+
+    return get_all_results_with_joins(Posts, Tags, PostTags, Modules, prof_id)
+
 
 
 # @endpoint_output.route('/V1/predictions', methods=['GET'])
