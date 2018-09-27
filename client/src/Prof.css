@@ -110,8 +110,6 @@
   }
 }
 
-
-
 .prof-data__tag {
   display: inline-block;
   color: #666666;
@@ -130,8 +128,8 @@
 }
 
 .prof-buttons {
-  overflow: hidden;
   margin-top: 15px;
+  margin-bottom: 70px;
 }
 
 .prof-buttons__dropdown {

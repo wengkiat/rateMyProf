@@ -11,15 +11,16 @@ class Search extends Component {
     super(props);
     this.state = {
       query: null,
-      profs: []
+      profs: [],
+      isProfData: false,
+      isCommentData: false,
+      isOver: false
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     const query = queryString.parse(this.props.location.search).q;
     this.setState({ query: query });
-    console.log(query);
-    console.log(this.state);
 
     searchProfs(query)
       .then(res => {

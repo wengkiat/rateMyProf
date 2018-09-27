@@ -96,3 +96,7 @@ export function postReview(profID) {
     }
   );
 }
+
+// export function getAllReview(profID) {
+//   return requestJSON("GET", "http://18.222.251.155:3000/reviews/profID")
+// }
