@@ -55,6 +55,10 @@ class Rate extends Component {
     }
   }
 
+  shouldComponentUpdate(nextProps, nextState){
+    return nextState.isOver;
+  }
+  
   handleClickRating(event) {
     let newValue = event.target.getAttribute("value");
     this.setState({
@@ -79,10 +83,6 @@ class Rate extends Component {
     });
   }
 
-
-  shouldComponentUpdate(nextProps, nextState){
-    return nextState.isOver;
-  }
 
   handleSubmit(event) {
     event.preventDefault();

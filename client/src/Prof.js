@@ -22,7 +22,6 @@ class Prof extends Component {
       reviews: [],
       moduleDictionary: {},
       moduleFilter: "",
-      commentDetails: {},
       tagList: [],
       tagCount: {},
       isOver: false,
@@ -38,18 +37,41 @@ class Prof extends Component {
     getProf(profID).then(res => {
       this.setState({
         prof: res,
-        isProfData: true
+        isProfData: true,
+        moduleDictionary: res.modules.reduce((obj, data, idx) => {
+          obj[data[1]] = data[2];
+          return obj;
+        }, {})
       });
       this.checkOver();
     });
     getAllReviews(profID).then(res => {
       this.setState({
         reviews: res,
-        isCommentsData: true
+        isCommentsData: true,
+        tagList: res.reduce((arr, data, idx) => {
+          for (let tagIdx in data.tags) {
+            let tag = data.tags[tagIdx];
+            if(!(tag in arr)) {
+              arr.push(tag);
+            }
+          }
+          return arr;
+        }, []),
+        tagCount: res.reduce((obj, data, idx) => {
+          for (let tagIdx in data.tags) {
+            let tag = data.tags[tagIdx];
+            if(tag in obj) {
+              obj[tag]++;
+            } else {
+              obj[tag] = 1;
+            }
+          }
+          return obj;
+        }, {})
       });
       this.checkOver();
     });
-    console.log(this.state.tagCount["SHK"]);
   }
   
   checkOver() {
@@ -65,9 +87,15 @@ class Prof extends Component {
   }
 
   componentDidUpdate() {
-    window.dispatchEvent(new Event('resize'));
     console.log(this.state.prof);
     console.log(this.state.reviews);
+    console.log(this.state.tagCount);
+    if(this.state.isOver) {
+      window.dispatchEvent(new Event('resize'));
+      setTimeout(function(){
+        window.dispatchEvent(new Event('resize'));
+      }, 50);
+    }
   }
 
   renderProfDetails() {
@@ -75,7 +103,7 @@ class Prof extends Component {
     return (
       <div className="prof-details">
         <div className="col-12 col-sm-4 col-xl-3 prof-details__image">
-          <img className="prof-photo" src="/img/anonymous.jpg"/>
+          <img className="prof-photo" src={"/img/" + (first_name+" "+last_name).toLowerCase().split(" ").join("_") + ".jpg"}/>
         </div>
 
         <div className="col-12 col-sm-8 col-xl-9 prof-details__text prof-data">
@@ -88,22 +116,24 @@ class Prof extends Component {
           <br/>
           <span className="prof-data__rating prof-rating  prof-page__font--tier-3">
             Average Rating:&nbsp;
-            {this.renderStars(rating)} (
+            {this.renderStars(rating.toFixed(2))} (
             <span className="prof-rating__value">
               {rating}
             </span>)
           </span>
           <br/>
           <span className="prof-data__tags prof-page__font--tier-4">
-            Related tags (TODO):
+            Related tags:
             <div className="prof-data__taglist font-size--xs">
-              <span className="prof-data__tag">HIGH WORKLOAD(1)</span> &nbsp;
-              <span className="prof-data__tag">LIKE TO TORTURE(1)</span> &nbsp;
-              <span className="prof-data__tag">YOU DIE? HE HAPPY(1)</span> &nbsp;
-              <span className="prof-data__tag">BARELY BREATHING(1)</span> &nbsp;
-              <span className="prof-data__tag">WANT TO S/U(1)</span> &nbsp;
-              <span className="prof-data__tag">NICE PROF(1)</span> &nbsp;
-              <span className="prof-data__tag">VERY FLEXIBLE(1)</span> &nbsp;
+              {this.state.tagList.map((tag)=> {
+                return (
+                  <span>
+                    <span className="prof-data__tag">
+                      {tag}({this.state.tagCount[tag]})
+                    </span> &nbsp;
+                  </span>
+                );
+              })}
             </div>
           </span>
         </div>
@@ -118,7 +148,7 @@ class Prof extends Component {
         <div className="prof-buttons">
           <div className="col-6 prof-buttons__dropdown no_padding">
             <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Filter (TODO)
+              Filter
             </button>
             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a className="dropdown-item" href="#">CS1010X</a>
@@ -130,7 +160,7 @@ class Prof extends Component {
           <div className="col-6 prof-buttons__rate">
             <Link to={`/profs/${id}/rate`}>
               <button type="button" className="btn btn-secondary">
-                Rate This Professor!
+                Rate This Prof!
               </button>
             </Link>
           </div>

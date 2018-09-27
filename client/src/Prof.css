@@ -161,6 +161,8 @@
 }
 
 .prof-comment__tags {
+  display: flex;
+  align-items: center;
   margin-bottom: 5px;
   width: 100%;
   padding: 0 0 0 0;
