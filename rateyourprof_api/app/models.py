@@ -75,7 +75,7 @@ class Professors(db.Model):
 
         mod = []
         for i in data2:
-            mod.append([i.code, i.name])
+            mod.append([i.id, i.code, i.name])
         return {
             'id': data[0][0].id,
             'first_name': data[0][0].first_name,
