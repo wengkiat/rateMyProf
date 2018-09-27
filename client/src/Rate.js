@@ -64,6 +64,19 @@ class Rate extends Component {
     //   console.log(idx);
     // });
   }
+  
+  onSubmit(event) {
+    event.preventDefault();
+    postReview({
+      prof_id: this.state.prof.id,
+      rating: 3,
+      difficulty: 3,
+      module: 6,
+      grade: 1,
+      tags: [1, 2, 3, 4]
+    })
+      .then(res => alert(JSON.stringify(res)));
+  }
 
   renderProfName() {
     return (
@@ -92,7 +105,7 @@ class Rate extends Component {
             this.state.prof.modules.map(module => {
               return (
                 <option value={module[0]}>
-                  {module[0] + " " + module[1]}
+                  {module[1] + " " + module[2]}
                 </option>
               );
             })
@@ -210,11 +223,6 @@ class Rate extends Component {
         <textarea type="textarea" rows={6} id="rate-form__comment" className="form-control" placeholder="Write down all your comments..." />
       </div>
     );
-  }
-
-  onSubmit(event) {
-    event.preventDefault();
-    postReview(this.state.prof.id).then(res => alert(JSON.stringify(res)));
   }
 
   renderSubmitButton() {
