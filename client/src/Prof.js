@@ -3,6 +3,16 @@ import { Link } from "react-router-dom";
 import { getProf, getAllReviews } from "./api.js";
 import "./Prof.css";
 
+function debug(obj) {
+  return (
+    <div>
+      <pre>
+        {JSON.stringify(obj, null, 4)}
+      </pre>
+    </div>
+  );
+}
+
 class Prof extends Component {
 
   constructor(props) {
@@ -17,24 +27,6 @@ class Prof extends Component {
     const profID = this.props.match.params.profID;
     getProf(profID).then(res => this.setState({prof: res}));
     getAllReviews(profID).then(res => this.setState({reviews: res}));
-  }
-
-  renderStars(rating) {
-    return (
-      <span className="rate-value">
-        {[1, 2, 3, 4, 5].map(i =>
-          <i key={i} className="fas fa-star star--dark"></i>
-        )}
-        <span
-          className="rate-value--coloured"
-          style={{ width: (rating * 20.0).toFixed(2) + '%' }}
-        >
-          {[1, 2, 3, 4, 5].map(i =>
-            <i key={i} className="fas fa-star star--bright"></i>
-          )}
-        </span>
-      </span>
-    )
   }
   
   renderProfDetails() {
@@ -62,7 +54,7 @@ class Prof extends Component {
           </span>
           <br/>
           <span className="prof-data__tags prof-page__font--tier-4">
-            Related tags:
+            Related tags (TODO):
             <div className="prof-data__taglist font-size--xs">
               <span className="prof-data__tag">HIGH WORKLOAD(1)</span> &nbsp;
               <span className="prof-data__tag">LIKE TO TORTURE(1)</span> &nbsp;
@@ -85,7 +77,7 @@ class Prof extends Component {
         <div className="prof-buttons">
           <div className="col-6 prof-buttons__dropdown no_padding">
             <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Filter
+              Filter (TODO)
             </button>
             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a className="dropdown-item" href="#">CS1010X</a>
@@ -105,104 +97,175 @@ class Prof extends Component {
     );
   }
   
-  renderReviews() {
-    const { id, first_name, last_name, department, rating } = this.state.prof;
-
+  renderFires(difficulty) {
+    const darkFire = i => <i key={i+100} className="fab fa-hotjar fire--dark"></i>
+    const brightFire = i => <i key={i+200} className="fab fa-hotjar fire--bright"></i>
+    const style = { width: (difficulty * 20.0).toFixed(2) + '%' }
     return (
-        <div className="prof-commentlist">
-          <div className="prof-comment background--lightgrey">
-            <div className="prof-comment__module font-size--m background--grey">
-                CS3216 (Software Engineering Products for Digital Markets)
-            </div>
-            <div className="prof-comment__tags font-size--s background--grey">
-              <div className="col-3 col-sm-2 prof-comment__tags-title">
-                Tags:
-              </div>
-              <div className="col-9 col-sm-10 prof-comment__taglist font-size--xxs">
-                <span className="prof-comment__tag">HIGH WORKLOAD</span> &nbsp;
-                <span className="prof-comment__tag">LIKE TO TORTURE</span> &nbsp;
-                <span className="prof-comment__tag">YOU DIE? HE HAPPY</span> &nbsp;
-                <span className="prof-comment__tag">BARELY BREATHING</span> &nbsp;
-                <span className="prof-comment__tag">WANT TO S/U</span> &nbsp;
-              </div>
-            </div>
-
-            <div className="prof-comment__details">
-              <div className="col-5 col-sm-4 prof-comment__overview font-size--xs">
-                <div className="prof-comment__rating">
-                  <div className="col-5 col-md-4 prof-comment__overview-title">
-                    Rating
-                  </div>
-                  <div className="col-7 col-md-8 prof-comment__overview-content">
-                    :
-                    <span className="prof-rating">
-                      {this.renderStars()}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="prof-comment__difficulty">
-                  <div className="col-5 col-md-4 prof-comment__overview-title">
-                    Difficulty
-                  </div>
-                  <div className="col-7 col-md-8 prof-comment__overview-content">
-                    :
-                    <span className="rate-value">
-                      <i className="fab fa-hotjar fire--dark"></i>
-                      <i className="fab fa-hotjar fire--dark"></i>
-                      <i className="fab fa-hotjar fire--dark"></i>
-                      <i className="fab fa-hotjar fire--dark"></i>
-                      <i className="fab fa-hotjar fire--dark"></i>
-                      <span className="rate-value--coloured fire--dark" id="prof_comment_difficultystars_1">
-                        <i className="fab fa-hotjar fire--bright"></i>
-                        <i className="fab fa-hotjar fire--bright"></i>
-                        <i className="fab fa-hotjar fire--bright"></i>
-                        <i className="fab fa-hotjar fire--bright"></i>
-                        <i className="fab fa-hotjar fire--bright"></i>
-                      </span>
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="prof-comment__grade">
-                  <div className="col-5 col-md-4 prof-comment__overview-title">
-                    Grade
-                  </div>
-                  <div className="col-7 col-md-8 prof-comment__overview-content">
-                    : A
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-7 col-sm-8 prof-comment__essay font-size--xs">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-              </div>
-            </div>
-
-            <div className="prof-comment__data font-size--xs">
-              <div className="col-7 prof-comment__timestamp font--grey">
-                Created on 2018-07-20 11:59 PM
-              </div>
-
-              <div className="col-5 prof-comment__vote">
-                <span className="prof-comment__thumbs-up">
-                  <i className="fas fa-thumbs-up"></i>
-                </span>
-                <span className="prof-comment__upvoted">
-                  25
-                </span>
-                <span className="prof-comment__thumbs-down">
-                  <i className="fas fa-thumbs-down"></i>
-                </span>
-                <span className="prof-comment__downvoted">
-                  7
-                </span>
-              </div>
-            </div>
-
-          </div>
-
+      <span className="rate-value">
+        {[1, 2, 3, 4, 5].map(darkFire)}
+        <span 
+          className="rate-value--coloured fire--dark"
+          id="prof_comment_difficultystars_1"
+          style={style}
+        >
+          {[1, 2, 3, 4, 5].map(brightFire)}
+        </span>
+      </span>
+    )
+  }
+  
+  renderDifficulty(difficulty) {
+    return (
+      <div className="prof-comment__difficulty">
+        <div className="col-5 col-md-4 prof-comment__overview-title">
+          Difficulty
         </div>
+        <div className="col-7 col-md-8 prof-comment__overview-content">
+          :
+          {this.renderFires(difficulty)}
+        </div>
+      </div>
+    )
+  }
+  
+  renderStars(rating) {
+    const darkStar = i => <i key={i} className="fas fa-star star--dark"></i>
+    const brightStar = i => <i key={i} className="fas fa-star star--bright"></i>
+    const style = { width: (rating * 20.0).toFixed(2) + '%' }
+    
+    return (
+      <span className="rate-value">
+        {[1, 2, 3, 4, 5].map(darkStar)}
+        <span className="rate-value--coloured" style={style}>
+          {[1, 2, 3, 4, 5].map(brightStar)}
+        </span>
+      </span>
+    )
+  }
+  
+  renderRating(rating) {
+    return (
+      <div className="prof-comment__rating">
+        <div className="col-5 col-md-4 prof-comment__overview-title">
+          Rating
+        </div>
+        <div className="col-7 col-md-8 prof-comment__overview-content">
+          :
+          <span className="prof-rating">
+            {this.renderStars(rating)}
+          </span>
+        </div>
+      </div>
+    )
+  }
+  
+  renderReviewTags(tags) {
+    const renderTag = tag => <span>
+      <span className="prof-comment__tag">{tag}</span>
+      &nbsp;
+    </span>
+    
+    return (
+      <div className="prof-comment__tags font-size--s background--grey">
+        <div className="col-3 col-sm-2 prof-comment__tags-title">
+          Tags:
+        </div>
+        <div className="col-9 col-sm-10 prof-comment__taglist font-size--xxs">
+          {tags.map(renderTag)}
+        </div>
+      </div>
+    )
+  }
+  
+  renderReviewTitle(module) {
+    return (
+      <div className="prof-comment__module font-size--m background--grey">
+          {module} "(TODO)"
+      </div>
+    )
+  }
+  
+  renderReviewGrade(grade) {
+    return (
+      <div className="prof-comment__grade">
+        <div className="col-5 col-md-4 prof-comment__overview-title">
+          Grade
+        </div>
+        <div className="col-7 col-md-8 prof-comment__overview-content">
+          : {"TODO" + grade}
+        </div>
+      </div>
+    )
+  }
+  
+  renderReviewVote(upvote, downvote) {
+    return (
+      <div className="col-5 prof-comment__vote">
+        <span className="prof-comment__thumbs-up">
+          <i className="fas fa-thumbs-up"></i>
+        </span>
+        <span className="prof-comment__upvoted">
+          {upvote}
+        </span>
+        <span className="prof-comment__thumbs-down">
+          <i className="fas fa-thumbs-down"></i>
+        </span>
+        <span className="prof-comment__downvoted">
+          {downvote}
+        </span>
+      </div>
+    )
+  }
+  
+  renderReviewContent(content) {
+    return (
+      <div className="col-7 col-sm-8 prof-comment__essay font-size--xs">
+        {content}
+      </div>
+    )
+  }
+  
+  renderReviewTimestamp(time_posted) {
+    return (
+      <div className="col-7 prof-comment__timestamp font--grey">
+        Created on {time_posted}
+      </div>
+    )
+  }
+  
+  renderReview(review) {
+    const {
+      rating, difficulty, grade, content, time_posted,
+      upvote, downvote, module, tags
+    } = review;
+    
+    return (
+      <div className="prof-comment background--lightgrey">
+        {this.renderReviewTitle(module)}
+        {this.renderReviewTags(tags)}
+        <div className="prof-comment__details">
+          <div className="col-5 col-sm-4 prof-comment__overview font-size--xs">
+            {this.renderRating(rating)}
+            {this.renderDifficulty(difficulty)}
+            {this.renderReviewGrade(grade)}
+          </div>
+          {this.renderReviewContent(content)}
+        </div>
+        <div className="prof-comment__data font-size--xs">
+          {this.renderReviewTimestamp(time_posted)}
+          {this.renderReviewVote(upvote, downvote)}
+        </div>
+        {debug(review)}
+      </div>
+    )
+  }
+  
+  renderReviews() {
+    return (
+      <div className="prof-commentlist">
+        {this.state.reviews.map(this.renderReview.bind(this))}
+      </div>
     )
   }
 
@@ -213,12 +276,6 @@ class Prof extends Component {
         {this.renderProfDetails()}
         {this.renderButtons()}
         {this.renderReviews()}
-        
-        <div>
-          <pre>
-            {JSON.stringify(this.state.reviews, null, 4)}
-          </pre>
-        </div>
       </div>
     );
   }
