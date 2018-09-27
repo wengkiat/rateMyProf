@@ -71,32 +71,19 @@ export function searchProfs(query) {
 }
 
 export function getAllTags() {
-  return requestJSON("GET", "http://18.222.251.155:3000/tags");
+  return requestJSON("GET", `http://18.222.251.155:3000/tags`);
 }
 
-export function postReview(profID) {
-  const body = {
-    "content": "test",
-    "rating": "3",
-    "difficulty": "3",
-    "module": "79",
-    "grade": "1",
-    "prof_id": profID,
-    "tags": [
-      1,
-      2,
-      3,
-      4
-    ]
-  };
-  return requestJSON("POST", "http://18.222.251.155:3000/review",
+export function postReview(props) {
+  const { content, rating, difficulty, module, grade, prof_id, tags} = props
+  return requestJSON("POST", `http://18.222.251.155:3000/review`,
     {
-      body: JSON.stringify(body),
+      body: JSON.stringify(props),
       headers: {"Content-Type": "application/json"}
     }
   );
 }
 
-// export function getAllReview(profID) {
-//   return requestJSON("GET", "http://18.222.251.155:3000/reviews/profID")
-// }
+export function getAllReviews(profID) {
+  return requestJSON("GET", `http://18.222.251.155:3000/reviews/${profID}`);
+}
