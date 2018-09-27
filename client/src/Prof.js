@@ -29,6 +29,10 @@ class Prof extends Component {
     getAllReviews(profID).then(res => this.setState({reviews: res}));
   }
   
+  componentDidUpdate() {
+    window.dispatchEvent(new Event('resize'));
+  }
+
   renderProfDetails() {
     const { id, first_name, last_name, department, rating } = this.state.prof;
     return (
