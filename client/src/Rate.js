@@ -11,18 +11,54 @@ class Rate extends Component {
       prof: {
         modules: []
       },
-      tags: []
+      tags: [],
+      isOver: false,
+      isProfData: false,
+      isTagData: false,
+      isOver: false
     };
 
-    this.onSubmit = this.onSubmit.bind(this)
+    this.onSubmit = this.onSubmit.bind(this);
+    this.checkOver = this.checkOver.bind(this);
+    this.handleClickRating = this.handleClickRating.bind(this);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     const { match } = this.props;
-    console.log(match);
     const profID = match.params.profID;
-    getProf(profID).then(res => this.setState({ prof: res }));
-    getAllTags().then(res => this.setState({ tags: res }));
+    getProf(profID).then(res => {
+      this.setState({ 
+        prof: res,
+        isProfData: true
+      });
+      this.checkOver();
+    });
+    getAllTags().then(res => {
+      this.setState({ 
+        tags: res,
+        isTagData: true
+      });
+      this.checkOver();
+    });
+  }
+
+  checkOver() {
+    if(this.state.isProfData && this.state.isTagData) {
+      this.setState({
+        isOver: true
+      });
+    }
+  }
+
+  handleClickRating() {
+
+  }
+
+  shouldComponentUpdate(nextProps, nextState){
+    return nextState.isOver;
+  }
+
+  componentWillUpdate(){
   }
 
   renderProfName() {
@@ -47,7 +83,7 @@ class Rate extends Component {
       <div className="form-group">
         <label htmlFor="rate-form__module" className="font-size--m">Module</label>
         <select className="form-control" id="rate-form__module">
-          <option>Select a module...</option>
+          <option selected disabled>Select a module...</option>
           {
             this.state.prof.modules.map(module => {
               return (
@@ -68,7 +104,7 @@ class Rate extends Component {
       <div className="form-group">
         <label htmlFor="rate-prof__grade" className="font-size--m">Grades Obtained</label>
         <select className="form-control" id="rate-form__grade">
-          <option>Select your grade...</option>
+          <option selected disabled>Select your grade...</option>
           {
             gradeList.map(grade =>
               <option value={grade}>{grade}</option>
@@ -178,7 +214,7 @@ class Rate extends Component {
 
   renderSubmitButton() {
     return (
-      <button type="submit" class="btn rate-form__submit">
+      <button type="submit" className="btn rate-form__submit">
         Submit
       </button>
     );
@@ -187,20 +223,24 @@ class Rate extends Component {
   render() {
     return (
       <div className="page">
-        <div className="rate-form font-size--xl">
-          Rate Your Prof!
-        </div>
-
-        <form>
-          {this.renderProfName()}
-          {this.renderModuleInput()}
-          {this.renderGradeInput()}
-          {this.renderRatingInput()}
-          {this.renderDifficultyInput()}
-          {this.renderTagInput()}
-          {this.renderCommentInput()}
-          {this.renderSubmitButton()}
-        </form>
+      {this.state.isOver ? (
+          <div>
+            <div className="rate-form font-size--xl">
+              Rate Your Prof!
+            </div>
+            <form>
+              {this.renderProfName()}
+              {this.renderModuleInput()}
+              {this.renderGradeInput()}
+              {this.renderRatingInput()}
+              {this.renderDifficultyInput()}
+              {this.renderTagInput()}
+              {this.renderCommentInput()}
+              {this.renderSubmitButton()}
+            </form>
+          </div>
+        ) : (<div></div>)
+      }
       </div>
     );
   }

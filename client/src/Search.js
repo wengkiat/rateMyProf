@@ -29,6 +29,7 @@ class Search extends Component {
 
   renderProf(props) {
     const { name, faculty, rating, id } = props;
+    const starWidth = {width: (rating/5 * 100) + "%"};
     return (
       <Link to={`/profs/${id}`}>
         <div className="search-result__prof prof background--lightgrey" key={id}>
@@ -50,7 +51,7 @@ class Search extends Component {
                 <i className="fas fa-star star--dark"></i>
                 <i className="fas fa-star star--dark"></i>
                 <i className="fas fa-star star--dark"></i>
-                <span className="rate-value--coloured" id="profs_ratingstars_1">
+                <span className="rate-value--coloured" style={starWidth}>
                   <i className="fas fa-star star--bright"></i>
                   <i className="fas fa-star star--bright"></i>
                   <i className="fas fa-star star--bright"></i>
