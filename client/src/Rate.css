@@ -11,24 +11,12 @@
   cursor: pointer;
 }
 
-#rate--form__rating {
-  display: none;
-}
-
-#rate--form__difficulty {
-  display: none;
-}
-
 .rate-form__star, .rate-form__star--coloured, .rate-form__fire, .rate-form__fire--coloured {
   cursor: pointer;
 }
 
 .rate-form__fire, .rate-form__fire--coloured {
   width: 54px;
-}
-
-.rate-form__checkbox {
-  display: none !important;
 }
 
 .rate-form__tag {

@@ -31,6 +31,7 @@ class Prof extends Component {
   
   componentDidUpdate() {
     window.dispatchEvent(new Event('resize'));
+    console.log(this.state.reviews);
   }
 
   renderProfDetails() {

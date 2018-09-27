@@ -11,18 +11,23 @@ class Rate extends Component {
         modules: []
       },
       tags: [],
+      tagsChosen: [],
+      rating: 0,
+      difficulty: 0,
       isOver: false,
       isProfData: false,
       isTagData: false,
       isOver: false
     };
 
-    this.onSubmit = this.onSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.checkOver = this.checkOver.bind(this);
     this.handleClickRating = this.handleClickRating.bind(this);
+    this.handleClickDifficulty = this.handleClickDifficulty.bind(this);
+    this.handleClickTag = this.handleClickTag.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const { match } = this.props;
     const profID = match.params.profID;
     getProf(profID).then(res => {
@@ -35,6 +40,7 @@ class Rate extends Component {
     getAllTags().then(res => {
       this.setState({ 
         tags: res,
+        tagsChosen: res.map(x=>false),
         isTagData: true
       });
       this.checkOver();
@@ -49,33 +55,72 @@ class Rate extends Component {
     }
   }
 
-  handleClickRating() {
-    console.log("test");
+  handleClickRating(event) {
+    let newValue = event.target.getAttribute("value");
+    this.setState({
+      rating: parseInt(newValue)
+    });
+
   }
+
+  handleClickDifficulty(event) {
+    let newValue = event.target.getAttribute("value");
+    this.setState({
+      difficulty: parseInt(newValue)
+    });
+  }
+
+  handleClickTag(event) {
+    let idx = parseInt(event.target.getAttribute("value")) - 1;
+    let tagsState = this.state.tagsChosen;
+    tagsState[idx] = !tagsState[idx];
+    this.setState({
+      tagsChosen: tagsState
+    });
+  }
+
 
   shouldComponentUpdate(nextProps, nextState){
     return nextState.isOver;
   }
 
   componentDidUpdate() {
-    // let ratingStar = document.getElementsByClassName("rate-form__star");
-    // ratingStar.forEach(function(elem, idx){
-    //   console.log(elem);
-    //   console.log(idx);
-    // });
   }
-  
-  onSubmit(event) {
+
+  handleSubmit(event) {
     event.preventDefault();
-    postReview({
-      prof_id: this.state.prof.id,
-      rating: 3,
-      difficulty: 3,
-      module: 6,
-      grade: 1,
-      tags: [1, 2, 3, 4]
-    })
-      .then(res => alert(JSON.stringify(res)));
+    let ratingGiven = this.state.rating;
+    let difficultyGiven = this.state.difficulty;
+    let gradeObtained = document.getElementById("rate-form__grade").options.selectedIndex;
+    let tagsGiven = this.state.tagsChosen.map((val, idx)=>val ? idx+1 : 0).filter((val) => val);
+    let commentGiven = document.getElementById("rate-form__comment").value;
+    
+    let moduleList = document.getElementById("rate-form__module");
+    let moduleTakenIdx = moduleList.options.selectedIndex;
+    let moduleTaken = moduleTakenIdx ? moduleList.options[moduleTakenIdx].value : "-1";
+
+    let isRatingFilled = ratingGiven != 0;
+    let isDifficultyFilled = difficultyGiven != 0;
+    let isModuleFilled = moduleTaken != "-1";
+    let isGradeFilled = gradeObtained != 0;
+
+    if (isRatingFilled && isDifficultyFilled && isModuleFilled && isGradeFilled) {
+      postReview({
+        "prof_id": this.state.prof.id,
+        "rating": ratingGiven.toString(),
+        "difficulty": difficultyGiven.toString(),
+        "module": moduleTaken.toString(),
+        "grade": gradeObtained.toString(),
+        "tags": tagsGiven,
+        "content": commentGiven
+      })
+        .then(res => {
+          console.log(res);
+          window.location.replace("/profs/" + this.state.prof.id)
+        });
+    } else {
+      alert("Please fill everything first!");
+    }
   }
 
   renderProfName() {
@@ -100,12 +145,12 @@ class Rate extends Component {
       <div className="form-group">
         <label htmlFor="rate-form__module" className="font-size--m">Module</label>
         <select className="form-control" id="rate-form__module">
-          <option selected disabled>Select a module...</option>
+          <option selected disabled value="0">Select a module...</option>
           {
             this.state.prof.modules.map(module => {
               return (
                 <option value={module[0]}>
-                  {module[1] + " " + module[2]}
+                  {module[1] + " (" + module[2] + ")"}
                 </option>
               );
             })
@@ -119,12 +164,12 @@ class Rate extends Component {
     const gradeList = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "D", "F"];
     return(
       <div className="form-group">
-        <label htmlFor="rate-prof__grade" className="font-size--m">Grades Obtained</label>
+        <label htmlFor="rate-form__grade" className="font-size--m">Grades Obtained</label>
         <select className="form-control" id="rate-form__grade">
-          <option selected disabled>Select your grade...</option>
+          <option selected disabled value="0">Select your grade...</option>
           {
-            gradeList.map(grade =>
-              <option value={grade}>{grade}</option>
+            gradeList.map((grade, idx) =>
+              <option value={idx+1}>{grade}</option>
             )
           }
         </select>
@@ -133,82 +178,65 @@ class Rate extends Component {
   }
 
   renderRatingInput() {
+    const starWidth = { width: (this.state.rating * 20.0).toFixed(2) + '%' }
     return (
       <div className="form-group">
-        <label htmlFor="rate-form__rating" className="font-size--m">{"Prof's Rating"}</label>
+        <label className="font-size--m">{"Prof's Rating"}</label>
         <div className="rate-form__stars-container">
           <span className="rate-value">
             {
               [1, 2, 3, 4, 5].map(rate =>
-                <i className="fas fa-star fa-3x rate-form__star star--dark" value={rate}></i>
+                <i className="fas fa-star fa-3x rate-form__star star--dark" onClick={this.handleClickRating} value={rate}></i>
               )
             }
-            <span className="rate-value--coloured" id="rate-form__stars--coloured">
+            <span className="rate-value--coloured" style={starWidth} id="rate-form__stars--coloured">
               {
                 [1, 2, 3, 4, 5].map(rate =>
-                  <i className="fas fa-star fa-3x rate-form__star--coloured star--bright" value={rate}></i>
+                  <i className="fas fa-star fa-3x rate-form__star--coloured star--bright" onClick={this.handleClickRating} value={rate}></i>
                 )
               }
             </span>
           </span>
         </div>
-        <select className="form-control" id="rate--form__rating">
-          {
-            [1, 2, 3, 4, 5].map(rate =>
-              <option value={rate}></option>
-            )
-          }
-        </select>
       </div>
     );
   }
 
   renderDifficultyInput() {
+    const fireWidth = { width: (this.state.difficulty * 20.0).toFixed(2) + '%' }
     return (
       <div className="form-group">
-        <label htmlFor="rate-form__difficulty" className="font-size--m">{"Difficulty Level"}</label>
+        <label className="font-size--m">{"Difficulty Level"}</label>
         <div className="rate-form__fires-container">
           <span className="rate-value">
             {
               [1, 2, 3, 4, 5].map(rate =>
-                <i className="fab fa-hotjar fa-3x rate-form__fire fire--dark" value={rate}></i>
+                <i className="fab fa-hotjar fa-3x rate-form__fire fire--dark" onClick={this.handleClickDifficulty} value={rate}></i>
               )
             }
-            <span className="rate-value--coloured" id="rate-form__fires--coloured">
+            <span className="rate-value--coloured" style={fireWidth} id="rate-form__fires--coloured">
               {
                 [1, 2, 3, 4, 5].map(rate =>
-                  <i className="fab fa-hotjar fa-3x rate-form__fire--coloured fire--bright" value={rate}></i>
+                  <i className="fab fa-hotjar fa-3x rate-form__fire--coloured fire--bright" onClick={this.handleClickDifficulty} value={rate}></i>
                 )
               }
             </span>
           </span>
         </div>
-        <select className="form-control" id="rate--form__rating">
-          {
-            [1, 2, 3, 4, 5].map(rate =>
-              <option value={rate}></option>
-            )
-          }
-        </select>
       </div>
     );
   }
 
   renderTagInput() {
+    const chosenStyle = {backgroundColor: "#A7ECF6"};
+    const rejectedStyle = {backgroundColor: "#EDEDED"};
     return (
       <div className="form-group">
         <label className="font-size--m">Choose Tags</label>
-        <div className="form-check rate-form__checkbox" id="rate-form__tags">
-          <input className="form-check-input" type="checkbox" value="" id="rateTags_1"/>
-          <input className="form-check-input" type="checkbox" value="" id="rateTags_2"/>
-          <input className="form-check-input" type="checkbox" value="" id="rateTags_3"/>
-          <input className="form-check-input" type="checkbox" value="" id="rateTags_4"/>
-          <input className="form-check-input" type="checkbox" value="" id="rateTags_5"/>
-        </div>
         <div className="rate-form__taglist">
           {
-            this.state.tags.map(tag =>
-              <span className="rate-form__tag">{tag.definition}</span>
+            this.state.tags.map((tag, idx) =>
+              <span className="rate-form__tag" onClick={this.handleClickTag} style={this.state.tagsChosen[idx] ? chosenStyle : rejectedStyle} value={tag.id}>{tag.definition}</span>
             )
           }
         </div>
@@ -241,7 +269,7 @@ class Rate extends Component {
             <div className="rate-form font-size--xl">
               Rate Your Prof!
             </div>
-            <form>
+            <form onSubmit={this.handleSubmit}>
               {this.renderProfName()}
               {this.renderModuleInput()}
               {this.renderGradeInput()}

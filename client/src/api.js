@@ -81,6 +81,7 @@ export function getAllTags() {
 
 export function postReview(props) {
   const { content, rating, difficulty, module, grade, prof_id, tags} = props
+  console.log(JSON.stringify(props));
   return requestJSON("POST", `http://18.222.251.155:3000/review`,
     {
       body: JSON.stringify(props),
