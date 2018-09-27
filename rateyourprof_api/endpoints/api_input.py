@@ -71,8 +71,9 @@ def post_review():
     try:
         db.session.commit()
 
-    except exc.SQLAlchemyError:
-        return jsonify({"msg": "invalid data format"}), http.HTTPStatus.BAD_REQUEST
+    except Exception as e:
+        logger.debug('e', exc_info=True)
+        return jsonify({"msg": "invalid data format or module is not valid"}), http.HTTPStatus.BAD_REQUEST
 
     db.session.flush() # to get post id of the post that was just posted
     # update tags
@@ -94,7 +95,13 @@ def post_review():
         prof.rating = ((prof.rating * prof.posts) + int(review_json['rating'])) / (prof.posts + 1)
 
     prof.posts = prof.posts + 1
-    db.session.commit()
+
+    try:
+        db.session.commit()
+
+    except Exception as e:
+        logger.debug(e, exc_info=True)
+        return jsonify({"msg": "invalid data format or tags are not valid"}), http.HTTPStatus.BAD_REQUEST
 
     return jsonify('Upload of review successful', ([prof.serialize_review()])), http.HTTPStatus.CREATED
 
