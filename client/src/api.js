@@ -31,18 +31,18 @@ export function getLoginToken(username, password) {
     });
 }
 
-function requestJSON(method, input, init = {}) {
+function requestText(method, input, init = {}) {
   return requestOnce(method, input, init)
     .then(res => {
       if (res.ok)
-        return res.json();
+        return res.text();
       if (res.status >= 400 && res.status < 500) {
         return getLoginToken("test", "test")
           .then(res => {
             return requestOnce(method, input, init)
               .then(res => {
                 if (res.ok)
-                  return res.json();
+                  return res.text();
                 throw Error(res.statusText);
               });
           });
@@ -55,8 +55,13 @@ function requestJSON(method, input, init = {}) {
     });
 }
 
+function requestJSON(method, input, init = {}, def = {}) {
+  return requestText(method, input, init)
+    .then(text => (text ? JSON.parse(text) : def))
+}
+
 export function getAllProfs() {
-  return requestJSON("GET", "http://18.222.251.155:3000/professors");
+  return requestJSON("GET", `http://18.222.251.155:3000/professors`, {}, []);
 }
 
 export function getProf(profID) {
@@ -67,11 +72,11 @@ export function searchProfs(query) {
   query = query.replace(/[^a-zA-Z\d:]/g, " ");
   console.log(query);
   const url = `http://18.222.251.155:3000/professors/search/${query}`;
-  return requestJSON("GET", url);
+  return requestJSON("GET", url, {}, []);
 }
 
 export function getAllTags() {
-  return requestJSON("GET", `http://18.222.251.155:3000/tags`);
+  return requestJSON("GET", `http://18.222.251.155:3000/tags`, {}, []);
 }
 
 export function postReview(props) {
@@ -85,5 +90,5 @@ export function postReview(props) {
 }
 
 export function getAllReviews(profID) {
-  return requestJSON("GET", `http://18.222.251.155:3000/reviews/${profID}`);
+  return requestJSON("GET", `http://18.222.251.155:3000/reviews/${profID}`, {}, []);
 }
