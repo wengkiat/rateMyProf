@@ -50,14 +50,19 @@ class Rate extends Component {
   }
 
   handleClickRating() {
-
+    console.log("test");
   }
 
   shouldComponentUpdate(nextProps, nextState){
     return nextState.isOver;
   }
 
-  componentWillUpdate(){
+  componentDidUpdate() {
+    // let ratingStar = document.getElementsByClassName("rate-form__star");
+    // ratingStar.forEach(function(elem, idx){
+    //   console.log(elem);
+    //   console.log(idx);
+    // });
   }
 
   renderProfName() {
