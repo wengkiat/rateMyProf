@@ -35,7 +35,7 @@ class Search extends Component {
       <Link to={`/profs/${id}`}>
         <div className="search-result__prof prof background--lightgrey" key={id}>
           <div className="col-4 prof__photobox">
-            <img src="/img/anonymous.jpg" className=".prof__photo"/>
+            <img src={"/img/"+ name.toLowerCase().split(" ").join("_") +".jpg"} className="prof__photo"/>
           </div>
           <div className="col-8 prof__overview">
             <div className="prof__name">
@@ -79,7 +79,7 @@ class Search extends Component {
           {this.state.profs.map(prof => {
             return this.renderProf({
               id: prof.id,
-              name: prof.first_name + prof.last_name,
+              name: prof.first_name + " " +prof.last_name,
               faculty: prof.department,
               rating: 0
             });
