@@ -84,9 +84,6 @@ class Rate extends Component {
     return nextState.isOver;
   }
 
-  componentDidUpdate() {
-  }
-
   handleSubmit(event) {
     event.preventDefault();
     let ratingGiven = this.state.rating;
@@ -94,7 +91,7 @@ class Rate extends Component {
     let gradeObtained = document.getElementById("rate-form__grade").options.selectedIndex;
     let tagsGiven = this.state.tagsChosen.map((val, idx)=>val ? idx+1 : 0).filter((val) => val);
     let commentGiven = document.getElementById("rate-form__comment").value;
-    
+
     let moduleList = document.getElementById("rate-form__module");
     let moduleTakenIdx = moduleList.options.selectedIndex;
     let moduleTaken = moduleTakenIdx ? moduleList.options[moduleTakenIdx].value : "-1";
@@ -115,7 +112,6 @@ class Rate extends Component {
         "content": commentGiven
       })
         .then(res => {
-          console.log(res);
           window.location.replace("/profs/" + this.state.prof.id)
         });
     } else {

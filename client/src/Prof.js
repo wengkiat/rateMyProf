@@ -19,18 +19,54 @@ class Prof extends Component {
     super(props);
     this.state = {
       prof: {},
-      reviews: []
+      reviews: [],
+      moduleDictionary: {},
+      moduleFilter: "",
+      commentDetails: {},
+      tagList: [],
+      tagCount: {},
+      isOver: false,
+      isProfData: false,
+      isCommentsData: false
     };
+
+    this.checkOver = this.checkOver.bind(this);
   }
 
   componentDidMount() {
     const profID = this.props.match.params.profID;
-    getProf(profID).then(res => this.setState({prof: res}));
-    getAllReviews(profID).then(res => this.setState({reviews: res}));
+    getProf(profID).then(res => {
+      this.setState({
+        prof: res,
+        isProfData: true
+      });
+      this.checkOver();
+    });
+    getAllReviews(profID).then(res => {
+      this.setState({
+        reviews: res,
+        isCommentsData: true
+      });
+      this.checkOver();
+    });
+    console.log(this.state.tagCount["SHK"]);
   }
   
+  checkOver() {
+    if(this.state.isProfData && this.state.isCommentsData) {
+      this.setState({
+        isOver: true
+      });
+    }
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextState.isOver;
+  }
+
   componentDidUpdate() {
     window.dispatchEvent(new Event('resize'));
+    console.log(this.state.prof);
     console.log(this.state.reviews);
   }
 
@@ -111,7 +147,6 @@ class Prof extends Component {
         {[1, 2, 3, 4, 5].map(darkFire)}
         <span 
           className="rate-value--coloured fire--dark"
-          id="prof_comment_difficultystars_1"
           style={style}
         >
           {[1, 2, 3, 4, 5].map(brightFire)}
@@ -278,9 +313,14 @@ class Prof extends Component {
     const { id, first_name, last_name, department, rating } = this.state.prof;
     return (
       <div className="page prof-page">
-        {this.renderProfDetails()}
-        {this.renderButtons()}
-        {this.renderReviews()}
+      {this.state.isOver ? (
+          <div>
+            {this.renderProfDetails()}
+            {this.renderButtons()}
+            {this.renderReviews()}
+          </div>
+        ) : (<div></div>)
+      }
       </div>
     );
   }

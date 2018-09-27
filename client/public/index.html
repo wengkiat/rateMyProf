@@ -85,10 +85,12 @@
 
     function resizeProfImage() {
       if ($(window).outerWidth() > 575) {
+        // make sure its square
         $(".prof-photo").width($(".prof-details__image").width());
         $(".prof-photo").height($(".prof-photo").width());
         $(".prof-photo").css("margin-top", 0 + ("px"));
 
+        // if photo is smaller than text, make it centralize
         if ($(".prof-details__image").width() < $(".prof-details__text").height()) {
           let diff = $(".prof-details__text").height() - $(".prof-details__image").width();
           $(".prof-details__image").height($(".prof-details__text").height());
@@ -97,6 +99,8 @@
           $(".prof-details__image").height($(".prof-details__image").width());
         }
       } else {
+
+        // centralize and limit the photo size when the window is small (mobile)
         $(".prof-photo").width(Math.min(300, $(window).width()));
         $(".prof-photo").height($(".prof-photo").width());
         $(".prof-details__image").css("text-align", "center");
@@ -128,36 +132,6 @@
         $(".prof__overview").css("margin-left", "0px");
       }
     }
-
-    function initialize() {
-      // this one work in prof.js
-      // $("#dropdownMenuButton").trigger("click");
-
-      // this one work in rate.js
-    //   $(".rate_star").on("click", function() {
-    //     let thisVal = $(this).attr("value");
-    //     $("#rateProfRating").attr("value", thisVal);
-    //     thisVal *= 100;
-    //     thisVal /= 5;
-    //     $(".rate_stars_2").css("width", thisVal + "%");
-    //   });
-    //   $(".rate_fire").on("click", function() {
-    //     let thisVal = $(this).attr("value");
-    //     $("#rateProfDifficulty").attr("value", thisVal);
-    //     thisVal *= 100;
-    //     thisVal /= 5;
-    //     $(".rate_fires_2").css("width", thisVal + "%");
-    //   });
-    //   $(".rate_tag").on("click", function(){
-    //     let thisID = $(this).attr("id").split("_")[1];
-    //     $("#rateTags_" + thisID).trigger("click");
-    //     if ($("#rateTags_" + thisID).is(":checked")) {
-    //       $(this).css("background-color", "#A7ECF6");
-    //     } else {
-    //       $(this).css("background-color", "#EDEDED");
-    //     }
-    //   });
-    // }
 
     function resizeFire() {
       $(".prof-comment__difficulty .fa-hotjar").width($(".prof-comment__rating .fa-star").width());
