@@ -107,16 +107,20 @@
 
     function resizeProfsImage() {
       if ($(".prof__photobox").width() > 175 ) {
+        // make sure everything is square
         $(".search-result__prof").height($(".prof__photobox").width());
         $(".prof__photo").height($(".prof__photobox").width());
         $(".prof__photo").css("margin-top", "0px");
       } else {
+        // minimum height is 175
+        // centralize the prof when that happened
         $(".search-result__prof").height(175);
         $(".prof__photo").height($(".prof__photobox").width());
-        // let diff = 175 - $(".prof__photo").height();
-        // $(".prof__photo").css("margin-top", (diff/2) + "px");
+        let diff = 175 - $(".prof__photo").height();
+        $(".prof__photo").css("margin-top", (diff/2) + "px");
       }
 
+      // if it is too big, pull the text to the left
       let diff = $(".prof__photobox").width() - $(".prof__photo").width();
       if (diff > 0) {
         $(".prof__overview").css("margin-left", -diff + "px");
@@ -156,8 +160,7 @@
     }
 
     function resizeFire() {
-      $(".fa-hotjar").width($(".prof_comment_ratingstar .fa-star").width());
-      $(".fa-hotjar.rate_fire").width($(".fa-star.rate_star").width());
+      $(".prof-comment__difficulty .fa-hotjar").width($(".prof-comment__rating .fa-star").width());
     }
 
   </script>

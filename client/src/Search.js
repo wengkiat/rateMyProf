@@ -12,13 +12,10 @@ class Search extends Component {
     this.state = {
       query: null,
       profs: [],
-      isProfData: false,
-      isCommentData: false,
-      isOver: false
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const query = queryString.parse(this.props.location.search).q;
     this.setState({ query: query });
 
@@ -26,6 +23,10 @@ class Search extends Component {
       .then(res => {
         this.setState({ profs: res });
       });
+  }
+
+  componentDidUpdate() {
+    window.dispatchEvent(new Event('resize'));
   }
 
   renderProf(props) {
@@ -81,7 +82,7 @@ class Search extends Component {
               id: prof.id,
               name: prof.first_name + " " +prof.last_name,
               faculty: prof.department,
-              rating: 0
+              rating: prof.rating
             });
           })}
         </div>
