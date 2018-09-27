@@ -23,6 +23,10 @@
   cursor: pointer;
 }
 
+.rate-form__fire, .rate-form__fire--coloured {
+  width: 54px;
+}
+
 .rate-form__checkbox {
   display: none !important;
 }

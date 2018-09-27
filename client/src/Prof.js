@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { getProf } from "./api.js";
 import "./Prof.css";
 
@@ -16,26 +17,23 @@ class Prof extends Component {
     console.log(match.params.profID);
     getProf(match.params.profID)
       .then(res => {
-        console.log(38495734);
-        console.log(res);
         this.setState({prof: res});
       });
   }
 
-  renderStars() {
+  renderStars(rating) {
     return (
       <span className="rate-value">
-        <i className="fas fa-star star--dark"></i>
-        <i className="fas fa-star star--dark"></i>
-        <i className="fas fa-star star--dark"></i>
-        <i className="fas fa-star star--dark"></i>
-        <i className="fas fa-star star--dark"></i>
-        <span className="rate-value--coloured">
-          <i className="fas fa-star star--bright"></i>
-          <i className="fas fa-star star--bright"></i>
-          <i className="fas fa-star star--bright"></i>
-          <i className="fas fa-star star--bright"></i>
-          <i className="fas fa-star star--bright"></i>
+        {[1, 2, 3, 4, 5].map(i =>
+          <i key={i} className="fas fa-star star--dark"></i>
+        )}
+        <span
+          className="rate-value--coloured"
+          style={{ width: (rating * 20.0).toFixed(2) + '%' }}
+        >
+          {[1, 2, 3, 4, 5].map(i =>
+            <i key={i} className="fas fa-star star--bright"></i>
+          )}
         </span>
       </span>
     )
@@ -60,7 +58,7 @@ class Prof extends Component {
             <br/>
             <span className="prof-data__rating prof-rating  prof-page__font--tier-3">
               Average Rating:&nbsp;
-              {this.renderStars()} (
+              {this.renderStars(rating)} (
               <span className="prof-rating__value">
                 {rating}
               </span>)
@@ -94,7 +92,11 @@ class Prof extends Component {
           </div>
 
           <div className="col-6 prof-buttons__rate">
-            <button type="button" className="btn btn-secondary">Rate This Professor!</button>
+            <Link to={`/profs/${id}/rate`}>
+              <button type="button" className="btn btn-secondary">
+                Rate This Professor!
+              </button>
+            </Link>
           </div>
         </div>
 

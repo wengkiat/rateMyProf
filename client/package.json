@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "ajv": "^6.5.4",
+    "babel-eslint": "^9.0.0",
     "query-string": "^6.1.0",
     "react": "^16.5.1",
     "react-bootstrap": "^0.32.4",
