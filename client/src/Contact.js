@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import "./Contact.css";
 
 class Contact extends Component {
@@ -29,8 +30,13 @@ class Contact extends Component {
           </div>
           <div className="form-group">
             <label className="contact-form__label" for="form_comments">Comments</label>
-            <input type="text" className="form-control" id="form_comments" placeholder="Enter Your Comments"/>
+            <textarea rows="5" className="form-control" id="form_comments" placeholder="Enter Your Comments"/>
           </div>
+          <Link to={`/`}>
+            <button type="button" className="btn btn-secondary">
+              Submit
+            </button>
+          </Link>
         </form>
 
       </div>
