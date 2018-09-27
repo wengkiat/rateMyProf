@@ -41,7 +41,7 @@ To set up connection to external database
     change this variable in .env
     DATABASE_URL="postgresql://username:password@serverurl:port/database"
 
-Updating database schema
+Updating database schema (not set up yet)
 -------
 
 To change the database schema, please access apiserver/app/models.py
@@ -75,7 +75,7 @@ To set up a specific path to store the log file, if left blank, it will default 
     change this variable in .env
     LOG_PATH = "/Path/you/want/filename"
 
-Testing
+Testing (not set up yet)
 -------
 
 To set up credentials for test
@@ -93,7 +93,7 @@ Will run all tests. Remember to set necessary environment variables such as DATA
 
 Manual testing
 -------
-    refer to api documentation at TBD
+    refer to api documentation at https://rateyourprofs.docs.apiary.io/#
 
 To run curl calls
 
