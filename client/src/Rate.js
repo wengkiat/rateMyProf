@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { getProf, getAllTags } from "./api.js";
+import { getProf, getAllTags, postReview } from "./api.js";
 import "./Rate.css";
-
 
 class Rate extends Component {
 
@@ -173,7 +172,8 @@ class Rate extends Component {
   }
 
   onSubmit(event) {
-
+    event.preventDefault();
+    postReview(this.state.prof.id).then(res => alert(JSON.stringify(res)));
   }
 
   renderSubmitButton() {
@@ -191,7 +191,7 @@ class Rate extends Component {
           Rate Your Prof!
         </div>
 
-        <form>
+        <form onSubmit={this.onSubmit}>
           {this.renderProfName()}
           {this.renderModuleInput()}
           {this.renderGradeInput()}
