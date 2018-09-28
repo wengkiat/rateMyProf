@@ -294,7 +294,7 @@ class Rate extends Component {
         ) : (
           <div className="loading-screen--logo">
           </div>
-        )}
+        )
       }
       </div>
     );
