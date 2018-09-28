@@ -1,6 +1,5 @@
 
 function requestOnce(method, input, init = {}) {
-  console.log(`requestOnce ${method}, ${input}, ${JSON.stringify(init)}`);
   const newHeader = {
     ...init.headers,
     "Authorization": "Bearer " + (localStorage.getItem("access_token") || "")
@@ -8,7 +7,6 @@ function requestOnce(method, input, init = {}) {
 
   return fetch(input, {...init, method: method, headers: newHeader})
     .catch(err => {
-      console.error(err);
       throw err;
     });
 }
@@ -26,7 +24,6 @@ export function getLoginToken(username, password) {
     })
     .then(body => {
       localStorage.setItem("access_token", body.access_token);
-      console.log(body.access_token);
       return body.access_token;
     });
 }
@@ -50,7 +47,6 @@ function requestText(method, input, init = {}) {
       throw Error(res.statusText);
     })
     .catch(err => {
-      console.error(err);
       throw err;
     });
 }

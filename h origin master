@@ -1,0 +1,1086 @@
+[33mcommit 5d12a30137e94c1c2d1fd7caa0f173a0b7b0d69a[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Merge: ab15107 1b9f722
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 15:16:13 2018 +0800
+
+    Merge branch 'master' of https://github.com/cs3216/a3-mobile-cloud-group-7
+
+[33mcommit ab15107560c1a884f15251aec8592844185e95b3[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 15:15:56 2018 +0800
+
+    repair bug in home logo
+
+[33mcommit 1b9f72200c4ea6e25fd259f166e5432a386b6d89[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Fri Sep 28 15:03:52 2018 +0800
+
+    Minor fix
+
+[33mcommit 97b13f2b449b8a9a2ee816ce0ce2c20440483728[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 14:57:51 2018 +0800
+
+    added not so good loading screen
+
+[33mcommit d5a70dfa74f719d12b0c3164d6853d8c2aa23761[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 14:48:19 2018 +0800
+
+    remove loading screen temporarily
+
+[33mcommit fc2f9f46d4105f7390b9248e6ed3a2536752f9ff[m
+Merge: 9e55dd8 8267d36
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 14:28:36 2018 +0800
+
+    Merge branch 'master' of https://github.com/cs3216/a3-mobile-cloud-group-7
+
+[33mcommit 9e55dd8aa3f9d8b9fc2c218e8a5e456c7cdaa340[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 14:28:22 2018 +0800
+
+    add loading screen
+
+[33mcommit 8267d36fe8153bb7fe693b6a0e3db10f1284482a[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Fri Sep 28 14:19:01 2018 +0800
+
+    Add logo in Home.js
+
+[33mcommit 79bddd0b582779eb37135850dd08cd1449a7decc[m
+Merge: da0d2ef ce3610e
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 13:54:05 2018 +0800
+
+    Merge branch 'master' of https://github.com/cs3216/a3-mobile-cloud-group-7
+
+[33mcommit da0d2ef90c86f1e8050d2fe3e87376e8b5a3adf8[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 13:53:41 2018 +0800
+
+    added cheat code
+
+[33mcommit ce3610e332c4b9c2a9f6a5703686f2b536d17762[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Fri Sep 28 13:39:00 2018 +0800
+
+    Change logo
+
+[33mcommit d86d194a00bb355f7eb9333e331ce00e8e11ed75[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 13:29:05 2018 +0800
+
+    cleaning
+
+[33mcommit 15a88b2cd4a4ba9899c1b4d8f8d858b134732ab3[m
+Merge: 5135db5 b330ec3
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 13:28:17 2018 +0800
+
+    Merge branch 'master' of https://github.com/cs3216/a3-mobile-cloud-group-7
+
+[33mcommit 5135db518b432eba0597f931927283e6244e589d[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 13:28:09 2018 +0800
+
+    add department on home.js
+
+[33mcommit b330ec322875aeb8ada19645485c375b0889347e[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Fri Sep 28 13:25:30 2018 +0800
+
+    Fix Fire's width
+
+[33mcommit f81d87bd924762c677b5d1efcaeef73a918de330[m
+Merge: 3aad996 b1e5986
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 13:21:45 2018 +0800
+
+    fixed cdonflict
+
+[33mcommit 3aad996c65ce47286c84ef0252ca5bdbb2020d94[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 13:20:42 2018 +0800
+
+    remove hardcoded grade list
+
+[33mcommit b1e59862c0db97710b86bb5800678a1fccbf1c12[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Fri Sep 28 13:09:44 2018 +0800
+
+    Fix Search feature
+
+[33mcommit 1fa50812ddb20d851ebe1939c2633ece7f1afe47[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 12:45:23 2018 +0800
+
+    add analytics
+
+[33mcommit f1f4437c18a0d36b796a5fe3d2e8a3ad3c3da82c[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 09:33:21 2018 +0800
+
+    minor repair and add logo on title bar
+
+[33mcommit b49da1c9265043541a02c50ec3ccb94dbe427975[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 09:22:24 2018 +0800
+
+    finished(?) prof.js
+
+[33mcommit 61c968bab3691af1e8c3df0b6de84eb6e8355295[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 07:06:52 2018 +0800
+
+    total tags and state variables in prof.js
+
+[33mcommit 2db227d8d9b06ccae716140e0c16818377084f0f[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 06:07:31 2018 +0800
+
+    partial prof.js
+
+[33mcommit 6784bbbbab9fe930a8ffca4ccf9a8bd13aa110d5[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 05:12:56 2018 +0800
+
+    finalized(?) rate.js
+
+[33mcommit 880eda1450561cb3c600e8d42f0db4c073a92ed1[m
+Merge: 1595063 1fe6854
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 02:46:36 2018 +0800
+
+    Merge branch 'master' of https://github.com/cs3216/a3-mobile-cloud-group-7
+
+[33mcommit 15950638d3a4dba081409deac65afbac0e765807[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 02:46:28 2018 +0800
+
+    added photo repair feature
+
+[33mcommit 1fe6854805cea2031a906a16114a95ac99cb486e[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Fri Sep 28 02:30:36 2018 +0800
+
+    Fix bug when API returns nothing
+
+[33mcommit af4608dc3028efa19d0d4a4f8465e5e00c9f9ccb[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Fri Sep 28 02:12:52 2018 +0800
+
+    Use real data in Prof.js
+
+[33mcommit 9cabf8ddaf7b44db1a63d9f145c8944c79cb7151[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 02:12:20 2018 +0800
+
+    repair minor bug
+
+[33mcommit e7b9eecc701026a4ad60d6c62cddbe15cb0dbbcb[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 02:06:20 2018 +0800
+
+    Finalized(?) search.js
+
+[33mcommit d0e941c627b67370c70c78303085bee6a6698769[m
+Merge: effef6b 17feb44
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 01:41:16 2018 +0800
+
+    Merge branch 'master' of https://github.com/cs3216/a3-mobile-cloud-group-7
+
+[33mcommit effef6ba709e6c8609093748eb408ed0af0d7dc6[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 01:41:07 2018 +0800
+
+    partial search.js
+
+[33mcommit 17feb448f44003e9f6aac9b5586f206efcf77918[m
+Author: Samuel Henry Kurniawan <33427847+ChrisMaxheart@users.noreply.github.com>
+Date:   Fri Sep 28 01:40:42 2018 +0800
+
+    standardize image
+
+[33mcommit 968db3e52981d17114672892d62b499184d81a41[m
+Merge: 1663103 cafff0e
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 01:25:09 2018 +0800
+
+    Merge branch 'master' of https://github.com/cs3216/a3-mobile-cloud-group-7
+
+[33mcommit 1663103adcacc9d97513ea445a71552fcf06649c[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 01:24:54 2018 +0800
+
+    remove link decoration on home
+
+[33mcommit cafff0eddcfd23da8de137a8bf32987aeb1e935a[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Fri Sep 28 00:54:51 2018 +0800
+
+    Resolve conflict in Prof.js
+
+[33mcommit 28424e30d9adc15f366f3c38c6666c8e9615e165[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Fri Sep 28 00:22:58 2018 +0800
+
+    Implement Submit button in Rate.js with fake data
+
+[33mcommit 525778524a3c737bc8a04e68db9e8f7caab3e6ac[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Fri Sep 28 00:54:11 2018 +0800
+
+    partial prof.js (please resolve conflict T_T
+
+[33mcommit a7bafffbc05ac30a77f6e19b1a70baf8f1923483[m
+Merge: e7b7d92 ad3bc97
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Thu Sep 27 23:27:47 2018 +0800
+
+    Merge branch 'master' of https://github.com/cs3216/a3-mobile-cloud-group-7
+
+[33mcommit e7b7d9298aad3e44b340616d2710e505451343e5[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Thu Sep 27 23:27:25 2018 +0800
+
+    repair the two issues
+
+[33mcommit ad3bc9758f3d9a4af4998d52803f5df1d8320be0[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Thu Sep 27 22:42:48 2018 +0800
+
+    fix: send module id as information
+
+[33mcommit fe81aa86052b26fd499dc4afc8974f95214ac60b[m
+Merge: e580b24 2c0f5be
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Thu Sep 27 22:33:07 2018 +0800
+
+    Merge branch 'master' of https://github.com/cs3216/a3-mobile-cloud-group-7
+
+[33mcommit e580b241dbe7053bb0939ad806ad64db33456c51[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Thu Sep 27 22:32:54 2018 +0800
+
+    fix: better error catching for post of review
+
+[33mcommit 2c0f5be75c9a1dc47b229742f9a03f08d734b999[m
+Merge: eaf3031 3a67bf7
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Thu Sep 27 21:04:15 2018 +0800
+
+    Merge branch 'master' of https://github.com/cs3216/a3-mobile-cloud-group-7
+
+[33mcommit eaf30314df7bdbee8bac0c8e5be6aa553271e356[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Thu Sep 27 21:04:07 2018 +0800
+
+    partial rate
+
+[33mcommit 3a67bf7a8e786ba7e4f5ec3fde7acec0346d1ee8[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Thu Sep 27 20:38:52 2018 +0800
+
+    Add Submit button to Contact.js
+
+[33mcommit 9f5412d0b310f1495959a6713bee15c80bf8770a[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Thu Sep 27 20:24:14 2018 +0800
+
+    Make stars work in Prof.js
+
+[33mcommit 97ff8dd7de863e06ae483efb0571676e68648949[m
+Merge: 3ef8df0 c891128
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Thu Sep 27 20:16:09 2018 +0800
+
+    merged
+
+[33mcommit 3ef8df0d57f480983597e4b8efed7f4b5a12f9e6[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Thu Sep 27 20:15:07 2018 +0800
+
+    partial rate.js
+
+[33mcommit c891128cd23403e3a214501285b0f3a014856809[m
+Merge: e8c28be 3d98398
+Author: Nguyen Tien Trung Kien <kc97ble@gmail.com>
+Date:   Thu Sep 27 20:02:24 2018 +0800
+
+    Merge pull request #24 from cs3216/kien3844
+    
+    No more datalist in Home.js
+
+[33mcommit 3d983980363c9a9c513517a3b834e141fcabb117[m[33m ([m[1;31morigin/kien3844[m[33m)[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Wed Sep 26 19:18:14 2018 +0800
+
+    No more datalist in Home.js
+
+[33mcommit e8c28be47b9848b73229cb7f54eba58bee058246[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Thu Sep 27 18:59:58 2018 +0800
+
+    chore: update readme
+
+[33mcommit c776ff0c3d40db890c69b3f4bc4ea025f3b340c8[m
+Merge: cbd442d 97d8023
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Wed Sep 26 23:45:49 2018 +0800
+
+    Merge branch 'master' of https://github.com/cs3216/a3-mobile-cloud-group-7
+
+[33mcommit cbd442db7d4676bfae888e7ca7e2b0cf73efc222[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Wed Sep 26 23:45:36 2018 +0800
+
+    feat: new method for string filter
+
+[33mcommit cecf49466f56341a4f3a2a9ed3efe6fbcf2ed81e[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Wed Sep 26 23:45:07 2018 +0800
+
+    fix: correct status codes
+
+[33mcommit 2d9816c077827fdc754723d45dec3200bbff36eb[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Wed Sep 26 23:44:17 2018 +0800
+
+    feat: new endpoint to get prof by name
+
+[33mcommit 3f6769bb3f93e0450fa5d42f4d5ceb4452ef5cca[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Wed Sep 26 23:43:21 2018 +0800
+
+    chore: update models
+
+[33mcommit 97d8023c96784caaed9cf360db2bcc5f90eb1d87[m
+Merge: 4cc93fd db68a16
+Author: Samuel Henry Kurniawan <33427847+ChrisMaxheart@users.noreply.github.com>
+Date:   Wed Sep 26 23:04:05 2018 +0800
+
+    Merge pull request #23 from cs3216/SamRefactor
+    
+    Added extra stuffs
+
+[33mcommit db68a164744b6d1e14e3e8716a50fa0a412f47f1[m[33m ([m[1;31morigin/SamRefactor[m[33m, [m[1;32mSamRefactor[m[33m)[m
+Merge: 897ec25 4cc93fd
+Author: Samuel Henry Kurniawan <33427847+ChrisMaxheart@users.noreply.github.com>
+Date:   Wed Sep 26 23:03:34 2018 +0800
+
+    Merge pull request #22 from cs3216/master
+    
+    merge
+
+[33mcommit 897ec2525e3ad01eac58dba20f02399dec54cf94[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Wed Sep 26 23:02:35 2018 +0800
+
+    added result box in the home page
+
+[33mcommit 4cc93fd63b80412aac1959bf2bea1fd07ef9bfe9[m
+Merge: 9c06114 605bc3b
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Wed Sep 26 22:33:17 2018 +0800
+
+    Merge branch 'master' of https://github.com/cs3216/a3-mobile-cloud-group-7
+
+[33mcommit 605bc3bb8548e499522ba0c6ee98003027e627c4[m
+Merge: e93a0b2 ae9e1db
+Author: Samuel Henry Kurniawan <33427847+ChrisMaxheart@users.noreply.github.com>
+Date:   Wed Sep 26 22:32:54 2018 +0800
+
+    Merge pull request #21 from cs3216/SamRefactor
+    
+    editing minor changes
+
+[33mcommit ae9e1dbba1cca698e78e845c29693fe7e3c43117[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Wed Sep 26 22:31:57 2018 +0800
+
+    editing minor changes
+
+[33mcommit 9c06114915b08d5e17c530c581df8881f309471a[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Wed Sep 26 22:31:53 2018 +0800
+
+    fix: cast string input into int
+
+[33mcommit e93a0b2f0ddc919e473539f779bf7af28fb4f8df[m
+Merge: 0144962 d391b82
+Author: Samuel Henry Kurniawan <33427847+ChrisMaxheart@users.noreply.github.com>
+Date:   Wed Sep 26 21:12:34 2018 +0800
+
+    Merge pull request #20 from cs3216/SamRefactor
+    
+    Sam refactor - completed
+
+[33mcommit d391b825d5f688b6677817a242e915a6240dec15[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Wed Sep 26 21:11:29 2018 +0800
+
+    refactor css completed
+
+[33mcommit 0b8a0b7511e2fa5a7cd32c27bedc32d6de973550[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Wed Sep 26 20:28:56 2018 +0800
+
+    refactored search.js
+
+[33mcommit d152fad4b4eb7ea7341511eb067a6d4fafa5fcf1[m
+Merge: ec4b70e 0144962
+Author: Samuel Henry Kurniawan <33427847+ChrisMaxheart@users.noreply.github.com>
+Date:   Wed Sep 26 18:20:02 2018 +0800
+
+    Merge pull request #18 from cs3216/master
+    
+    merge
+
+[33mcommit 0144962189269415b43851d65f76521b1c571b9e[m
+Merge: 7eea886 ec4b70e
+Author: Samuel Henry Kurniawan <33427847+ChrisMaxheart@users.noreply.github.com>
+Date:   Wed Sep 26 18:19:35 2018 +0800
+
+    Merge pull request #17 from cs3216/SamRefactor
+    
+    Refactored three other pages
+
+[33mcommit ec4b70e2695d804f3e870e518117910cfef36c58[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Wed Sep 26 18:18:45 2018 +0800
+
+    refactored login.css
+
+[33mcommit b61277a867d8125609135c6016063c07465677f9[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Wed Sep 26 18:15:00 2018 +0800
+
+    refactored login.css
+
+[33mcommit 7eea8860bb1eb9d91195abd8a47e632147730cf9[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Wed Sep 26 17:10:38 2018 +0800
+
+    Implement auto-suggest feature
+
+[33mcommit 6c9abcb6394d644a70d8fd91e2b0ca0a9e537c0b[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Wed Sep 26 17:44:51 2018 +0800
+
+    refactored about.css and contact.css
+
+[33mcommit 2c26cdfe4218e163178108d9b7f497accc3af519[m
+Merge: d0522b3 6fee7f4
+Author: Samuel Henry Kurniawan <33427847+ChrisMaxheart@users.noreply.github.com>
+Date:   Wed Sep 26 17:18:15 2018 +0800
+
+    Merge pull request #16 from cs3216/master
+    
+    pull
+
+[33mcommit 6fee7f4ef44de74708bf763964e6edcd3396bcf4[m
+Merge: 54b2f5e d0522b3
+Author: Samuel Henry Kurniawan <33427847+ChrisMaxheart@users.noreply.github.com>
+Date:   Wed Sep 26 17:17:22 2018 +0800
+
+    Merge pull request #15 from cs3216/SamRefactor
+    
+    Sam refactor
+
+[33mcommit d0522b3cb71fa97c48d70a8e5a37cc94cb4db0ea[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Wed Sep 26 17:16:32 2018 +0800
+
+    refactored prof.js
+
+[33mcommit 54b2f5eeebda750beda2e56a04d4e01606e2f280[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Wed Sep 26 17:09:35 2018 +0800
+
+    fix: no need to send upvote and downvote since its default
+
+[33mcommit d560111a0f31000ca7ceb17c0bdd0b64b3766453[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Wed Sep 26 16:56:47 2018 +0800
+
+    fix: return updated prof data upon successful post
+
+[33mcommit 15adf7d8c78813228b8880e3b59df7618a662238[m
+Merge: 4c63622 3ba84cb
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Wed Sep 26 16:44:30 2018 +0800
+
+    Merge branch 'master' of https://github.com/cs3216/a3-mobile-cloud-group-7
+
+[33mcommit 4c63622edb6056a54eb56b9c2effeda5482f11dc[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Wed Sep 26 16:44:20 2018 +0800
+
+    feat: method to manipulate data to return for reviews
+
+[33mcommit d066abb0f6a4543e925a3a17433ca285028d4d4c[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Wed Sep 26 16:43:54 2018 +0800
+
+    fix: correct incorrect status codes
+
+[33mcommit 39b62e37672a476b9e454bc29e59c88cb7ab5eb3[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Wed Sep 26 16:43:29 2018 +0800
+
+    feat: new endpoint to get reviews
+
+[33mcommit a2e19f0ed7cd80a4ea3f03ec8e1459da9345ef0e[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Wed Sep 26 16:43:06 2018 +0800
+
+    feat: updates other tables, TB converted to triggers later
+
+[33mcommit a1718d213e6465a44e16e70f4b1b4a1918284e8b[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Wed Sep 26 16:42:41 2018 +0800
+
+    fix: checker to check if prof_id is valid
+
+[33mcommit a268653f243b9a139196562494cb5d764aeee98f[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Wed Sep 26 16:42:02 2018 +0800
+
+    feat: new model for many to many rel between posts and tags
+
+[33mcommit 6e259a9fe6f61a109381fea4219202a08e286b85[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Wed Sep 26 16:41:25 2018 +0800
+
+    fix: correct database structure
+
+[33mcommit ab64be0492e3f7732735eb7d9c995c636cefed89[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Wed Sep 26 15:59:39 2018 +0800
+
+    partial prof.css refactored
+
+[33mcommit 3ba84cba6955c2cf4dc5e835ecf6be14cdf125c3[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Wed Sep 26 15:47:16 2018 +0800
+
+    Use real data in Rate.js
+
+[33mcommit 33008b0cb8068d6e6521a4a839e37b0eee6cef75[m
+Merge: fffa166 94ef521
+Author: Samuel Henry Kurniawan <33427847+ChrisMaxheart@users.noreply.github.com>
+Date:   Wed Sep 26 15:25:24 2018 +0800
+
+    Merge pull request #14 from cs3216/SamRefactor
+    
+    add logo
+
+[33mcommit 94ef52127d9faa82c8f99f2762d3f80b98ddbbf1[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Wed Sep 26 15:24:21 2018 +0800
+
+    add logo
+
+[33mcommit fffa16600681c44e38c082e44f6fb3c4e9b46f21[m
+Merge: 8aca63c 8b188ba
+Author: Samuel Henry Kurniawan <33427847+ChrisMaxheart@users.noreply.github.com>
+Date:   Wed Sep 26 15:09:33 2018 +0800
+
+    Merge pull request #13 from cs3216/SamRefactor
+    
+    Refactored css of index.html and home.css to adopt bem style
+
+[33mcommit 8b188ba7fccac2c2d362585bc2afb1bea1ea778b[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Wed Sep 26 15:08:28 2018 +0800
+
+    Refactored index and home to adopt BEM style
+
+[33mcommit 8aca63c040c20ddcf6674ad3db9886e62fc51097[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Wed Sep 26 14:57:31 2018 +0800
+
+    Search feature
+
+[33mcommit d012e289907c0c75126f16b775ef9379c3b891ba[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Wed Sep 26 14:33:05 2018 +0800
+
+    change the structure of the css files
+
+[33mcommit 07bcb4fac2fc642e3dcc9283facc3edaff8e4f3a[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Wed Sep 26 14:25:12 2018 +0800
+
+    make home.css
+
+[33mcommit cb784b19b4cb6aab6a0463074489742030192500[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Wed Sep 26 14:22:39 2018 +0800
+
+    restructure bootstrap files
+
+[33mcommit 186ff5299b57eb4e3c14975093a03ac5f73b099d[m
+Merge: 3a9676f dd8efa0
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Mon Sep 24 00:48:05 2018 +0800
+
+    Merge branch 'master' of https://github.com/cs3216/a3-mobile-cloud-group-7
+
+[33mcommit 3a9676fa5ddfa7e9a67d4467361f773a57ebebe8[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Mon Sep 24 00:47:52 2018 +0800
+
+    fix: update status codes
+
+[33mcommit b1e53f72e12a9d17c97a8c235a275dd268005fe9[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Mon Sep 24 00:47:32 2018 +0800
+
+    feat: get tags endpoint
+
+[33mcommit 850814bfee86639e4b806d9bb1da8b56247245eb[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Mon Sep 24 00:47:09 2018 +0800
+
+    chore: clean unnesscary endpoints
+
+[33mcommit add079decec348f2639ea3327d93cbc659d6fdd6[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Mon Sep 24 00:46:34 2018 +0800
+
+    feat: endpoints for upvote and downvote
+
+[33mcommit c1ee23995195e5f4c12b75c98fd5a4884b779f9c[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Mon Sep 24 00:46:01 2018 +0800
+
+    fix: seralize method for tags
+
+[33mcommit dd8efa018ad9c29a1b1c12c55732f4c76b799fde[m
+Merge: 0d2ae5d c869f3d
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 23 21:39:33 2018 +0800
+
+    Merge branch 'master' of https://github.com/cs3216/a3-mobile-cloud-group-7
+
+[33mcommit 0d2ae5d38bd37c3ba0e96959e5c0d64cc18c8f38[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 23 21:39:22 2018 +0800
+
+    repaired link in the main navbar
+
+[33mcommit c869f3d252c319caae12001653fcdace4f160ed9[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Sun Sep 23 21:31:58 2018 +0800
+
+    Add 404 Not Found page
+
+[33mcommit 70421906320c36c954e9b26b6d42cbf05e7373ca[m
+Merge: c615a36 efc1707
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 23 21:26:18 2018 +0800
+
+    merged
+
+[33mcommit c615a36c3a2338ad450ee6914815b1809fcf3d9e[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 23 21:24:02 2018 +0800
+
+    finished form page
+
+[33mcommit efc17076caac40561285ede22bfd8fc28cdb2491[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Sun Sep 23 21:09:08 2018 +0800
+
+    Add /search endpoint
+
+[33mcommit 5e9bcc0435109725ec77dc09f63e6f8adfd702c7[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Sun Sep 23 20:08:57 2018 +0800
+
+    Get the real data in prof page
+
+[33mcommit d7e9bc395d0a7e6ec86e6c594685515645f09184[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Sun Sep 23 18:47:01 2018 +0800
+
+    Get the real list of professors
+
+[33mcommit f0ae8583da48ef2c3dacd11f3527aec00008ab8a[m
+Merge: 21d0f33 e944711
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Sun Sep 23 18:07:43 2018 +0800
+
+    merge to pull
+
+[33mcommit 21d0f334ecbbd8e8d3e472c3289905ec5fb4cd1b[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Sun Sep 23 18:06:12 2018 +0800
+
+    chore: update bash script
+
+[33mcommit e944711cc7d179fc48a850c9629919fdfa974154[m
+Merge: 21a2090 9f6151e
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 23 17:53:49 2018 +0800
+
+    Merge branch 'master' of https://github.com/cs3216/a3-mobile-cloud-group-7
+
+[33mcommit 21a20907f829b38db42c0b582daf7bb54db3ee9a[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 23 17:53:24 2018 +0800
+
+    change color tag to blue
+
+[33mcommit 9f6151ebe9fcc8c09215c00d7bcc1ea327b546ed[m
+Merge: c95b1d8 2e05c6c
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Sun Sep 23 17:51:36 2018 +0800
+
+    Merge branch 'master' of https://github.com/cs3216/a3-mobile-cloud-group-7
+
+[33mcommit c95b1d823d9d81478ae1150b79f9f3d6e8b336e2[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Sun Sep 23 17:51:23 2018 +0800
+
+    fix: new methods to get needed values on frontend side
+
+[33mcommit 158965c3647a714206794c39182955f78705ec25[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Sun Sep 23 17:50:27 2018 +0800
+
+    feat: new method to get specific prof
+
+[33mcommit aea0cee189775bc6acc3408ee50a8edf9692eb48[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Sun Sep 23 17:49:59 2018 +0800
+
+    chore: update tables and serialisation methods
+
+[33mcommit 2e05c6cc4630d5483eefc666b8861693d74dbfab[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 23 17:30:35 2018 +0800
+
+    repair bugs in prof.js
+
+[33mcommit 149fd5f07aa746036a3c7912332dddd193cd1ee4[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 23 17:20:56 2018 +0800
+
+    added tags implementation
+
+[33mcommit 7adc909ed1a8d2506ed63412ac34942de5032a2e[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 23 16:41:58 2018 +0800
+
+    repair photo sizing and star background
+
+[33mcommit fb8ad7ce3aca8ed888638c1140c1bfa987d4b4ae[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 23 13:50:06 2018 +0800
+
+    fixed very minor changes
+
+[33mcommit e4cebea2c6c33185568e2eca3d8b4155e931335c[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 23 13:46:27 2018 +0800
+
+    repair bug in photo prof.js
+
+[33mcommit 363efc508f0b9f495295e64477ebe1b328c52367[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 23 13:42:00 2018 +0800
+
+    repair photo width in prof.js
+
+[33mcommit e9c5ad295753dfc8aa98e687e0320a8a8cd6bb5c[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Sun Sep 23 13:34:07 2018 +0800
+
+    Refactor Profs.js
+
+[33mcommit 32f49e60e47ca542195698321704ceece31c88f3[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Sun Sep 23 11:30:27 2018 +0800
+
+    Add ESLint configuration
+
+[33mcommit 8ed2a6adac23591b330403216f35aad85a565e31[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 23 12:24:51 2018 +0800
+
+    changed stars to fire for difficulty rating
+
+[33mcommit 20e12aa89b56df19c0d67df7034fea6ead3ed55a[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 23 12:11:39 2018 +0800
+
+    added border radius for search page
+
+[33mcommit 3a0c522ea1e1745bda4d1bb25071b5826495c9b1[m
+Merge: f9666ab 6bcfbf1
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 23 12:06:06 2018 +0800
+
+    Merge branch 'master' of https://github.com/cs3216/a3-mobile-cloud-group-7
+
+[33mcommit f9666ab07259a1a07c51f854e6aec9d358525aca[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 23 12:05:33 2018 +0800
+
+    remove ugly border and add star implementation on search page
+
+[33mcommit 6bcfbf161babe3a2acd823eb0cc8701b8f1424cb[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Sun Sep 23 11:50:49 2018 +0800
+
+    fix: clean up requirements.txt
+
+[33mcommit ac82122d933b6b9ab9a5d29c63f68b61499548e9[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Sun Sep 23 11:30:30 2018 +0800
+
+    fix: changes to error codes
+
+[33mcommit 76647ece304f8267d0bc70c452e7911299f29492[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sat Sep 22 15:31:47 2018 +0800
+
+    implement star for rating instead of number
+
+[33mcommit f36a9e4612f53c75adb42cafd082e72b1035ce9d[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Thu Sep 20 13:41:09 2018 +0800
+
+    simple login page finished
+
+[33mcommit 358ea4cc0f0d25fb84dd474b0e0839cd7f31afa2[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Thu Sep 20 13:06:13 2018 +0800
+
+    simple contact us page finished
+
+[33mcommit f927138b505b8f761dcebf6dc4f1a7a132c722e5[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Thu Sep 20 03:05:28 2018 +0800
+
+    completed simple about page
+
+[33mcommit fc7004322869edeed658ec4e45bcb16a47a375a4[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Thu Sep 20 02:21:45 2018 +0800
+
+    completed static page profs search
+
+[33mcommit 9144b4c81cd3978142e0403bba5673670f098a74[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Thu Sep 20 01:25:44 2018 +0800
+
+    added filter button and rate button
+
+[33mcommit 588ce73a81c1949391767aff982b40fa65842b3b[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Thu Sep 20 00:55:17 2018 +0800
+
+    updated responsive image for upvote part
+
+[33mcommit 278d23ddb338b5fd3c6a0e758d1626e80dce6943[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Thu Sep 20 00:43:53 2018 +0800
+
+    Added fontawesome and finished individual prof page
+
+[33mcommit 6a660d582293f3ac62b825020c4b5d5c37c86bd0[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Wed Sep 19 17:03:46 2018 +0800
+
+    modify prof photo to always have the same height to the text
+
+[33mcommit 0fcaa8249cac915bca5e39f4660a7e5598302843[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 16 20:43:16 2018 +0800
+
+    first part prof page
+
+[33mcommit 03a8d0d2fc8241a26fa4ee609e036b516e84f65d[m
+Author: Weng Kiat Chiang <wengkiat916@gmail.com>
+Date:   Sun Sep 16 20:39:22 2018 +0800
+
+    feat: inital API
+
+[33mcommit 9908e50284c3bfda09709d6f5cb66361e0de1698[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Sun Sep 16 19:17:12 2018 +0800
+
+    Extract function
+
+[33mcommit b05790cb97bf6cc96591368c90143b142f2fcfd0[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 16 18:59:28 2018 +0800
+
+    repair image
+
+[33mcommit 10a00a517e827afbd651743286cf80c242fe48db[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Sun Sep 16 18:43:54 2018 +0800
+
+    Add endpoints for /profs and /profs/:profID
+
+[33mcommit 172bb55c49154be0f6a70dd0b853bb7ded9f887c[m
+Merge: e05d7ee 4c0d911
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 16 18:22:32 2018 +0800
+
+    Merge branch 'master' of https://github.com/cs3216/a3-mobile-cloud-group-7
+
+[33mcommit e05d7ee93affe59ebed865f716f427c12af2890e[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 16 18:22:08 2018 +0800
+
+    'completed' homepage
+
+[33mcommit 4c0d91134d5d80ee1d168f6f6cb8b980ca2cd87d[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Sun Sep 16 17:24:38 2018 +0800
+
+    Remove trash
+
+[33mcommit ea86ba8dde129bb60d03d2aaf83ad1c63fa4439e[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Sun Sep 16 17:18:55 2018 +0800
+
+    Remove 'kien' folder
+
+[33mcommit 8bd91d14c69817898181bb33440c5e0c34910cea[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Sun Sep 16 17:03:13 2018 +0800
+
+    Create client folder
+
+[33mcommit ca9a4b1ab65c56e4bcab624cb01d532465d4d24d[m
+Merge: 843bec5 03bb649
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 16 17:10:04 2018 +0800
+
+    Merge branch 'master' of https://github.com/cs3216/a3-mobile-cloud-group-7
+
+[33mcommit 843bec5d19a13f2e5d5cd32c1511cc9fa963f794[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 16 17:09:19 2018 +0800
+
+    add nonrepaired index page
+
+[33mcommit 03bb649bf0c0631c73e80a6cc12b75025cb41094[m
+Merge: 16af948 f24ae4f
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Sun Sep 16 16:11:45 2018 +0800
+
+    Merge branch 'master' of https://github.com/cs3216/a3-mobile-cloud-group-7
+
+[33mcommit 16af948c78a3aa688d388f5afd4dcfc0d7b0417d[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Sun Sep 16 16:10:38 2018 +0800
+
+    Use React
+
+[33mcommit f24ae4fa7f451e089a75f26fc4865a33d3de64ad[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 16 15:45:25 2018 +0800
+
+    edited margin navbar
+
+[33mcommit 446182428f47c3f1e56fb84f78ba11caa203aeb9[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 16 15:40:10 2018 +0800
+
+    edit responsive display for navbar
+
+[33mcommit 610d651679ce3d5515bbdca40920250b2a0ec2e0[m
+Merge: 7404bc5 3ec16ca
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 16 15:36:29 2018 +0800
+
+    Merge branch 'master' of https://github.com/cs3216/a3-mobile-cloud-group-7
+    
+    Update navbar
+
+[33mcommit 7404bc542b6eb90c1c89c8c67731a44bdce5427b[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 16 15:35:59 2018 +0800
+
+    add navbar
+
+[33mcommit 3ec16caeb1c944554349035975e3bf4637b85a9f[m
+Merge: c212893 647fc3b
+Author: Nguyen Tien Trung Kien <kc97ble@gmail.com>
+Date:   Sun Sep 16 14:46:02 2018 +0800
+
+    Merge pull request #4 from cs3216/kien-attempt-1
+    
+    Add router.js
+
+[33mcommit 647fc3bbebefd538e399e0aeef86dcba8a765b13[m[33m ([m[1;31morigin/kien-attempt-1[m[33m)[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Sun Sep 16 14:44:54 2018 +0800
+
+    Add router.js
+
+[33mcommit c2128932f9a39f2bf3817a569ad2df350abbedb6[m
+Author: Samuel Henry Kurniawan <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 16 14:19:19 2018 +0800
+
+    added bootstrap and jquery
+
+[33mcommit f8412885d5292a4aa9563b099117488cea663082[m
+Merge: 3b32a59 2a0b3af
+Author: Nguyen Tien Trung Kien <kc97ble@gmail.com>
+Date:   Sun Sep 16 12:10:42 2018 +0800
+
+    Merge pull request #3 from cs3216/kien-attempt-1
+    
+    Fix .gitignore
+
+[33mcommit 2a0b3af14ad30ade2879158c2f34178607db6df6[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Sun Sep 16 12:09:21 2018 +0800
+
+    Fix .gitignore
+
+[33mcommit 3b32a597a610c3c3e999ad5d8461cd6fd6ab7faf[m
+Merge: 05bb35d c9e8ffb
+Author: Nguyen Tien Trung Kien <kc97ble@gmail.com>
+Date:   Sun Sep 16 11:55:07 2018 +0800
+
+    Merge pull request #2 from cs3216/kien-attempt-1
+    
+    Kien's attempt 01
+
+[33mcommit c9e8ffb8357a817ee1a4015b696641369a5e3915[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Sun Sep 16 11:53:51 2018 +0800
+
+    Kien's attempt 01
+
+[33mcommit 05bb35dc82a49afb52697f53ba0fc088a35826aa[m
+Merge: c0d4b72 7582482
+Author: Nguyen Tien Trung Kien <kc97ble@gmail.com>
+Date:   Sun Sep 16 11:28:01 2018 +0800
+
+    Merge pull request #1 from cs3216/add-gitignore-node
+    
+    Add .gitignore
+
+[33mcommit 75824822435f53a84efb0de7588bbe08b32437c5[m[33m ([m[1;31morigin/add-gitignore-node[m[33m)[m
+Author: Kien Nguyen <kc97ble@gmail.com>
+Date:   Sun Sep 16 11:27:12 2018 +0800
+
+    Add .gitignore
+
+[33mcommit c0d4b72a7a8f5282c7e7799e31840fc7ea64230a[m
+Author: ChrisMaxheart <samuelhenrykurniawan@yahoo.com>
+Date:   Sun Sep 16 11:03:21 2018 +0800
+
+    add README.md
