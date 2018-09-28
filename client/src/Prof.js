@@ -217,8 +217,8 @@ class Prof extends Component {
   }
 
   renderFires(difficulty) {
-    const darkFire = i => <i key={i+100} className="fab fa-hotjar fire--dark"></i>;
-    const brightFire = i => <i key={i+200} className="fab fa-hotjar fire--bright"></i>;
+    const darkFire = i => <i key={i+100} className="fab fa-hotjar fire--dark" style={{width:"1.2em"}}></i>;
+    const brightFire = i => <i key={i+200} className="fab fa-hotjar fire--bright" style={{width:"1.2em"}}></i>;
     const style = { width: (difficulty * 20.0).toFixed(2) + "%" };
     return (
       <span className="rate-value">
@@ -240,7 +240,7 @@ class Prof extends Component {
           Difficulty
         </div>
         <div className="col-7 col-md-8 prof-comment__overview-content">
-          :
+          {": "}
           {this.renderFires(difficulty)}
         </div>
       </div>
@@ -248,8 +248,8 @@ class Prof extends Component {
   }
 
   renderStars(rating) {
-    const darkStar = i => <i key={i} className="fas fa-star star--dark"></i>;
-    const brightStar = i => <i key={i} className="fas fa-star star--bright"></i>;
+    const darkStar = i => <i key={i} className="fas fa-star star--dark" style={{width:"1.2em"}}></i>;
+    const brightStar = i => <i key={i} className="fas fa-star star--bright" style={{width:"1.2em"}}></i>;
     const style = { width: (rating * 20.0).toFixed(2) + "%" };
 
     return (
@@ -269,7 +269,7 @@ class Prof extends Component {
           Rating
         </div>
         <div className="col-7 col-md-8 prof-comment__overview-content">
-          :
+          {": "}
           <span className="prof-rating">
             {this.renderStars(rating)}
           </span>
