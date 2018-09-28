@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { getProf, getAllReviews, upvoteReview, downvoteReview, getGradeList } from "./api.js";
+import GoogleLogin from 'react-google-login';
 import "./Prof.css";
 
 class Prof extends Component {
@@ -75,7 +76,7 @@ class Prof extends Component {
       this.checkOver();
     });
     getGradeList().then(res => {
-      this.setState({ 
+      this.setState({
         grades: res,
         isGradeData: true
       });
@@ -215,9 +216,23 @@ class Prof extends Component {
 
         <div className="col-6 prof-buttons__rate">
           <Link to={`/profs/${id}/rate`}>
-            <button type="button" className="btn btn-secondary">
-                Rate This Prof!
-            </button>
+            {localStorage.getItem("Login") ? (
+              <button type="button" className="btn btn-secondary">
+                  Rate This Prof!
+              </button>
+            ) : (
+              <GoogleLogin
+                type="button" className="btn btn-secondary"
+                clientId="146566530913-jbveuscvcisi53fknmrdvm13lg4hfumm.apps.googleusercontent.com"
+                buttonText="Rate This Prof!"
+                onSuccess={res => {
+                  localStorage.setItem("Login", res.Zi.access_token);
+                  this.props.history.push(`/profs/${id}/rate`);
+                  window.initialize();
+                }}
+                onFailure={res => alert("Login unsuccessfully")}
+              />
+            )}
           </Link>
         </div>
       </div>

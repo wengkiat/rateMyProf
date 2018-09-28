@@ -32,15 +32,20 @@ class Rate extends Component {
   componentDidMount() {
     const { match } = this.props;
     const profID = match.params.profID;
+
+    if (!localStorage.getItem("Login")) {
+      this.props.history.push(`/profs/${profID}`);
+    }
+
     getProf(profID).then(res => {
-      this.setState({ 
+      this.setState({
         prof: res,
         isProfData: true
       });
       this.checkOver();
     });
     getAllTags().then(res => {
-      this.setState({ 
+      this.setState({
         tags: res,
         tagsChosen: res.map(x=>false),
         isTagData: true
@@ -48,7 +53,7 @@ class Rate extends Component {
       this.checkOver();
     });
     getGradeList().then(res => {
-      this.setState({ 
+      this.setState({
         grades: res,
         isGradeData: true
       });
@@ -68,7 +73,7 @@ class Rate extends Component {
   shouldComponentUpdate(nextProps, nextState){
     return nextState.isOver;
   }
-  
+
   handleClickRating(event) {
     let newValue = event.target.getAttribute("value");
     this.setState({
