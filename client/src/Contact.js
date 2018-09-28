@@ -21,15 +21,15 @@ class Contact extends Component {
 
         <form className="background--lightgrey contact__form contact-form">
           <div className="form-group">
-            <label className="contact-form__label" for="form_name">Name</label>
+            <label className="contact-form__label" htmlFor="form_name">Name</label>
             <input type="text" className="form-control" id="form_name" placeholder="Enter Your Name"/>
           </div>
           <div className="form-group">
-            <label className="contact-form__label" for="form_email">Email Address</label>
+            <label className="contact-form__label" htmlFor="form_email">Email Address</label>
             <input type="text" className="form-control" id="form_email" placeholder="Enter Your Email Address"/>
           </div>
           <div className="form-group">
-            <label className="contact-form__label" for="form_comments">Comments</label>
+            <label className="contact-form__label" htmlFor="form_comments">Comments</label>
             <textarea rows="5" className="form-control" id="form_comments" placeholder="Enter Your Comments"/>
           </div>
           <Link to={`/`}>
