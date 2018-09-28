@@ -15,14 +15,14 @@ http://rateyourprofs.com
 ### Chiang Weng Kiat
 Matriculation Number: A0141128R
 
-Role: Backend (Developing Database and API)
+Role: Backend (Database, RESTFUL API, Token Authentication, Deployment of API, Apiary)
 
 ### Nguyen Tien Trung Kien
 Matriculation Number: A0161364J
 
-Role: Frontend (Retrieving Data using API and Translating Data into Dynamic Website)
+Role: Frontend (Data Retrieval using API, Google Login, Deployment of Client Side Server and Translating Data into Dynamic Website)
 
 ### Samuel Henry Kurniawan
 Matriculation Number: A0144896M
 
-Role: Frontend (Translating Data into Dynamic Website and Webpage Static Design)
+Role: Frontend (Planning Layout, Designing, and Styling of Initial Static Website, and Translating Data into Dynamic Website)
