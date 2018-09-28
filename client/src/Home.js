@@ -30,6 +30,17 @@ class Home extends Component {
   renderForm() {
     return (
       <form action="/search" className="search__form">
+        <div style={{height: "250px", width: "100%"}}>
+          <img
+            style={{
+              height: "200px",
+              width: "auto",
+              margin: "auto",
+            }}
+            src="/img/logo-grey.png"
+            className="icon__logo"
+          />
+        </div>
         <input
           type="text"
           name="q"
