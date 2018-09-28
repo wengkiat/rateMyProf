@@ -25,4 +25,4 @@ Role: Frontend (Data Retrieval using API, Google Login, Deployment of Client Sid
 ### Samuel Henry Kurniawan
 Matriculation Number: A0144896M
 
-Role: Frontend (Planning Layout, Designing, and Styling of Initial Static Website, and Translating Data into Dynamic Website)
+Role: Frontend (Planning of Layout, Designing, and Styling of Initial Static Website, and Translating Data into Dynamic Website)
