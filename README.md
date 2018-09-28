@@ -10,7 +10,7 @@ An Application for reviewing and rating professors, for the improvement of the p
 ### Link
 http://rateyourprofs.com
 
-## Created By
+## Created By: Group 7
 ### Chiang Weng Kiat
 Matriculation Number: A0141128R
 
