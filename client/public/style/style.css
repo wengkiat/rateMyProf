@@ -1,11 +1,5 @@
 html {
-  -ms-overflow-style: none; 
-  overflow: -moz-scrollbars-none; 
   overflow-x: hidden;
-}
-
-html::-webkit-scrollbar { 
-  display: none; 
 }
 
 a:hover {
