@@ -80,8 +80,6 @@ export function getAllTags() {
 }
 
 export function postReview(props) {
-  const { content, rating, difficulty, module, grade, prof_id, tags} = props
-  console.log(JSON.stringify(props));
   return requestJSON("POST", `http://18.222.251.155:3000/review`,
     {
       body: JSON.stringify(props),
@@ -92,4 +90,12 @@ export function postReview(props) {
 
 export function getAllReviews(profID) {
   return requestJSON("GET", `http://18.222.251.155:3000/reviews/${profID}`, {}, []);
+}
+
+export function upvoteReview(reviewID) {
+  return requestJSON("POST", `http://18.222.251.155:3000/review/upvote/${reviewID}`);
+}
+
+export function downvoteReview(reviewID) {
+  return requestJSON("POST", `http://18.222.251.155:3000/review/downvote/${reviewID}`);
 }

@@ -1,17 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { getProf, getAllReviews } from "./api.js";
+import { getProf, getAllReviews, upvoteReview, downvoteReview } from "./api.js";
 import "./Prof.css";
-
-function debug(obj) {
-  return (
-    <div>
-      <pre>
-        {JSON.stringify(obj, null, 4)}
-      </pre>
-    </div>
-  );
-}
 
 class Prof extends Component {
 
@@ -20,6 +10,7 @@ class Prof extends Component {
     this.state = {
       prof: {},
       reviews: [],
+      reviewsVote: {},
       moduleDictionary: {},
       moduleFilter: "",
       tagList: [],
@@ -30,6 +21,9 @@ class Prof extends Component {
     };
 
     this.checkOver = this.checkOver.bind(this);
+    this.handleFilter = this.handleFilter.bind(this);
+    this.handleUpvote = this.handleUpvote.bind(this);
+    this.handleDownvote = this.handleDownvote.bind(this);
   }
 
   componentDidMount() {
@@ -52,7 +46,7 @@ class Prof extends Component {
         tagList: res.reduce((arr, data, idx) => {
           for (let tagIdx in data.tags) {
             let tag = data.tags[tagIdx];
-            if(!(tag in arr)) {
+            if(!(arr.includes(tag))) {
               arr.push(tag);
             }
           }
@@ -61,12 +55,18 @@ class Prof extends Component {
         tagCount: res.reduce((obj, data, idx) => {
           for (let tagIdx in data.tags) {
             let tag = data.tags[tagIdx];
-            if(tag in obj) {
+            if(obj[tag]) {
               obj[tag]++;
             } else {
               obj[tag] = 1;
             }
           }
+          return obj;
+        }, {}),
+        reviewsVote: res.reduce((obj, data, idx)=> {
+          let reviewID = data.id;
+          obj[reviewID.toString() + "1"] = 0;
+          obj[reviewID.toString() + "0"] = 0;
           return obj;
         }, {})
       });
@@ -87,14 +87,37 @@ class Prof extends Component {
   }
 
   componentDidUpdate() {
-    console.log(this.state.prof);
-    console.log(this.state.reviews);
-    console.log(this.state.tagCount);
     if(this.state.isOver) {
       window.dispatchEvent(new Event('resize'));
       setTimeout(function(){
         window.dispatchEvent(new Event('resize'));
       }, 50);
+    }
+  }
+
+  handleFilter(event) {
+    this.setState({moduleFilter:event.target.getAttribute("value")});
+  }
+
+  handleUpvote(event) {
+    let postID = parseInt(event.target.getAttribute("value"));
+    let voteMemo = this.state.reviewsVote;
+    let key = postID.toString()+"1";
+    if(!voteMemo[key]) {
+      upvoteReview(postID);
+      voteMemo[key] = 1;
+      this.setState({reviewsVote: voteMemo});
+    }
+  }
+
+  handleDownvote(event){
+    let postID = parseInt(event.target.getAttribute("value"));
+    let voteMemo = this.state.reviewsVote;
+    let key = postID.toString()+"0";
+    if(!voteMemo[key]) {
+      downvoteReview(postID);
+      voteMemo[key] = 1;
+      this.setState({reviewsVote: voteMemo});
     }
   }
 
@@ -116,19 +139,19 @@ class Prof extends Component {
           <br/>
           <span className="prof-data__rating prof-rating  prof-page__font--tier-3">
             Average Rating:&nbsp;
-            {this.renderStars(rating.toFixed(2))} (
+            {this.renderStars(rating)} (
             <span className="prof-rating__value">
-              {rating}
+              {rating.toFixed(2)}
             </span>)
           </span>
           <br/>
           <span className="prof-data__tags prof-page__font--tier-4">
             Related tags:
             <div className="prof-data__taglist font-size--xs">
-              {this.state.tagList.map((tag)=> {
+              {this.state.tagList.map((tag, idx)=> {
                 return (
                   <span>
-                    <span className="prof-data__tag">
+                    <span className="prof-data__tag" value={idx}>
                       {tag}({this.state.tagCount[tag]})
                     </span> &nbsp;
                   </span>
@@ -146,14 +169,16 @@ class Prof extends Component {
 
     return (
         <div className="prof-buttons">
-          <div className="col-6 prof-buttons__dropdown no_padding">
+          <div className="col-6 prof-buttons__dropdown">
             <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Filter
             </button>
-            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a className="dropdown-item" href="#">CS1010X</a>
-              <a className="dropdown-item" href="#">CS1101S</a>
-              <a className="dropdown-item" href="#">CS3216</a>
+            <div className="dropdown-menu dropdown-container" aria-labelledby="dropdownMenuButton">
+              {this.state.prof.modules.map(module => {
+                return (
+                  <div className="dropdown-item dropdown-container__item" href="#" value={module[1]} onClick={this.handleFilter}>{module[1]}</div>
+                );
+              })}
             </div>
           </div>
 
@@ -251,38 +276,40 @@ class Prof extends Component {
   renderReviewTitle(module) {
     return (
       <div className="prof-comment__module font-size--m background--grey">
-          {module} "(TODO)"
+          {module + " (" + this.state.moduleDictionary[module] + ")"}
       </div>
     )
   }
   
   renderReviewGrade(grade) {
+    const gradeList = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "F"];
     return (
       <div className="prof-comment__grade">
         <div className="col-5 col-md-4 prof-comment__overview-title">
           Grade
         </div>
         <div className="col-7 col-md-8 prof-comment__overview-content">
-          : {"TODO" + grade}
+          : {gradeList[grade-1]}
         </div>
       </div>
     )
   }
   
-  renderReviewVote(upvote, downvote) {
+  renderReviewVote(upvote, downvote, id) {
+    let voteMemo = this.state.reviewsVote;
     return (
       <div className="col-5 prof-comment__vote">
         <span className="prof-comment__thumbs-up">
-          <i className="fas fa-thumbs-up"></i>
+          <i className="fas fa-thumbs-up" value={id} onClick={this.handleUpvote}></i>
         </span>
         <span className="prof-comment__upvoted">
-          {upvote}
+          {upvote + voteMemo[id.toString()+"1"]}
         </span>
-        <span className="prof-comment__thumbs-down">
-          <i className="fas fa-thumbs-down"></i>
+        <span className="prof-comment__thumbs-down" >
+          <i className="fas fa-thumbs-down" value={id} onClick={this.handleDownvote}></i>
         </span>
         <span className="prof-comment__downvoted">
-          {downvote}
+          {downvote + voteMemo[id.toString()+"0"]}
         </span>
       </div>
     )
@@ -307,7 +334,7 @@ class Prof extends Component {
   renderReview(review) {
     const {
       rating, difficulty, grade, content, time_posted,
-      upvote, downvote, module, tags
+      upvote, downvote, module, tags, id
     } = review;
     
     return (
@@ -323,18 +350,24 @@ class Prof extends Component {
           {this.renderReviewContent(content)}
         </div>
         <div className="prof-comment__data font-size--xs">
-          {this.renderReviewTimestamp(time_posted)}
-          {this.renderReviewVote(upvote, downvote)}
+          {this.renderReviewTimestamp(time_posted.split("T")[0])}
+          {this.renderReviewVote(upvote, downvote, id)}
         </div>
-        {debug(review)}
       </div>
     )
   }
   
   renderReviews() {
+    const filterElement = this.state.moduleFilter;
     return (
       <div className="prof-commentlist">
-        {this.state.reviews.map(this.renderReview.bind(this))}
+        {this.state.reviews.filter((review)=>{
+          if(filterElement == "") {
+            return true;
+          } else {
+            return review.module == filterElement;
+          }
+        }).map(this.renderReview.bind(this))}
       </div>
     )
   }

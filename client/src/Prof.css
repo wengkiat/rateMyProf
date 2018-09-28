@@ -138,6 +138,10 @@
   padding: 0 0 0 0;
 }
 
+.dropdown-container__item {
+  cursor: pointer;
+}
+
 .prof-buttons__rate {
   text-align: right;
   float: left;
