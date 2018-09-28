@@ -2,7 +2,7 @@
 
 ## Application
 ### Name 
-Rate Your Prof
+Rate Your Profs
 
 ### Description
 An Application for reviewing and rating professors, to help students better decide if a professor’s teaching style in a particular module would suit them.
