@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getProf, getAllTags, postReview } from "./api.js";
+import { getProf, getAllTags, postReview, getGradeList} from "./api.js";
 import "./Rate.css";
 
 class Rate extends Component {
@@ -12,11 +12,13 @@ class Rate extends Component {
       },
       tags: [],
       tagsChosen: [],
+      grades: [],
       rating: 0,
       difficulty: 0,
       isOver: false,
       isProfData: false,
       isTagData: false,
+      isGradeData: false,
       isOver: false
     };
 
@@ -45,13 +47,21 @@ class Rate extends Component {
       });
       this.checkOver();
     });
+    getGradeList().then(res => {
+      this.setState({ 
+        grades: res,
+        isGradeData: true
+      });
+      this.checkOver();
+    });
   }
 
   checkOver() {
-    if(this.state.isProfData && this.state.isTagData) {
+    if(this.state.isProfData && this.state.isTagData && this.state.isGradeData) {
       this.setState({
         isOver: true
       });
+      console.log(this.state.grades);
     }
   }
 
@@ -157,7 +167,7 @@ class Rate extends Component {
   }
 
   renderGradeInput() {
-    const gradeList = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "D", "F"];
+    const gradeList = this.state.grades.map(grade=>grade.score);
     return(
       <div className="form-group">
         <label htmlFor="rate-form__grade" className="font-size--m">Grades Obtained</label>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { getProf, getAllReviews, upvoteReview, downvoteReview } from "./api.js";
+import { getProf, getAllReviews, upvoteReview, downvoteReview, getGradeList } from "./api.js";
 import "./Prof.css";
 
 class Prof extends Component {
@@ -10,6 +10,7 @@ class Prof extends Component {
     this.state = {
       prof: {},
       reviews: [],
+      grades: [],
       reviewsVote: {},
       moduleDictionary: {},
       moduleFilter: "",
@@ -17,7 +18,8 @@ class Prof extends Component {
       tagCount: {},
       isOver: false,
       isProfData: false,
-      isCommentsData: false
+      isCommentsData: false,
+      isGradeData: false
     };
 
     this.checkOver = this.checkOver.bind(this);
@@ -72,10 +74,17 @@ class Prof extends Component {
       });
       this.checkOver();
     });
+    getGradeList().then(res => {
+      this.setState({ 
+        grades: res,
+        isGradeData: true
+      });
+      this.checkOver();
+    });
   }
   
   checkOver() {
-    if(this.state.isProfData && this.state.isCommentsData) {
+    if(this.state.isProfData && this.state.isCommentsData && this.state.isGradeData) {
       this.setState({
         isOver: true
       });
@@ -282,7 +291,7 @@ class Prof extends Component {
   }
   
   renderReviewGrade(grade) {
-    const gradeList = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "F"];
+    const gradeList = this.state.grades.map(grade=>grade.score);
     return (
       <div className="prof-comment__grade">
         <div className="col-5 col-md-4 prof-comment__overview-title">

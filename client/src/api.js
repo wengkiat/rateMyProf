@@ -99,3 +99,8 @@ export function upvoteReview(reviewID) {
 export function downvoteReview(reviewID) {
   return requestJSON("POST", `http://18.222.251.155:3000/review/downvote/${reviewID}`);
 }
+
+export function getGradeList() {
+  return requestJSON("GET", `http://18.222.251.155:3000/grades`);
+
+}
