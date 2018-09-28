@@ -82,7 +82,7 @@ class Prof extends Component {
       this.checkOver();
     });
   }
-  
+
   checkOver() {
     if(this.state.isProfData && this.state.isCommentsData && this.state.isGradeData) {
       this.setState({
@@ -97,9 +97,9 @@ class Prof extends Component {
 
   componentDidUpdate() {
     if(this.state.isOver) {
-      window.dispatchEvent(new Event('resize'));
+      window.dispatchEvent(new Event("resize"));
       setTimeout(function(){
-        window.dispatchEvent(new Event('resize'));
+        window.dispatchEvent(new Event("resize"));
       }, 50);
     }
   }
@@ -172,53 +172,67 @@ class Prof extends Component {
       </div>
     );
   }
-  
+
   renderButtons() {
     const { id, first_name, last_name, department, rating } = this.state.prof;
 
     return (
-        <div className="prof-buttons">
-          <div className="col-6 prof-buttons__dropdown">
-            <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <div className="prof-buttons">
+        <div className="col-6 prof-buttons__dropdown">
+          <button
+            className="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
               Filter
-            </button>
-            <div className="dropdown-menu dropdown-container" aria-labelledby="dropdownMenuButton">
-              {this.state.prof.modules.map(module => {
-                return (
-                  <div className="dropdown-item dropdown-container__item" href="#" value={module[1]} onClick={this.handleFilter}>{module[1]}</div>
-                );
-              })}
-            </div>
-          </div>
-
-          <div className="col-6 prof-buttons__rate">
-            <Link to={`/profs/${id}/rate`}>
-              <button type="button" className="btn btn-secondary">
-                Rate This Prof!
-              </button>
-            </Link>
+          </button>
+          <div className="dropdown-menu dropdown-container" aria-labelledby="dropdownMenuButton">
+            {this.state.prof.modules.map(module => {
+              return (
+                <div
+                  className="dropdown-item dropdown-container__item"
+                  href="#"
+                  value={module[1]}
+                  onClick={this.handleFilter}
+                >
+                  {module[1]}
+                </div>
+              );
+            })}
           </div>
         </div>
+
+        <div className="col-6 prof-buttons__rate">
+          <Link to={`/profs/${id}/rate`}>
+            <button type="button" className="btn btn-secondary">
+                Rate This Prof!
+            </button>
+          </Link>
+        </div>
+      </div>
     );
   }
-  
+
   renderFires(difficulty) {
-    const darkFire = i => <i key={i+100} className="fab fa-hotjar fire--dark"></i>
-    const brightFire = i => <i key={i+200} className="fab fa-hotjar fire--bright"></i>
-    const style = { width: (difficulty * 20.0).toFixed(2) + '%' }
+    const darkFire = i => <i key={i+100} className="fab fa-hotjar fire--dark"></i>;
+    const brightFire = i => <i key={i+200} className="fab fa-hotjar fire--bright"></i>;
+    const style = { width: (difficulty * 20.0).toFixed(2) + "%" };
     return (
       <span className="rate-value">
         {[1, 2, 3, 4, 5].map(darkFire)}
-        <span 
+        <span
           className="rate-value--coloured fire--dark"
           style={style}
         >
           {[1, 2, 3, 4, 5].map(brightFire)}
         </span>
       </span>
-    )
+    );
   }
-  
+
   renderDifficulty(difficulty) {
     return (
       <div className="prof-comment__difficulty">
@@ -230,14 +244,14 @@ class Prof extends Component {
           {this.renderFires(difficulty)}
         </div>
       </div>
-    )
+    );
   }
-  
+
   renderStars(rating) {
-    const darkStar = i => <i key={i} className="fas fa-star star--dark"></i>
-    const brightStar = i => <i key={i} className="fas fa-star star--bright"></i>
-    const style = { width: (rating * 20.0).toFixed(2) + '%' }
-    
+    const darkStar = i => <i key={i} className="fas fa-star star--dark"></i>;
+    const brightStar = i => <i key={i} className="fas fa-star star--bright"></i>;
+    const style = { width: (rating * 20.0).toFixed(2) + "%" };
+
     return (
       <span className="rate-value">
         {[1, 2, 3, 4, 5].map(darkStar)}
@@ -245,9 +259,9 @@ class Prof extends Component {
           {[1, 2, 3, 4, 5].map(brightStar)}
         </span>
       </span>
-    )
+    );
   }
-  
+
   renderRating(rating) {
     return (
       <div className="prof-comment__rating">
@@ -261,15 +275,15 @@ class Prof extends Component {
           </span>
         </div>
       </div>
-    )
+    );
   }
-  
+
   renderReviewTags(tags) {
     const renderTag = tag => <span>
       <span className="prof-comment__tag">{tag}</span>
       &nbsp;
-    </span>
-    
+    </span>;
+
     return (
       <div className="prof-comment__tags font-size--s background--grey">
         <div className="col-3 col-sm-2 prof-comment__tags-title">
@@ -279,17 +293,17 @@ class Prof extends Component {
           {tags.map(renderTag)}
         </div>
       </div>
-    )
+    );
   }
-  
+
   renderReviewTitle(module) {
     return (
       <div className="prof-comment__module font-size--m background--grey">
-          {module + " (" + this.state.moduleDictionary[module] + ")"}
+        {module + " (" + this.state.moduleDictionary[module] + ")"}
       </div>
-    )
+    );
   }
-  
+
   renderReviewGrade(grade) {
     const gradeList = this.state.grades.map(grade=>grade.score);
     return (
@@ -301,9 +315,9 @@ class Prof extends Component {
           : {gradeList[grade-1]}
         </div>
       </div>
-    )
+    );
   }
-  
+
   renderReviewVote(upvote, downvote, id) {
     let voteMemo = this.state.reviewsVote;
     return (
@@ -321,31 +335,31 @@ class Prof extends Component {
           {downvote + voteMemo[id.toString()+"0"]}
         </span>
       </div>
-    )
+    );
   }
-  
+
   renderReviewContent(content) {
     return (
       <div className="col-7 col-sm-8 prof-comment__essay font-size--xs">
         {content}
       </div>
-    )
+    );
   }
-  
+
   renderReviewTimestamp(time_posted) {
     return (
       <div className="col-7 prof-comment__timestamp font--grey">
         Created on {time_posted}
       </div>
-    )
+    );
   }
-  
+
   renderReview(review) {
     const {
       rating, difficulty, grade, content, time_posted,
       upvote, downvote, module, tags, id
     } = review;
-    
+
     return (
       <div className="prof-comment background--lightgrey">
         {this.renderReviewTitle(module)}
@@ -363,9 +377,9 @@ class Prof extends Component {
           {this.renderReviewVote(upvote, downvote, id)}
         </div>
       </div>
-    )
+    );
   }
-  
+
   renderReviews() {
     const filterElement = this.state.moduleFilter;
     return (
@@ -378,21 +392,21 @@ class Prof extends Component {
           }
         }).map(this.renderReview.bind(this))}
       </div>
-    )
+    );
   }
 
   render() {
     const { id, first_name, last_name, department, rating } = this.state.prof;
     return (
       <div className="page prof-page">
-      {this.state.isOver ? (
+        {this.state.isOver ? (
           <div>
             {this.renderProfDetails()}
             {this.renderButtons()}
             {this.renderReviews()}
           </div>
         ) : (<div></div>)
-      }
+        }
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { searchProfs } from "./api.js";
+import { searchProfsByName } from "./api.js";
 import "./Search.css";
 
 const queryString = require("query-string");
@@ -19,10 +19,8 @@ class Search extends Component {
     const query = queryString.parse(this.props.location.search).q;
     this.setState({ query: query });
 
-    searchProfs(query)
-      .then(res => {
-        this.setState({ profs: res });
-      });
+    searchProfsByName(query)
+      .then(res => this.setState({ profs: res }));
   }
 
   componentDidUpdate() {

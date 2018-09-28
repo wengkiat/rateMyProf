@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { searchProfs } from "./api.js";
+import { searchProfsByName } from "./api.js";
 import "./Home.css";
 
 class Home extends Component {
@@ -19,7 +19,7 @@ class Home extends Component {
     const query = event.target.value;
     this.setState({ query: query });
 
-    searchProfs(query).then(res => {
+    searchProfsByName(query).then(res => {
       if (Array.isArray(res))
         this.setState({ profs: res });
       else
