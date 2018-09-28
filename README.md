@@ -13,12 +13,15 @@ http://rateyourprofs.com
 ## Created By
 ### Chiang Weng Kiat
 Matriculation Number: A0141128R
+
 Role: Backend (Developing Database and API)
 
 ### Nguyen Tien Trung Kien
 Matriculation Number: A0161364J
+
 Role: Frontend (Retrieving Data using API and Translating Data into Dynamic Website)
 
 ### Samuel Henry Kurniawan
 Matriculation Number: A0144896M
+
 Role: Frontend (Translating Data into Dynamic Website and Webpage Static Design)
