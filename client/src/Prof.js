@@ -75,7 +75,7 @@ class Prof extends Component {
       this.checkOver();
     });
     getGradeList().then(res => {
-      this.setState({ 
+      this.setState({
         grades: res,
         isGradeData: true
       });
