@@ -139,7 +139,7 @@ a:hover {
 }
 
 .loading-screen--logo {
-  background:url('/img/logo.png') no-repeat center center fixed;
+  background:url('/img/logo-white.png') no-repeat center center fixed;
   height: 2000px;
 }
 
