@@ -33,7 +33,7 @@ class Prof extends Component {
     getProf(profID).then(res => {
       this.setState({
         prof: res,
-        isProfData: true,
+        // isProfData: true,
         moduleDictionary: res.modules.reduce((obj, data, idx) => {
           obj[data[1]] = data[2];
           return obj;
@@ -190,6 +190,14 @@ class Prof extends Component {
               Filter
           </button>
           <div className="dropdown-menu dropdown-container" aria-labelledby="dropdownMenuButton">
+            <div
+              className="dropdown-item dropdown-container__item"
+              href="#"
+              value=""
+              onClick={this.handleFilter}
+            >
+              Clear Filter
+            </div>
             {this.state.prof.modules.map(module => {
               return (
                 <div
@@ -405,8 +413,12 @@ class Prof extends Component {
             {this.renderButtons()}
             {this.renderReviews()}
           </div>
-        ) : (<div></div>)
-        }
+        ) : (
+          <div className="loading-screen--white">
+            <div className="loading-screen--logo">
+            </div>
+          </div>
+        )}
       </div>
     );
   }
