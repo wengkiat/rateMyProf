@@ -47,7 +47,7 @@ class Home extends Component {
             {this.state.profs.slice(0, 5).map(prof =>
               <Link to={`/profs/${prof.id}`}>
                 <div className="preliminary-search-result__prof">
-                  {prof.first_name + " " + prof.last_name}
+                  {prof.first_name + " " + prof.last_name + " (" + prof.department + ")"}
                 </div>
               </Link>
             )}
