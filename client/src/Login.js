@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { GoogleLogin } from 'react-google-login';
 import "./Login.css";
 
 class Login extends Component {
@@ -13,19 +14,16 @@ class Login extends Component {
           Login Using Existing Account
         </div>
         <div className="login__options font-size--l">
-          <button type="button" className="btn btn-primary login__button login-fb col-12 col-sm-5">
-            <div className="col-3 login-fb__image ">
-              <i class="fab fa-facebook-square fa-3x login-fb__icon"></i>
-            </div>
-            <div className="col-9 login-fb__text">
-              <table className="login-fb__table">
-                <td className="login-fb__cell">
-                  Login using Facebook
-                </td>
-              </table>
-            </div>
-          </button>
-          <button type="button" className="btn btn-danger login__button login-google col-12 col-sm-5">
+          <GoogleLogin
+            type="button" className="btn btn-danger login__button login-google col-12 col-sm-5"
+            clientId="146566530913-jbveuscvcisi53fknmrdvm13lg4hfumm.apps.googleusercontent.com"
+            onSuccess={res => {
+              localStorage.setItem("Login", res.Zi.access_token);
+              this.props.history.goBack();
+              window.initialize();
+            }}
+            onFailure={res => alert("Login unsuccessfully")}
+          >
             <div className="col-3 login-google__image">
               <i class="fab fa-google-plus-square fa-3x login-google__icon"></i>
             </div>
@@ -36,7 +34,7 @@ class Login extends Component {
                 </td>
               </table>
             </div>
-          </button>
+          </GoogleLogin>
         </div>
       </div>
     );

@@ -50,8 +50,8 @@
               <li class="nav-item active navbar__item">
                 <a class="nav-link" href="/contact">Contact Us</a>
               </li>
-              <li class="nav-item active navbar__item">
-                <a class="nav-link" href="/login">Login</a>
+              <li class="nav-item active navbar__item" id="login-button">
+                <a class="nav-link" href="/login" id="login-text">Login</a>
               </li>
             </ul>
           </div>
@@ -90,7 +90,18 @@
       resizeIndexBackground();
       resizeProfImage();
       resizeProfsImage();
+      initialize();
     });
+
+    function initialize() {
+      if (localStorage.getItem("Login")) {
+        $("#login-text").text("Logout");
+        $("#login-text").attr("href", "/logout");
+      } else {
+        $("#login-text").text("Login");
+        $("#login-text").attr("href", "/login");
+      }
+    }
 
     function resizeIndexBackground(){
       let windowHeight = $(window).height();
