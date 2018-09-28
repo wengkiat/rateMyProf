@@ -72,6 +72,21 @@
   </body>
   <script>
 
+    $(document).ready(()=> {
+      setTimeout(function(){
+          window.dispatchEvent(new Event("resize"));
+        }, 50);
+      setTimeout(function(){
+          window.dispatchEvent(new Event("resize"));
+        }, 200);
+      setTimeout(function(){
+          window.dispatchEvent(new Event("resize"));
+        }, 600);
+      setTimeout(function(){
+          window.dispatchEvent(new Event("resize"));
+        }, 1000);
+    });
+
     $(window).resize(()=>{
       resizeIndexBackground();
       resizeProfImage();
@@ -133,6 +148,7 @@
         $(".prof__overview").css("margin-left", "0px");
       }
     }
+
 
 
   </script>

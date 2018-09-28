@@ -286,7 +286,10 @@ class Rate extends Component {
               {this.renderSubmitButton()}
             </form>
           </div>
-        ) : (<div></div>)
+        ) : (
+          <div className="loading-screen--logo">
+          </div>
+        )}
       }
       </div>
     );

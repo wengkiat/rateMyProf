@@ -33,7 +33,7 @@ class Prof extends Component {
     getProf(profID).then(res => {
       this.setState({
         prof: res,
-        // isProfData: true,
+        isProfData: true,
         moduleDictionary: res.modules.reduce((obj, data, idx) => {
           obj[data[1]] = data[2];
           return obj;
@@ -75,7 +75,7 @@ class Prof extends Component {
       this.checkOver();
     });
     getGradeList().then(res => {
-      this.setState({
+      this.setState({ 
         grades: res,
         isGradeData: true
       });
@@ -414,9 +414,7 @@ class Prof extends Component {
             {this.renderReviews()}
           </div>
         ) : (
-          <div className="loading-screen--white">
-            <div className="loading-screen--logo">
-            </div>
+          <div className="loading-screen--logo">
           </div>
         )}
       </div>

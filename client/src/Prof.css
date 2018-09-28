@@ -1,3 +1,7 @@
+html, body, #root, .page{
+  height: 100%;
+}
+
 .prof-page__font--tier-1 {
   font-size: 38px;
 }

@@ -27,22 +27,6 @@ class Home extends Component {
     });
   }
 
-  componentDidMount() {
-    console.log("test");
-    setTimeout(function(){
-        window.dispatchEvent(new Event("resize"));
-      }, 50);
-    setTimeout(function(){
-        window.dispatchEvent(new Event("resize"));
-      }, 200);
-    setTimeout(function(){
-        window.dispatchEvent(new Event("resize"));
-      }, 600);
-    setTimeout(function(){
-        window.dispatchEvent(new Event("resize"));
-      }, 1000);
-  }
-
   renderForm() {
     return (
       <form action="/search" className="search__form">
@@ -79,7 +63,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <div className="index loading-screen--logo">
+        <div className="index">
           <div className="index__background--transparent">
             <div className="index__search-container page">
               <div className="index__search search">
