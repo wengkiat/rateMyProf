@@ -28,6 +28,25 @@
   width: 100%;
 }
 
+.home-logo {
+  height: 250px;
+}
+
+.home-logo__image {
+  height: 200px;
+  width: auto;
+  margin: auto;
+}
+
+@media only screen and (max-width: 350px) {
+  .home-logo {
+    height: 200px;
+  }
+  .home-logo__image {
+    height: 150px;
+  }
+}
+
 .search__text {
   font-size: 24px;
   height: 60px;
