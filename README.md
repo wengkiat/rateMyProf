@@ -5,7 +5,8 @@
 Rate Your Profs!
 
 ### Description
-An Application for reviewing and rating professors, for the improvement of the prof himself and for considerations for students in choosing
+An Application for reviewing and rating professors, to help students better decide if a professor’s teaching style/module would suit them.
+
 
 ### Link
 http://rateyourprofs.com
